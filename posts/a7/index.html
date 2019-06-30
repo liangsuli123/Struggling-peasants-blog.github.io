@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="在之前的一篇文章中:利用Docker来搭建分布式文件系统FastDfs，我们已经搭建好了FastDfs分布式文件系统，并且已经可以通过命令进行上传操作，那么如何使用python来上传文件呢？ 很简单，还"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/a7/"/>
+
+  
+
+  <title>python3.7.3操作FastDfs来进行文件操作 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/a7/'>python3.7.3操作FastDfs来进行文件操作</a></h2>
+          <span class="date">2019.02.15</span>
+        </div>
+        <div class="post_content markdown"><pre><code>在之前的一篇文章中:利用Docker来搭建分布式文件系统FastDfs，我们已经搭建好了FastDfs分布式文件系统，并且已经可以通过命令进行上传操作，那么如何使用python来上传文件呢？
+
+
+    很简单，还是利用docker的特性，我们知道docker 的 -v 参数，可以自动挂载宿主机的文件件到容器中去，这样宿主和容器就可以进行无障碍的文件共享，我们通过-v参数，把宿主机的root目录自动挂载到docker容器中的/var/root目录中去。
+
+
+docker run -d --network=host --name tracker -v /root:/var/root delron/fastdfs tracker
+
+docker run -d --network=host --name storage -e TRACKER_SERVER=172.18.0.1:22122 -v /root:/var/root -e GROUP_NAME=group1 delron/fastdfs storage
+
+我们又起了两个服务，一个tracker(调度)另外一个是storage(仓库),只不过都共享了宿主的文件夹/root，挂载到了/var/root下
+
+然后分别进入宿主的命令行以及进入容器storage的命令行，发现文件夹已经共享
+
+
+
+
+此时，我们可以利用docker的exec命令不进入容器，直接在宿主机的环境下调用容器内的命令，因为文件夹已经共享，所以我们输入的文件目录虽然是容器中的/var/root目录，但是实际上该上传的文件就在宿主的/root目录中，这里，我们不上传图片，而是上传一个视频
+
+
+docker exec -i storage /usr/bin/fdfs_upload_file /etc/fdfs/client.conf /var/root/test.mp4
+
+上传成功后，fastdfs将会返回视频的网络地址
+
+
+
+浏览器访问一下，没有问题
+
+
+
+
+至此，在宿主机中上传文件已经搞定，而python同样也可以在命令行中执行命令，我们可以从命令中得到URL的做法来实现django与fastdfs的交流，这里利用的是python中的os.popen方法，可以非常简单的在命令行中获取返回的fastdfs网络地址，从而避开了必须要安装fastdfs的python客户端，因为该客户端对python3并不十分友好。代码如下：
+
+
+import os
+import re
+
+std = os.popen(&quot;docker exec -i storage /usr/bin/fdfs_upload_file /etc/fdfs/client.conf /var/root/test.mp4&quot;).read()
+print('*********** fastdfs excute start ***********')
+print(std.strip())
+print('*********** fastdfs excute end ***********')
+
+这样，在django中上传文件时，就可以通过命令的方式上传到fastdfs中，获取返回地址后入库就可以了，本次操作将docker的特性运用到了极致，由此可见docker的泛用性之广，实实在在的提高了开发效率。
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

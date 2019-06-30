@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue表单的学习&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ message:&#39;你好&#39; } }); // 多选框的增删改查 var app = new Vue({ el:&amp;quot;#b&amp;quot;, data:{ checknames:[] }"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/"/>
+
+  
+
+  <title>vue表单选项框 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/'>vue表单选项框</a></h2>
+          <span class="date">2017.06.25</span>
+        </div>
+        <div class="post_content markdown"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;vue表单的学习&lt;/title&gt;
+    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //单一入口
+    window.onload = function(){
+        var app = new Vue({
+
+            el:&quot;#a&quot;,
+            data:{
+                message:'你好'
+            }
+        });
+        // 多选框的增删改查
+        var app = new Vue({
+            el:&quot;#b&quot;,
+            data:{
+                checknames:[]
+            }
+        });
+        // 单选框
+        var app = new Vue({
+            el:&quot;#c&quot;,
+            data:{
+                picked:&quot;&quot;,gender:&quot;男&quot;
+            }
+        });
+    }
+    
+    &lt;/script&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id = &quot;a&quot;&gt;
+        &lt;!-- 双向绑定用 v-model绑定 --&gt;
+    &lt;input type='text' v-model='message'/&gt;
+
+    设置的变量内容是: {{message}}
+    &lt;!-- 多行文本域 textarea --&gt;
+    &lt;textarea v-model=&quot;message&quot; style=&quot;height:300px&quot;&gt;&lt;/textarea&gt;&lt;br/&gt;
+
+    &lt;!-- 多选框的绑定 checkbox label是标签属性，来注明多选框的内容 --&gt;
+    &lt;input type='checkbox' name=&quot;crouse&quot; value='mysql'/&gt;
+    &lt;label&gt;mysql&lt;/label&gt;
+
+    &lt;input type=&quot;checkbox&quot; name=&quot;crouse&quot; value=&quot;jquery&quot;/&gt;
+    &lt;label&gt;jquery&lt;/label&gt;
+
+    &lt;input type=&quot;checkbox&quot; name=&quot;crouse&quot; value=&quot;vue&quot;/&gt;
+    &lt;label&gt;vue&lt;/label&gt;
+    &lt;br/&gt;&lt;br/&gt;
+&lt;/div&gt;
+&lt;!-- 多选框的绑定并显示出来 --&gt;
+&lt;div id=&quot;b&quot;&gt;
+     
+     &lt;!-- 多选框的绑定 checkbox label是标签属性，来注明多选框的内容 --&gt;
+     &lt;input type='checkbox' name=&quot;crouse&quot; value='mysql' v-model=&quot;checknames&quot; /&gt;
+     &lt;label&gt;mysql&lt;/label&gt;
+ 
+     &lt;input type=&quot;checkbox&quot; name=&quot;crouse&quot; value=&quot;jquery&quot; v-model=&quot;checknames&quot;/&gt;
+     &lt;label&gt;jquery&lt;/label&gt;
+ 
+     &lt;input type=&quot;checkbox&quot; name=&quot;crouse&quot; value=&quot;vue&quot; v-model=&quot;checknames&quot;/&gt;
+     &lt;label&gt;vue&lt;/label&gt;
+     &lt;!-- 用vue的模板语法来打印勾选的课程列表 --&gt;
+     {{ checknames }} &lt;label&gt;这是你所选的课程&lt;/label&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;!-- vue的单选标签 --&gt;
+    &lt;div id=&quot;c&quot;&gt;
+        &lt;!-- name 分组 --&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;yesorno&quot; value=&quot;是&quot; v-model=&quot;picked&quot; /&gt;
+        &lt;label&gt;是&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;yesorno&quot; value=&quot;否&quot; v-model=&quot;picked&quot; /&gt;
+        &lt;label&gt;否&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;nanornv&quot; value=&quot;男&quot; v-model=&quot;gender&quot; /&gt;
+        &lt;label&gt;男&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;nanornv&quot; value=&quot;女&quot; v-model=&quot;gender&quot; /&gt;
+        &lt;label&gt;女&lt;/label&gt;
+        &lt;br/&gt;
+        &lt;span&gt;你选中的是：{{ picked }}  ，&amp;nbsp;选择性别：{{ gender }}&lt;/span&gt;
+    &lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E5%9F%BA%E7%A1%80/">基础</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

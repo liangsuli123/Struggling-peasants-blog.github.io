@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Siege是linux下的一个web系统的压力测试工具，支持多链接，支持get和post请求，可以对web系统进行多并发下持续请求的压力测试。今天我们就使用Siege来对Django进行一次压力测试，"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/a10/"/>
+
+  
+
+  <title>在Centos下使用Siege对Django服务进行压力测试 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/a10/'>在Centos下使用Siege对Django服务进行压力测试</a></h2>
+          <span class="date">2019.02.22</span>
+        </div>
+        <div class="post_content markdown"><pre><code>    Siege是linux下的一个web系统的压力测试工具，支持多链接，支持get和post请求，可以对web系统进行多并发下持续请求的压力测试。今天我们就使用Siege来对Django进行一次压力测试，看看单台Django服务到底能抗住多少的并发数。
+
+    首先安装Siege
+
+    
+
+wget http://download.joedog.org/siege/siege-3.0.8.tar.gz
+tar zxvf siege-3.0.8.tar.gz
+cd siege-3.0.8
+./configure
+make
+make install
+
+验证安装结果：输入siege -V 如果输出了版本号就代表安装没问题
+
+Siege命令常用参数
+
+
+-c 200 指定并发数200
+-r 5 指定测试的次数5
+-f urls.txt 制定url的文件
+-i internet系统，随机发送url
+-b 请求无需等待 delay=0
+-t 5 持续测试5分钟
+
+
+测试指标说明：
+
+
+Transactions: 4 hits 完成4次处理 
+Availability: 100.00 % 成功率 
+Elapsed time: 1.19 secs 总共用时
+Data transferred: 0.03MB 共数据传输：0.03MB
+Response time: 0.13 secs 相应用时0.13秒，显示网络连接的速度
+Transaction rate: 3.36 trans/sec平均每秒完成3.36次处理，表示服务器后台处理的速度
+Throughput: 0.03MB/sec 平均每秒传送数据：0.03MB
+Concurrency: 0.45 最高并发数 0.45
+Successful transactions: 4成功处理次数
+Failed transactions: 0 失败处理次数
+Longest  transaction：0.25请求最长响应时间/每次传输所花最长时间
+Shortest  transaction：0.09请求最短响应时间/每次传输所花最短时间
+
+主要参考指标是 Transaction rate
+
+
+测试背景:  
+
+
+软件：python3.7.2 Django2.0.4 
+
+硬件 内存:1g cpu:1个1核  这个硬件配置有点惨，没办法了，因为没钱买好的
+
+业务场景：Django使用mysql进行普通的读操作，没有使用任何缓存
+
+压测命令：255个用户并发访问localhost:8000，持续时间为1分钟
+
+
+siege -c255 -t60S -v -b 127.0.0.1:8000
+
+
+首先使用runserver的起服务方式进行压测：
+
+
+python3 manage.py runserver 0.0.0.0:8000
+
+
+
+可以看到，这个有点凄惨，每秒后台只能处理166的请求，失败次数也有点高，更加说明了，runserver最好就是本地调试开发的时候用用就可以了，在生产环境使用runserver无异于自杀，不过在一些测试服务器上，如果懒得搭建uwsgi或者gunicorn，可以使用nohup配合runserver临时用一下。
+
+
+使用uwsgi来起服务，uwsgi作为一款高性能的服务器，安装方式请见：https://v3u.cn/a_id_72 起8个worker
+
+
+uwsgi --http :8000 --module mypro.wsgi --processes 8
+
+
+
+可以看到使用了uwsgi的提升还是很可观的，失败次数也减少了一半左右
+
+
+    最后，我们来试一试Gunicorn
+
+    Gunicorn是使用Python实现的WSGI服务器, 直接提供了http服务, 并且在woker上提供了多种选择, gevent, eventlet这些都支持, 在多worker最大化里用CPU的同时, 还可以使用协程来提供并发支撑, 对于网络IO密集的服务比较有利
+
+安装 gunicorn
+
+
+pip3 install gunicorn
+
+起4个worker,50个线程
+
+
+gunicorn --env DJANGO_SETTINGS_MODULE=mypro.settings mypro.wsgi:application -w 4 -b 0.0.0.0:8000 -k gthread --threads 50
+
+
+
+可以看到性能上和uwsgi差不太多，但是失败数比较多。以1g1核的服务器，并发阈值也就在200左右了。
+
+
+    综上，单以性能论，Django的表现并非很好，但是你不能忽略它的学习成本低，简单并且容易上手的优势，鱼与熊掌不能兼得，如果要求高性能，可以试试tornado, 如果tornado依然无法满足，可以尝试使用golang，毕竟golang是以高并发著称的编译语言，而且基于它的web框架也很容易上手，性能很可观，例如Iris。
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

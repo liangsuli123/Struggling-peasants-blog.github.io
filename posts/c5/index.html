@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Docker Compose 1、Docker Compose 介绍 1. Compose是一个定义和管理多容器的工具，使用Python语言编写。 2. 使用Compose配置文件描述多个容器应用的架构，比如使用什么镜像、数据卷、网络、映射端口等； 3. 然后"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/c5/"/>
+
+  
+
+  <title> docker高级篇  &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/c5/'> docker高级篇 </a></h2>
+          <span class="date">2018.10.18</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="docker-compose">Docker Compose</h1>
+
+<pre><code>1、Docker Compose 介绍
+
+　　　　　　1. Compose是一个定义和管理多容器的工具，使用Python语言编写。
+
+　　　　　　2. 使用Compose配置文件描述多个容器应用的架构，比如使用什么镜像、数据卷、网络、映射端口等；
+
+　　　　　　3. 然后一条命令管理所有服务，比如启动、停止、重启等。
+
+　　2、安装docker compose
+
+　　　　1、法1：下载 并安装docker compose
+
+　　　　　　　　curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+　　　　　　　　chmod +x /usr/local/bin/docker-compose
+
+ 　　　　　　　　或者
+
+　　　　　　　　pip install docker-compose
+
+　　　　2、法2：直接解压安装
+
+　　　　　　　　unzip docker-compose-linux-x86_64.zip      # 解压后只有一个文件 docker-compose
+
+　　　　　　　　chmod +x docker-compose
+
+　　　　　　　　mv docker-compose /usr/bin/
+
+　　3、YAML文件格式及编写注意事项
+　　　　　　注：docker-compose使用yaml文件对容器进行描述
+
+　　　　　　YAML是一种标记语言很直观的数据序列化格式，可读性高。类似于XML数据描述语言，语法比XML简单的很多。
+
+　　　　　　YAML数据结构通过缩进来表示，连续的项目通过减号来表示，键值对用冒号分隔，数组用中括号括起来，hash用花括号括起来。
+
+　　　　　　YAML文件格式注意事项：
+　　　　　　　　　　1.不支持制表符tab键缩进，需要使用空格缩进
+　　　　　　　　　　2.通常开头缩进2个空格
+　　　　　　　　　　3.字符后缩进1个空格，如冒号、逗号、横杆
+　　　　　　　　　　4.用井号注释
+　　　　　　　　　　5.如果包含特殊字符用单引号引起来
+　　　　　　　　　　6.布尔值（true、false、yes、no、on、off）必须用引号括起来，这样分析器会将他们解释为字符串。
+
+　　4、compose 配置常用字段
+
+　　　　　　
+
+　　5、常用命令
+
+ 　　　　　　
+
+1.2 使用Docker Compose 一键部署LNMP网站平台
+　　1、一键部署LNMP文件结构
+
+复制代码
+.
+├── docker-compose.yml           # compose 的yml文件用于描述要构建的容器
+├── mysql 
+│   ├── conf
+│   │   └── my.cnf               # my.cnf ： mysql主配置文件 
+│   └── data                     # data 数据目录，当构建的时候会将mysql数据持久化到宿主机上
+├── nginx
+│   ├── Dockerfile               # 构建nginx容器的 Dockerfile 文件
+│   ├── nginx-1.12.1.tar.gz
+│   └── nginx.conf               # nginx的主配置文件
+├── php
+│   ├── Dockerfile               # 构建php容器的 Dockerfile 文件
+│   ├── php-5.6.31.tar.gz
+│   └── php.ini                 
+└── wwwroot
+    └── index.php                # 网站根目录
+复制代码
+
+复制代码
+version: '3'
+services:
+  nginx:
+    hostname: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 81:80
+    networks:
+      - lnmp
+    volumes:
+      - ./wwwroot:/usr/local/nginx/html
+
+  php:
+    hostname: php
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    networks:
+      - lnmp
+    volumes:
+      - ./wwwroot:/usr/local/nginx/html
+
+  mysql:
+    hostname: mysql
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    networks:
+      - lnmp
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/data:/var/lib/mysql
+    command: --character-set-server=utf8
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user123
+
+networks:
+  lnmp: 
+复制代码
+
+复制代码
+[mysqld]
+user=mysql
+port=3306
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+pid-file=/var/run/mysql/mysql.pid
+log_error=/var/log/mysql/error.log
+character_set_server = utf8
+max_connections=3600
+复制代码
+
+复制代码
+FROM centos:7
+MAINTAINER www.aliangedu.com
+RUN yum install -y gcc gcc-c++ make openssl-devel pcre-devel
+ADD nginx-1.12.1.tar.gz /tmp
+
+RUN cd /tmp/nginx-1.12.1 &amp;&amp; \
+    ./configure --prefix=/usr/local/nginx &amp;&amp; \
+    make -j 2 &amp;&amp; \
+    make install
+
+RUN rm -rf /tmp/nginx-1.12.1* &amp;&amp; yum clean all
+
+COPY nginx.conf /usr/local/nginx/conf
+
+WORKDIR /usr/local/nginx
+EXPOSE 80
+CMD [&quot;./sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+复制代码
+
+复制代码
+FROM centos:7
+MAINTAINER www.aliangedu.com
+RUN yum install -y gcc gcc-c++ make openssl-devel pcre-devel
+ADD nginx-1.12.1.tar.gz /tmp
+
+RUN cd /tmp/nginx-1.12.1 &amp;&amp; \
+    ./configure --prefix=/usr/local/nginx &amp;&amp; \
+    make -j 2 &amp;&amp; \
+    make install
+
+RUN rm -rf /tmp/nginx-1.12.1* &amp;&amp; yum clean all
+
+COPY nginx.conf /usr/local/nginx/conf
+
+WORKDIR /usr/local/nginx
+EXPOSE 80
+CMD [&quot;./sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+[root@linux-node2 compose_lnmp]# cat nginx/nginx.conf 
+user  root; 
+worker_processes  auto; 
+
+error_log  logs/error.log  info;
+
+pid        logs/nginx.pid; 
+
+
+events {
+    use epoll; 
+}
+
+http {
+
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+    access_log logs/access.log main;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen 80;
+        server_name localhost;
+        root html;
+        index index.html index.php;
+
+        location ~ \.php$ {
+            root html;
+            fastcgi_pass php:9000;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; 
+            include fastcgi_params;
+        }
+    }
+}
+复制代码
+
+复制代码
+FROM centos:7
+MAINTAINER www.aliangedu.com
+RUN yum install -y gcc gcc-c++ make gd-devel libxml2-devel libcurl-devel libjpeg-devel libpng-devel openssl-devel
+ADD php-5.6.31.tar.gz /tmp/
+
+RUN cd /tmp/php-5.6.31 &amp;&amp; \
+    ./configure --prefix=/usr/local/php \
+    --with-config-file-path=/usr/local/php/etc \
+    --with-mysql --with-mysqli \
+    --with-openssl --with-zlib --with-curl --with-gd \
+    --with-jpeg-dir --with-png-dir --with-iconv \
+    --enable-fpm --enable-zip --enable-mbstring &amp;&amp; \
+    make -j 4 &amp;&amp; \
+    make install &amp;&amp; \
+    cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf &amp;&amp; \
+    sed -i &quot;s/127.0.0.1/0.0.0.0/&quot; /usr/local/php/etc/php-fpm.conf &amp;&amp; \
+    sed -i &quot;21a \daemonize = no&quot; /usr/local/php/etc/php-fpm.conf
+COPY php.ini /usr/local/php/etc
+
+RUN rm -rf /tmp/php-5.6.31* &amp;&amp; yum clean all
+
+WORKDIR /usr/local/php
+EXPOSE 9000
+CMD [&quot;./sbin/php-fpm&quot;, &quot;-c&quot;, &quot;/usr/local/php/etc/php-fpm.conf&quot;]
+复制代码
+
+&lt;?php phpinfo();?&gt;
+　　3、执行一键部署命令
+
+ 　　　　　　docker-compose -f docker-compose.yml  up
+
+ 　　　　　　docker-compose -f docker-compose.yml  up -d       # -d参数让程序运行在后台
+
+　　4、说明
+
+　　　　　　http://192.168.0.211:81/                  # 运行上面命令即可在页面打开php页面
+
+　　　　　　注：如果想要使用其他页面直接将 wwwroot中的index.php问价进行替换即可W
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

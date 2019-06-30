@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 梁苏莉的博客</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 25 May 2019 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xshell 常用命令</title>
+      <link>/posts/xshell/</link>
+      <pubDate>Sat, 25 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/xshell/</guid>
+      <description>Xshell :一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议. 0 帮助 命令 与清屏 help 查看帮助命令 ls 查看ls命令下的具体用法 info ls 查看ls命令的作用 clear 清屏 1。查看当前路径 pwd</description>
+    </item>
+    
+    <item>
+      <title>redis安装成功后get: command not found</title>
+      <link>/posts/redis_error/</link>
+      <pubDate>Mon, 20 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/redis_error/</guid>
+      <description>redis安装成功后get: command not found 安装redis后客户端无法使用，即redis-cli执行后报找不到的错误。 这主要是安装redis的时候没有把客户端装上，在StackOverFlow上找到了一种只安装</description>
+    </item>
+    
+    <item>
+      <title>jieba分词</title>
+      <link>/posts/jieba/</link>
+      <pubDate>Fri, 03 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/jieba/</guid>
+      <description>使用 wordcloud 构建词云图 from wordcloud import WordCloud from matplotlib import pyplot as plt from PIL import Image import numpy as np 1.准备数据 content = open(&#39;豆瓣舌尖中国.txt&#39;,&#39;rb&#39;).read() result = jieba.lcut(content,cut_all=False) #精确模式 content = &#39; &#39;.join(result) #将list转化为空格分开的str 2.初始化词云</description>
+    </item>
+    
+    <item>
+      <title>React、Vue、Angular</title>
+      <link>/posts/chinese-preview/</link>
+      <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/chinese-preview/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;当前，三大主流前端框架分别是React、Vue、Angular这三个框架。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;React&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>/posts/websocket/</link>
+      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/websocket/</guid>
+      <description>websocket协议解决消息发送问题 Could not decode a text frame as UTF-8. 在使用websocket 时出现了Could not decode a text frame as UTF-8 首次连接成功当发送消息时，出现了编码作错误 第一请求页面时，连接成功 当发送消息时，不加enc</description>
+    </item>
+    
+    <item>
+      <title>web三大框架</title>
+      <link>/posts/japanese-preview/</link>
+      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/japanese-preview/</guid>
+      <description>python web三大框架，flask、django、tornado Django（ORM、URL分发系统、MTV） Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型</description>
+    </item>
+    
+    <item>
+      <title>迁移报错</title>
+      <link>/posts/migrations/</link>
+      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/migrations/</guid>
+      <description>You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run &#39;python manage.py migrate&#39; to apply them. 数据库迁移时报错， You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run &#39;python manage.py migrate&#39; to apply them. 可以执行 python manage.py migrate 它可以让我们在修改Model后可以在不影响现有数据的前提下重建表</description>
+    </item>
+    
+    <item>
+      <title>数据库分表分库</title>
+      <link>/posts/sql_1/</link>
+      <pubDate>Wed, 03 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/sql_1/</guid>
+      <description>分表分库 1、分库 当数据库中的表太多，将某些表分到不同数据库，例如：1W张表时 代价：连表查询跨数据库，代码变多 2、分表 水平分表：将某些列拆分到另一张表，例如：博客+博客详情 垂直分表：将某些历史信息，分到</description>
+    </item>
+    
+    <item>
+      <title>OSError: mysql_config not found</title>
+      <link>/posts/error/</link>
+      <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/error/</guid>
+      <description>上次在部署阿里云安装Centos7里 pip3 install mysqlclient 是 一直报 OSError: mysql_config not found 这个错，上网百度了半天终于找到了解决的办法，需要安装依赖包： yum install mysql-devel gcc gcc-devel python-devel 安装这个在pip3 install mysqlclient 就可以了</description>
+    </item>
+    
+    <item>
+      <title>关于mysql联合索引的最左前缀原则以及b&#43;tree</title>
+      <link>/posts/sql1/</link>
+      <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/sql1/</guid>
+      <description>关于mysql联合索引的最左前缀原则以及b+tree 软件版本mysql5.7 根据官网的文档 https://dev.mysql.com/doc/refman/5.7/en/multiple-column-indexes.html 查询条件要符合最左原则才能使用到索引 首先说说联合索引的好处： 覆盖索引，这一点是最重要的，重所周知非主键索引会</description>
+    </item>
+    
+    <item>
+      <title>数据库索引</title>
+      <link>/posts/sql/</link>
+      <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/sql/</guid>
+      <description>索引 主键索引，外键索引，联合索引，唯一索引 索引固然可 以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率 1. 当数据多且字段值有相同的值得时候用普通索引。 2. 当字段多且字段值没有重复的时候用唯一索引。 3. 当有多个</description>
+    </item>
+    
+    <item>
+      <title>数据库优化</title>
+      <link>/posts/english-preview/</link>
+      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/english-preview/</guid>
+      <description>1.sql 语句的优化 1、创建数据表时把固定长度的放在前面（） 2、将固定数据放入内存： 例如：choice字段 （django中有用到，数字1、2、3…… 对应相应内容） 3、char 和 varchar 的区别(char可变, varc</description>
+    </item>
+    
+    <item>
+      <title>在Centos下使用Siege对Django服务进行压力测试</title>
+      <link>/posts/a10/</link>
+      <pubDate>Fri, 22 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a10/</guid>
+      <description>Siege是linux下的一个web系统的压力测试工具，支持多链接，支持get和post请求，可以对web系统进行多并发下持续请求的压力测试。今天我们就使用Siege来对Django进行一次压力测试，</description>
+    </item>
+    
+    <item>
+      <title>在阿里云Centos7.6上利用docker搭建Jenkins来自动化部署Django项目</title>
+      <link>/posts/a9/</link>
+      <pubDate>Tue, 19 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a9/</guid>
+      <description>一般情况下，将一个项目部署到生产环境的流程如下： 需求分析—原型设计—开发代码—内网部署-提交测试—确认上线—备份数据—外网更新-最终测试，如果发现外网部署的代码有异常，需要及时回滚。 整个过程相当复杂而</description>
+    </item>
+    
+    <item>
+      <title>在阿里云服务器上使用Nginx部署https协议的网站</title>
+      <link>/posts/a8/</link>
+      <pubDate>Sun, 17 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a8/</guid>
+      <description>之前写过一篇文章是在阿里云服务器上用Apache切换https协议：将博客迁移阿里云并且切换成https解析的过程 这一次，换成使用Nginx来部署，相比之下，比Apache的配置要简单一些 如何申请SS</description>
+    </item>
+    
+    <item>
+      <title>fastdfs 中client.conf 文件</title>
+      <link>/posts/fastdfs2/</link>
+      <pubDate>Fri, 15 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/fastdfs2/</guid>
+      <description>fastdfs 中client.conf 文件 # connect timeout in seconds # default value is 30s connect_timeout=30 连接超时 # network timeout in seconds # default value is 30s network_timeout=60 网络超时 # the base path to store log files base_path=/home/yuqing/fastdfs 日志文件目录 # tracker_server can ocur more than once, and tracker_server format is # &amp;quot;host:port&amp;quot;, host can be hostname or ip address tracker_server=10.0.0.42:22122 tracker服务器地址 #standard log level as syslog, case insensitive,</description>
+    </item>
+    
+    <item>
+      <title>python3.7.3操作FastDfs来进行文件操作</title>
+      <link>/posts/a7/</link>
+      <pubDate>Fri, 15 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a7/</guid>
+      <description>在之前的一篇文章中:利用Docker来搭建分布式文件系统FastDfs，我们已经搭建好了FastDfs分布式文件系统，并且已经可以通过命令进行上传操作，那么如何使用python来上传文件呢？ 很简单，还</description>
+    </item>
+    
+    <item>
+      <title>FastDFS客户端与自定义文件存储系统</title>
+      <link>/posts/fastdfs/</link>
+      <pubDate>Thu, 14 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/fastdfs/</guid>
+      <description>FastDFS客户端与自定义文件存储系统 &amp;lt;1&amp;gt;安装 安装提供给大家的fdfs_client-py-master.zip到虚拟环境中 pip install fdfs_client-py-master.zip pip install mutagen pip install requests &amp;lt;2&amp;gt;使用 使用FastDFS客</description>
+    </item>
+    
+    <item>
+      <title>利用Docker来搭建分布式文件系统FastDfs</title>
+      <link>/posts/a6/</link>
+      <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a6/</guid>
+      <description>对于文件存储来说，一般情况下简单的处理就是在Django配置文件中配置存储目录，按照规则对文件进行上传或者下载。 实际上，当文件较少的时候，Django是可以应付的过来的。但当文件以海量形式出现的时候，</description>
+    </item>
+    
+    <item>
+      <title>在阿里云Centos上配置nginx&#43;uwsgi&#43;负载均衡配置</title>
+      <link>/posts/a5/</link>
+      <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a5/</guid>
+      <description>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以</description>
+    </item>
+    
+    <item>
+      <title>在阿里云Centos7.6上部署Supervisor来监控和操作各类服务 </title>
+      <link>/posts/a4/</link>
+      <pubDate>Tue, 29 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a4/</guid>
+      <description>Supervisor 是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。它可以很方便的监听、启动、停止、重启一个或多个进程。用Superv</description>
+    </item>
+    
+    <item>
+      <title>在阿里云centos7.6上部署vue.js2.6前端应用</title>
+      <link>/posts/a2/</link>
+      <pubDate>Tue, 22 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a2/</guid>
+      <description>在之前的一篇文章中详细阐述了如何部署Nginx代理uwsgi+django后台服务,现在轮到部署前端应用vue.js了，vue.js的好处就不多说了，其作为一个轻巧、高性能、可组件化的MVVM库，学习</description>
+    </item>
+    
+    <item>
+      <title>在阿里云Centos7.6中部署nginx1.16&#43;uwsgi2.0.18&#43;Django2.0.4</title>
+      <link>/posts/a1/</link>
+      <pubDate>Thu, 17 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/a1/</guid>
+      <description>一直以来想写一篇完整的在阿里云服务器上部署Django服务结合uwsgi，并且通过nginx做反向代理。因为网上的攻略鱼龙混杂，加上技术不断更新，一些年代久远的文章很容易让人在部署的过程中掉坑里，无法</description>
+    </item>
+    
+    <item>
+      <title>  Django &#43; Uwsgi &#43; Nginx 的生产环境部署  </title>
+      <link>/posts/d10/</link>
+      <pubDate>Sun, 30 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d10/</guid>
+      <description>1、Web协议介绍 Web协议出现顺序： CGI -&amp;gt; FCGI -&amp;gt; WSGI -&amp;gt; uwsgi 1. CGI： 最早的协议 2. FCGI： 比CGI快 3. WSGI： Python专用的协议 4. uwsgi： 比FCGI和WSGI都快，是uWSGI项目自有的协议，主要</description>
+    </item>
+    
+    <item>
+      <title>  Django中的缓存  </title>
+      <link>/posts/d10/</link>
+      <pubDate>Sat, 29 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d10/</guid>
+      <description>1、Django缓存作用 1. 由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显 2. 缓存将一个某个views的返回值保存至内存或者memcache中，5分</description>
+    </item>
+    
+    <item>
+      <title> Django序列化操作 </title>
+      <link>/posts/d9/</link>
+      <pubDate>Fri, 28 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d9/</guid>
+      <description>1、为什么需要需要序列化操作 1. python中很多格式的数据类型不能通过简单的json直接序列化转换成字符串格式传递到前端 2. 比如：form提交出现错误，返回的是Django的errors.dict对象，</description>
+    </item>
+    
+    <item>
+      <title> Django进阶篇 </title>
+      <link>/posts/d8/</link>
+      <pubDate>Mon, 24 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d8/</guid>
+      <description>1.1 Cookie 返回顶部 1、cookie简介 1. cookie实质就是客户端硬盘中存放的键值对，利用这个特性可以用来做用户验证 2. 比如：{“username”: “dachengzi”} #再次访问url就会携带这些信息过</description>
+    </item>
+    
+    <item>
+      <title> Django基础篇 </title>
+      <link>/posts/d7/</link>
+      <pubDate>Thu, 20 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d7/</guid>
+      <description>1、web框架本质 1. 对于所有的Web应用，本质上其实就是一个socket服务端，用户的浏览器其实就是一个socket客户端。 2. 真实web框架一般会分为两部分：服务器程序和应用程序。 1）服务器程序负责对</description>
+    </item>
+    
+    <item>
+      <title> Memcached </title>
+      <link>/posts/d6/</link>
+      <pubDate>Sun, 16 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d6/</guid>
+      <description>1.1 Memcached简介与安装 返回顶部 1、Memcached简介 1. Memcached 是一个高性能的分布式内存对象缓存系统，用于动态Web应用以减轻数据库负载。 2. 它通过在内存中缓存数据和对象来减少读取数据库的次数，从而</description>
+    </item>
+    
+    <item>
+      <title> Redis缓存系统 </title>
+      <link>/posts/d5/</link>
+      <pubDate>Sat, 08 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d5/</guid>
+      <description>1.1 在centos6.5中安装Redis 返回顶部 1. 到官网下载Redis：https://redis.io/download 2. 或者直在Linux下运行下面命令 $ wget http://download.redis.io/releases/redis-3.2.8.tar.gz $ tar xzf redis-3.2.8.tar.gz $ cd redis-3.2.8 $ make 3. 先启动Redis服务</description>
+    </item>
+    
+    <item>
+      <title> 数据库-消息队列 &amp; 缓存系统 </title>
+      <link>/posts/d4/</link>
+      <pubDate>Sat, 08 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d4/</guid>
+      <description>RabbitMQ 1.1 RabbitMq与Redis队列对比 返回顶部 1、RabbitMQ与Redis作用 1. RabbitMQ: RabbitMQ是一个可以在不同程序间共享数据的代理，是实现AMQP（高级消息队列协议）的消息中间件的一种 2. Redis: 是</description>
+    </item>
+    
+    <item>
+      <title> 通讯录管理 </title>
+      <link>/posts/d3/</link>
+      <pubDate>Mon, 03 Dec 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d3/</guid>
+      <description>1.1 概述 &amp;amp; 开启API接口同步 返回顶部 官方文档：http://work.weixin.qq.com/api/doc#10016 1.2 成员管理 返回顶部 1、创建成员 官方文档：http://work.weixin.</description>
+    </item>
+    
+    <item>
+      <title> 消息推送 </title>
+      <link>/posts/d2/</link>
+      <pubDate>Thu, 29 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d2/</guid>
+      <description>1.1 概述 返回顶部 官方文档：http://work.weixin.qq.com/api/doc#12739 1.2 发送应用消息 返回顶部 参考文档：http://work.weixin.qq.com/api/doc</description>
+    </item>
+    
+    <item>
+      <title> 企业微信API开发前准备 </title>
+      <link>/posts/d1/</link>
+      <pubDate>Sun, 25 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/d1/</guid>
+      <description>1.1 术语介绍 返回顶部 参考文档：http://work.weixin.qq.com/api/doc#10013 企业微信管理后台： https://work.weixin.qq.com/wework_admin/frame 1、corpid：ww2f9a1a85f1806981 每个企业都拥有唯一的</description>
+    </item>
+    
+    <item>
+      <title> 云监控 </title>
+      <link>/posts/c12/</link>
+      <pubDate>Tue, 20 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c12/</guid>
+      <description>1、云监控相关接口 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.profile.client_profile import ClientProfile from tencentcloud.common.profile.http_profile import HttpProfile from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException from tencentcloud.monitor.v20180724 import monitor_client, models from day04.settings import secretKey,secretId # 导入腾讯云账户secretId，secretKey值 # 实例化一个认证对象，入参需要传入腾讯云账户secre</description>
+    </item>
+    
+    <item>
+      <title> 腾讯云API-云服务器 </title>
+      <link>/posts/c11/</link>
+      <pubDate>Wed, 14 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c11/</guid>
+      <description>1、腾讯云SDK使用举例 网址：https://cloud.tencent.com/document/sdk/Python 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException # 导入对应产品模块的client mode</description>
+    </item>
+    
+    <item>
+      <title> git常见报错解决方法 </title>
+      <link>/posts/c10/</link>
+      <pubDate>Wed, 07 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c10/</guid>
+      <description>1、warning: LF will be replaced by CRLF in .idea/workspace.xml. 参考博客：https://www.cnblogs.com/helloHKTK/p/7351946.html git config --global core.autocrlf true 1.2 phabricator使用arc提交代码步骤 1</description>
+    </item>
+    
+    <item>
+      <title> git分支管理 </title>
+      <link>/posts/c9/</link>
+      <pubDate>Sat, 03 Nov 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c9/</guid>
+      <description>参考博客：https://www.cnblogs.com/gzpblog/p/5463031.html 1、git常用命令 echo &amp;quot;#Description&amp;quot; &amp;gt; README.md， 添加一个文件 git status， 查看当前状态，发现有未跟踪</description>
+    </item>
+    
+    <item>
+      <title> Git基本常用命令 </title>
+      <link>/posts/c8/</link>
+      <pubDate>Sun, 28 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c8/</guid>
+      <description>mkdir： XX (创建一个空目录 XX指目录名) pwd： 显示当前目录的路径。 git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。 git add XX 把xx文件添加到暂存区去。 git commit –m “XX” 提交文件 –m 后面</description>
+    </item>
+    
+    <item>
+      <title>  git &amp; github </title>
+      <link>/posts/c7/</link>
+      <pubDate>Wed, 24 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c7/</guid>
+      <description>1. 为什么要使用版本控制 1、举例说明： 1）假设你在的公司要上线一个新功能，你们开发团队为实现这个新功能，写了大约5000行代码，上线没2 天，就发现这个功能用户并不喜欢，你老板让你去掉这个功能，你怎么办？</description>
+    </item>
+    
+    <item>
+      <title>  CI（持续集成）/CD（持续交付/持续部署） </title>
+      <link>/posts/c6/</link>
+      <pubDate>Sat, 20 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> docker高级篇 </title>
+      <link>/posts/c5/</link>
+      <pubDate>Thu, 18 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c5/</guid>
+      <description>Docker Compose 1、Docker Compose 介绍 1. Compose是一个定义和管理多容器的工具，使用Python语言编写。 2. 使用Compose配置文件描述多个容器应用的架构，比如使用什么镜像、数据卷、网络、映射端口等； 3. 然后</description>
+    </item>
+    
+    <item>
+      <title> Dockerfile: 构建nginx项目镜像 </title>
+      <link>/posts/c4/</link>
+      <pubDate>Sun, 14 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c4/</guid>
+      <description>1、使用 Dockerfile-nginx 文件构建一个基础镜像 nginx:v1 复制代码 FROM centos:7 MAINTAINER www.ctnrs.com RUN yum install -y gcc gcc-c++ make \ openssl-devel pcre-devel gd-devel \ iproute net-tools telnet wget curl &amp;amp;&amp;amp; \ yum clean all &amp;amp;&amp;amp; \ rm -rf /var/cache/yum/* RUN wget http://nginx.org/download/nginx-1.15.5.tar.gz &amp;amp;&amp;amp; \ tar zxf nginx-1.15.5.tar.gz &amp;amp;&amp;amp; \ cd nginx-1.15.5 &amp;amp;&amp;amp; \ ./configure --prefix=/usr/local/nginx \ --with-http_ssl_module \ --with-http_stub_status_module &amp;amp;&amp;amp; \ make -j 4 &amp;amp;&amp;amp; make install &amp;amp;&amp;amp; \ rm -rf /usr/local/nginx/html/* &amp;amp;&amp;amp; \ echo &amp;quot;ok&amp;quot; &amp;gt;&amp;gt; /usr/local/nginx/html/status.html &amp;amp;&amp;amp; \ cd / &amp;amp;&amp;amp; rm -rf nginx-1.12.2* &amp;amp;&amp;amp; \</description>
+    </item>
+    
+    <item>
+      <title> docker常用命令 </title>
+      <link>/posts/c3/</link>
+      <pubDate>Wed, 10 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c3/</guid>
+      <description>1、docker镜像管理常用命令 docker help # 查看docker帮助 docker image --help # 查看 docker中 镜像相关帮助 docker image ls # 查看当前所有镜像 docker image inspect nginx # 查看指定镜像（nginx镜像）详细信息 docker pull nginx:1.14 # 下载指定版本镜像 nginx docker image rm</description>
+    </item>
+    
+    <item>
+      <title> docker 基本使用 </title>
+      <link>/posts/c2/</link>
+      <pubDate>Sat, 06 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c2/</guid>
+      <description>1、docker与虚拟机比较 2、docker版本 1. 社区版（Community Edition, CE） 2. 企业版（Enterprise Edition, EE） 1.2 docker安装 1、docker安装参考官方文档 1. docker官方文档：ht</description>
+    </item>
+    
+    <item>
+      <title> itchat发送微信消息 </title>
+      <link>/posts/c1/</link>
+      <pubDate>Mon, 01 Oct 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/c1/</guid>
+      <description>1、运行程序，会弹出二维码，扫描授权后即可实现自动回复信息 参考01 参考02 复制代码 #coding=utf8 import itchat, time from itchat.content import * @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING]) def text_reply(msg): itchat.send(&#39;%s: %s&#39; % (msg[&#39;Type&#39;], msg[&#39;Text&#39;]), msg[&#39;FromUserName&#39;]) @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO]) def download_files(msg): msg[&#39;Text&#39;](msg[&#39;FileName&#39;]) return &#39;@%s@%s&#39; % ({&#39;Picture&#39;: &#39;img&#39;, &#39;Video&#39;: &#39;vid&#39;}.get(msg[&#39;Type&#39;], &#39;fil&#39;), msg[&#39;FileName&#39;]) @itchat.msg_register(FRIENDS) def add_friend(msg): itchat.add_friend(**msg[&#39;Text&#39;]) # 该操作会自动将新好友的消息录入，不</description>
+    </item>
+    
+    <item>
+      <title> python3使用email和smtplib库发送邮件 </title>
+      <link>/posts/b18/</link>
+      <pubDate>Wed, 26 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b18/</guid>
+      <description>注：python代理登录qq邮箱发邮件，是需要更改自己qq邮箱设置的。在这里大家需要做两件事情：邮箱开启SMTP功能 、获得授权码 教程链接 1、给单个人发邮件 参考 复制代码 from email.mime.text import MIMEText from email.header import Header from smtplib import SMTP_SSL #qq邮箱</description>
+    </item>
+    
+    <item>
+      <title>django&#43;celery&#43;redis实现异步周期任务  </title>
+      <link>/posts/b17/</link>
+      <pubDate>Fri, 21 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b17/</guid>
+      <description>注：python的celery模块 4.2.0版本， 刚开始安装的未4.1.1版本，但是定时任务居然不执行 1、在settings.py中配置celery 复制代码 #1、如果在django中需要周期性执行，在</description>
+    </item>
+    
+    <item>
+      <title>celery与Django项目最佳实践  </title>
+      <link>/posts/b16/</link>
+      <pubDate>Mon, 17 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b16/</guid>
+      <description>1、在Django中使用celery介绍（celery无法再windows下运行） 1）在Django中使用celery时，celery文件必须以tasks.py 2）Django会自动到每个APP中找t</description>
+    </item>
+    
+    <item>
+      <title> celery简单使用 </title>
+      <link>/posts/b15/</link>
+      <pubDate>Thu, 13 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b15/</guid>
+      <description>1、安装 1. 安装celery： pip3 install celery # ln -s /usr/local/python3/bin/celery /bin/celery 2. 安装redis 2、创建tasks.py文件进行验证 复制代码 from celery import Celery import time app = Celery(&#39;TASK&#39;, broker=&#39;redis://localhost&#39;, backend=&#39;redis://localhost&#39;) @app.task def add(x, y): print(&amp;quot;running..add.&amp;quot;, x, y) return x + y @app.task def minus(x, y): time.sleep(60) print(&amp;quot;running..minus.&amp;quot;, x, y) return x - y 复制代码 1、启动Celery</description>
+    </item>
+    
+    <item>
+      <title>Celery介绍</title>
+      <link>/posts/b14/</link>
+      <pubDate>Sat, 08 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b14/</guid>
+      <description>参考博客：http://www.cnblogs.com/alex3714/p/6351797.html 1、celery应用举例 1、Celery 是一个 基于python开发的分布式异步消息任务队列，通过它</description>
+    </item>
+    
+    <item>
+      <title>数据索引index</title>
+      <link>/posts/b13/</link>
+      <pubDate>Mon, 03 Sep 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b13/</guid>
+      <description>1、通过索引值或索引标签获取数据 复制代码 import numpy as np, pandas as pd #1、通过列表生成Series s4 = pd.Series(np.array([1,2,3,4])) print s4 # 0 1 # 1 2 # 2 3 # 3 4 #2、为Series自定义的索引值 s4.index = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;] print s4 # a 1 # b 2 # c 3 # d 4 #3、通过两种</description>
+    </item>
+    
+    <item>
+      <title>Python数据分析之pandas学习</title>
+      <link>/posts/b12/</link>
+      <pubDate>Thu, 30 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b12/</guid>
+      <description>参考博客：http://www.cnblogs.com/nxld/p/6058591.html 1、pandas介绍 1. 在pandas中有两类非常重要的数据结构，即序列Series和数据框DataFram</description>
+    </item>
+    
+    <item>
+      <title>http简介</title>
+      <link>/posts/b11/</link>
+      <pubDate>Sat, 25 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b11/</guid>
+      <description>1、什么是http 1. HTTP是一个客户端和服务器端请求和应答的标准（TCP） 2. 设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法 2、http报文格式 1）请求行 求方法字段、URL字段和HT</description>
+    </item>
+    
+    <item>
+      <title>tcp/ip基本知识</title>
+      <link>/posts/b10/</link>
+      <pubDate>Mon, 20 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b10/</guid>
+      <description>1:tcp/ip基本知识 1.1 tcp常识 1、网络七层 2、TCP三层握手 复制代码 ####1、第一次握手 # 建立连接时，客户端发送SYN包到服务器，其中包含客户端的初始序号seq=x，并进入SYN_SENT状态</description>
+    </item>
+    
+    <item>
+      <title>greenlet:轻量级的并发编程</title>
+      <link>/posts/b9/</link>
+      <pubDate>Wed, 15 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b9/</guid>
+      <description>1、greenlet原理 &amp;amp; 使用 1. greenle间切换 1）一个 “greenlet” 是一个很小的独立微线程，可以把它想像成一个堆栈帧，栈底是初始调用，而栈顶是当前greenlet的暂停位置。 2）你使用gr</description>
+    </item>
+    
+    <item>
+      <title>事件驱动、五种I/O操作、I/O多路复用select和epoll</title>
+      <link>/posts/b8/</link>
+      <pubDate>Sun, 12 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b8/</guid>
+      <description>1、什么是事件驱动 定义：就是根据不同事件触发处理不同的事情（根据事件做反应），将要处理的事件加入队列中而不是立刻处理 2、使用UI编程的点击事件理解事件驱动 1） 目前大部分的UI编程都是事件驱动模型，如很</description>
+    </item>
+    
+    <item>
+      <title>使用线程池、进程池、协程向多个url并发获取页面数据比较</title>
+      <link>/posts/b7/</link>
+      <pubDate>Wed, 08 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b7/</guid>
+      <description>特点： 1．进程：启用进程非常浪费资源 2．线程：线程多，并且在阻塞过程中无法执行其他任务 3．协程：gevent只用起一个线程，当请求发出去后gevent就不管,永远就只有一个线程工作，谁先回来先处理 1、</description>
+    </item>
+    
+    <item>
+      <title>Python进程池和线程池</title>
+      <link>/posts/b6/</link>
+      <pubDate>Sun, 05 Aug 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b6/</guid>
+      <description>1、简介 参考官网 1、Python标准库为我们提供了threading和multiprocessing模块编写相应的多线程/多进程代码 2、但是当项目达到一定的规模，频繁创建/销毁进程或者线程是非常消耗资</description>
+    </item>
+    
+    <item>
+      <title>协程</title>
+      <link>/posts/b5/</link>
+      <pubDate>Tue, 10 Jul 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b5/</guid>
+      <description>1、什么是协程（进入上一次调用的状态） 1. 协程，又称微线程，纤程，协程是一种用户态的轻量级线程。 2. 线程的切换会保存到CPU的栈里，协程拥有自己的寄存器上下文和栈， 3. 协程调度切换时，将寄存器上下文和栈保存</description>
+    </item>
+    
+    <item>
+      <title>线程，进程应用场景</title>
+      <link>/posts/b4/</link>
+      <pubDate>Sun, 08 Jul 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b4/</guid>
+      <description>1、多线程和多进程各自应用场景 1. I/O操作不占用CPU（从硬盘，网路读入数据等） 2. 计算占用CPU，这种情况最好不用多线程 3. python多线程不适合CPU密集型的任务，适合I/O密集型的任务 4. pytho</description>
+    </item>
+    
+    <item>
+      <title>线程，进程</title>
+      <link>/posts/b3/</link>
+      <pubDate>Thu, 05 Jul 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b3/</guid>
+      <description>1、什么是进程(process)？（进程是资源集合） 1. 程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，这种执行的程序就称之为进程 2. 程序和进程的区别就在于：程序是指令的集合，它是进</description>
+    </item>
+    
+    <item>
+      <title> SocketServer服务</title>
+      <link>/posts/b2/</link>
+      <pubDate>Sun, 10 Jun 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b2/</guid>
+      <description>1、SocketServer作用 1. socket无法支持多并发，SocketServer 可以实现多并发 2. SocketServer使编写一个Socket服务器通信变得更加简单 3. SocketServer其实</description>
+    </item>
+    
+    <item>
+      <title>socket模块</title>
+      <link>/posts/b1/</link>
+      <pubDate>Tue, 05 Jun 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/b1/</guid>
+      <description>1、socket起源 1. socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。 2. socket就是该模式的一个实现，socket即</description>
+    </item>
+    
+    <item>
+      <title>jwt原理</title>
+      <link>/posts/jwt/</link>
+      <pubDate>Tue, 08 May 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/jwt/</guid>
+      <description>JWT的实现原理 前言 最近在做一个python项目的改造，将python项目重构为java项目，过程中遇到了这个知识点，觉得这个蛮实用的，所以下班后回来趁热打铁写下这篇总结，希望后面的人能够有所借鉴，少</description>
+    </item>
+    
+    <item>
+      <title>正则3</title>
+      <link>/posts/re3/</link>
+      <pubDate>Thu, 03 May 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/re3/</guid>
+      <description>python正则表达式中的特殊字符： ^ 表示匹配的字符必须在最前边 $ 表示匹配的字符必须在最后边 * 匹配* 前面的字符0次或n次 + 匹配+ 前面的字符1次或n次 ? 匹配？前面的字符0次或1次 . (小数点）匹配除换行符</description>
+    </item>
+    
+    <item>
+      <title>正则2</title>
+      <link>/posts/re2/</link>
+      <pubDate>Fri, 20 Apr 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/re2/</guid>
+      <description>正达表达式：匹配 爬取 过滤 合法性的判断---------runoob.com网址 四方法：match group compile findall 爬取编码： 两个步骤：爬取（ import urllib.request） 数据清洗（import re） import urllib.resquest 导入爬取</description>
+    </item>
+    
+    <item>
+      <title>深拷贝和浅拷贝</title>
+      <link>/posts/copy/</link>
+      <pubDate>Thu, 05 Apr 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/copy/</guid>
+      <description>定义： 在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。 浅拷贝：拷贝了最外围的对象本身，内部的元素</description>
+    </item>
+    
+    <item>
+      <title>正则1</title>
+      <link>/posts/re1/</link>
+      <pubDate>Tue, 03 Apr 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/re1/</guid>
+      <description>匹配多个字符----默认greed 贪婪 • * 匹配前一个字符 * 匹配前一个字符 修饰前面的字符出现0次或无限次数 匹配 + 修饰前一位字符至少一次或无限次（至少得有 一个） ? 匹配一个字符出现最多一次或着没有-----</description>
+    </item>
+    
+    <item>
+      <title>编码</title>
+      <link>/posts/bianma/</link>
+      <pubDate>Tue, 03 Apr 2018 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/bianma/</guid>
+      <description>import base64 s = &#39;无可挑剔&#39; q=base64.b64encode(bytes(s, &#39;gbk&#39;)) print(q) w=base64.b64decode(base64.b64encode(bytes(s, &#39;gbk&#39;))) print(w) 编码过程 s = &amp;quot;无可挑剔&amp;quot; encoder = base64.b64encode(s.encode(&amp;quot;utf-8&amp;quot;)) print(encoder) str_encoder = encoder.decode(&#39;utf-8&#39;) print(str_encoder) # 解码过程 decoder = base64.b64decode(str_encoder) print(decoder.decode(&#39;utf-8&#39;)) src = &amp;quot;功成名就&amp;quot; tgt = base64.b64encode(src.encode(&#39;UTF-8&#39;)) print (tgt) src = base64.b64decode(tgt).decode(&#39;utf-8&#39;) print (src) &amp;quot;&amp;quot;&amp;quot; b&#39;zt6/ycz0zN4=&#39; b&#39;\xce\xde\xbf\xc9\xcc\xf4\xcc\xde&#39; b&#39;5peg5Y+v5oyR5YmU&#39; 5peg5Y+v5oyR5YmU 无可挑剔 b&#39;5Yqf5oiQ5ZCN5bCx&#39; 功成名就 &amp;quot;&amp;quot;&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>反扒操作</title>
+      <link>/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 01 Aug 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</guid>
+      <description>先检查是否有API API是网站官方提供的数据接口，如果通过调用API采集数据，则相当于在网站允许的范围内采集，这样既不会有道德法律风险，也没有网站故意设置的障碍；不过调用API接口的访问则处于网站的控</description>
+    </item>
+    
+    <item>
+      <title>具体爬虫操作</title>
+      <link>/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sat, 29 Jul 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</guid>
+      <description>首先肯定要实现图片抓取这个基本功能 然后实现对用户所给的链接进行抓取 最后要有一定的交互，程序不能太傻吧 一、页面获取 要让python可以进行对网页的访问，那肯定要用到urllib之类的包。So先来个 import urllib u</description>
+    </item>
+    
+    <item>
+      <title>selenium破解人人登陆验证码</title>
+      <link>/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</link>
+      <pubDate>Tue, 18 Jul 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</guid>
+      <description>from selenium import webdriver from PIL import Image from chaojiying import Chaojiying_Client import time driver = webdriver.Chrome() driver.get(&#39;http://ww.renren.com&#39;) driver.find_element_by_xpath(&#39;//*[@id=&amp;quot;email&amp;quot;]&#39;).send_keys(&amp;quot;人人网账号&amp;q</description>
+    </item>
+    
+    <item>
+      <title>selenium爬取优酷页面并下载图片</title>
+      <link>/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Thu, 13 Jul 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
+      <description>from selenium import webdriver import requests driver = webdriver.Chrome() #打开优酷 driver.get(&amp;quot;http://www.youku.com&amp;quot;) #点开优酷片库 driver.find_element_by_xpath(&amp;quot;//*[@id=&#39;m_2544&#39;]/div/ul/li[6]/span[1]/a&amp;quot;).click() #获取所有img元素 listImg = driver.find_elements_by_xpath(&amp;quot;//div[@class=&#39;vaule_main&#39;]//li/div/div/img&amp;quot;) #取img的src值 listSrc = [] for img in listImg: src = img.get_attribute(&#39;src&#39;) listSrc.append(src) print(len(listImg)) #下载图片 session = requests.session() for index,value in enumerate(listSrc): response = session.get(value) with open(str(index)+&#39;.png&#39;,mode=&#39;wb&#39;) as f: f.write(response.content)</description>
+    </item>
+    
+    <item>
+      <title>vue累加计数器</title>
+      <link>/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
+      <pubDate>Sat, 08 Jul 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的单击事件&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;.c&amp;quot;, data:{ //定义计数器 counter:0, } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;c&amp;quot;&amp;gt; &amp;lt;!-- 定义一个按钮，使用counter做累加--&amp;gt; &amp;lt;button</description>
+    </item>
+    
+    <item>
+      <title>vue样式的动态绑定</title>
+      <link>/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Mon, 03 Jul 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的样式绑定&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .active{ background-color: gold; color:blue; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ //激活 false isactive:true } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;a&amp;quot;&amp;gt;人生</description>
+    </item>
+    
+    <item>
+      <title>vue表单选项框</title>
+      <link>/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</link>
+      <pubDate>Sun, 25 Jun 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue表单的学习&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ message:&#39;你好&#39; } }); // 多选框的增删改查 var app = new Vue({ el:&amp;quot;#b&amp;quot;, data:{ checknames:[] }</description>
+    </item>
+    
+    <item>
+      <title>vue的选项卡功能</title>
+      <link>/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Tue, 20 Jun 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue选项卡学习&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .box{ border:1px solid blueviolet; height: 228px; width: 323px; background-color: bisque; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload= function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ tabId:0 } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- tab 选项 --&amp;gt; &amp;lt;div class=&amp;quot;tab&amp;quot;&amp;gt; &amp;lt;!-- 制作选项卡头部</description>
+    </item>
+    
+    <item>
+      <title>vue.js 监听属性的学习/ 千米、米的转换 /时、分、秒 的转换</title>
+      <link>/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sat, 10 Jun 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue_的监听属性&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app= new Vue({ el:&amp;quot;#app&amp;quot;, data:{ kilometers:0, meters:0 }, //监听属性 watch:{ kilometers:function(val){ this.kilometers = val; this.meters = val * 1000; }, meters:function(val){ this.kilometers = val / 1000; this.meters.val; } } }); var app1 = new Vue({ el:&amp;quot;#app1&amp;quot;, data:{ seconds:0, minutes:0, hours:0 }, //</description>
+    </item>
+    
+    <item>
+      <title>vue.js的计算属性</title>
+      <link>/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Mon, 05 Jun 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue 计算属性的学习&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ information:&#39;灰色的世界里，只有你的眼睛是色彩斑斓的&#39; }, computed:{ reverseInformation:function(){ return this.information.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- 颠倒字符串 上面的</description>
+    </item>
+    
+    <item>
+      <title>vue入门</title>
+      <link>/posts/vue%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 10 May 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/vue%E5%85%A5%E9%97%A8/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Vue.js 的入门&amp;lt;/title&amp;gt; &amp;lt;!-- 导入 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ //el 属性用来绑定元素节点 el:&amp;quot;#app&amp;quot;, //data属性用来绑定数据 data:{ message:&#39;Hello World&#39; } }); //建立vue对象 var app2 = new Vue({ // 绑定元素节点</description>
+    </item>
+    
+    <item>
+      <title>鼠标事件</title>
+      <link>/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Thu, 20 Apr 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;mouse 事件&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot; ./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; &amp;gt; $(function(){ // 用id 选择器监听鼠标 悬停事件 $(&amp;quot;#b2&amp;quot;).mouseover(function(){ $(&amp;quot;.c2&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;gold&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;color&amp;quot;,&amp;quot;blue&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;font-size&amp;quot;,&amp;quot;36px&amp;quot;); }); // 用id选择器来修改元素的样式 $(&amp;quot;#b2&amp;quot;).mouseout(function(){ $(&amp;quot;.c2&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;pink&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;color&amp;quot;,&amp;quot;red&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;font-size&amp;quot;,&amp;quot;18px&amp;quot;); }); }); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;b2&amp;quot; value=&amp;quot;悬停改变颜色&amp;qu</description>
+    </item>
+    
+    <item>
+      <title>jquery_ajax 跨域</title>
+      <link>/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</link>
+      <pubDate>Mon, 10 Apr 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery_ajax&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&amp;quot;#b2&amp;quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:&#39;GET&#39;, //提交网址 url:&#39;http://192.168.1.238/ajax.php&#39;, //数据格式 dataType:&#39;jsonp&#39;, //具体数据 data:{&#39;phone&#39;:$(&amp;quot;#phone&amp;quot;).val()}, //回调函数 jsonp:&#39;callback&#39;, //通信成</description>
+    </item>
+    
+    <item>
+      <title>jquery 的鼠标事件/淡入淡出/绑定</title>
+      <link>/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Fri, 10 Mar 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery的学习&amp;lt;/title&amp;gt; &amp;lt;!-- 引入第三方库用单表签 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; /* jquery 代码的入口，用来等待元素的全部加载*/ // $(function() { // /* 用jQuery选择器来选取某</description>
+    </item>
+    
+    <item>
+      <title>jquery_ajax 异步提交</title>
+      <link>/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Mon, 20 Feb 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery_ajax&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&amp;quot;#b2&amp;quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:&#39;GET&#39;, //提交网址 url:&#39;http://192.168.1.238/ajax.php&#39;, //数据格式 dataType:&#39;jsonp&#39;, //具体数据 data:{&#39;phone&#39;:$(&amp;quot;#phone&amp;quot;).val()}, //回调函数 jsonp:&#39;callback&#39;, //通信成</description>
+    </item>
+    
+    <item>
+      <title>前端javascript</title>
+      <link>/posts/%E5%89%8D%E7%AB%AFjavascript/</link>
+      <pubDate>Sun, 15 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/%E5%89%8D%E7%AB%AFjavascript/</guid>
+      <description>前端 JavaScript javaScript----数据库jquery $(function(){ 执行代码 }); 基本语法：$(selector).action() $(&amp;quot;p&amp;quot;).hide() 隐藏所有&amp;lt;p&amp;gt;元素 $(&amp;quot;#test&amp;quot;).hide() - 隐藏所有 id=&amp;quot;test&amp;quot; 的元素 $(this).hide() - 隐藏当前元素 $(&amp;quot;p.test&amp;quot;).hide() 隐藏所有clas</description>
+    </item>
+    
+    <item>
+      <title>前端正则匹配手机号</title>
+      <link>/posts/re/</link>
+      <pubDate>Sun, 15 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/re/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery验证表单&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- 写入jquery的单一入口 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; $(function(){ //验证手机号方法 function isPhoneNo(phone){ //写匹配规则 pattern匹配 var pattern = /^1[3-9]\d{9}$/; //返回</description>
+    </item>
+    
+    <item>
+      <title>css动画</title>
+      <link>/posts/css%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 10 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/css%E5%8A%A8%E7%94%BB/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;animate 学习&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //jquery单一入口 $ (function(){ // $(&amp;quot;#b2&amp;quot;).click(function(){ // 通过标签选择器来进行动画动作 $(&amp;quot;div&amp;quot;).animate({ left: &#39;400px&#39;, width: &#39;400px&#39;, height:&#39;400px&#39; }); $(&amp;quot;div&amp;quot;).animate({ right: &#39;400px&#39;, width: &#39;400px&#39;, height:&#39;400px&#39; }); }); }); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;quot; width : 200px; height : 200px; font-size: 30px; text-align: center;line-height ;position:absolute;&amp;quot;&amp;gt; 我是你爸爸&amp;lt</description>
+    </item>
+    
+    <item>
+      <title>正则表达式</title>
+      <link>/posts/%E6%AD%A3%E5%88%99/</link>
+      <pubDate>Tue, 10 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/%E6%AD%A3%E5%88%99/</guid>
+      <description>正达表达式：匹配 过滤 爬取编码： 两个步骤：爬取（ import urllib.request） 数据清洗（import re） import urllib.resquest 导入爬取模块 import re 导入正则表达式 response=urllib.request.urlopen(&amp;quot;http://t.cn/RttEZZa&amp;quot;) html=response.read() html=html.decode(&amp;quot;utf-8</description>
+    </item>
+    
+    <item>
+      <title>html 表单</title>
+      <link>/posts/html-%E8%A1%A8%E5%8D%95/</link>
+      <pubDate>Sun, 08 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/html-%E8%A1%A8%E5%8D%95/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;form 表单的学习&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- 表单的标签 提交方式两种： get (默认 长度有限制)和 post（安全性高） --&amp;gt; &amp;lt;form action=&amp;quot;http://192.168.1.238&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; 用户名：&amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;请</description>
+    </item>
+    
+    <item>
+      <title>html table</title>
+      <link>/posts/html-table/</link>
+      <pubDate>Fri, 06 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/html-table/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;/&amp;gt; &amp;lt;title&amp;gt;表格制作&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;table border=&amp;quot;2&amp;quot; width=&amp;quot;500&amp;quot; align=&amp;quot;center&amp;quot; height=&amp;quot;300&amp;quot; cellspacing=&amp;quot;0&amp;quot; cellpadding=&amp;quot;20&amp;quot;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;12&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;1234&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;12345&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;red&amp;quot; face=&amp;quot;楷体&amp;quot; size=&#39;16&#39;&amp;gt;这个世界好可怕&amp;lt;</description>
+    </item>
+    
+    <item>
+      <title>html超文本标记语言</title>
+      <link>/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 05 Jan 2017 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;/&amp;gt; &amp;lt;title align=center&amp;gt;哼哼&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./jquery.moatext-min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./ls.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;center&amp;gt; &amp;lt;h1 class=&amp;quot;moatext_lens&amp;quot;&amp;gt; 愤怒的一天&amp;amp;lt;哈哈&amp;amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;今天</description>
+    </item>
+    
+    <item>
+      <title>时间复杂度</title>
+      <link>/posts/time/</link>
+      <pubDate>Sat, 25 Jun 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/time/</guid>
+      <description>算法复杂度分为时间复杂度和空间复杂度。 时间复杂度 是指执行算法所需要的计算工作量 空间复杂度 是指执行这个算法所需要的内存空间 算法的时间复杂度反映了算法执行的时间长短，它是度量一个算法好坏的重要指标。 度量一</description>
+    </item>
+    
+    <item>
+      <title>centos 中 redis 的安装</title>
+      <link>/posts/centos/</link>
+      <pubDate>Mon, 30 May 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/centos/</guid>
+      <description>centos 中 redis 的安装 安装流程 Wget http://download.redis.io/releases/redis-5.0.4.tar.gz tar xzf redis-5.0.4.tar.gz mv redis-5.0.4 /usr/local/redis cd /usr/local/redis make make install 安装完成后，我们进入目录/usr/local/bin中查看 cd /usr/local/bin ls -all redis-server &amp;amp; 配置 Redis的配置信息在/usr/local/redis/redis.conf下。</description>
+    </item>
+    
+    <item>
+      <title>二维码生成</title>
+      <link>/posts/erweima/</link>
+      <pubDate>Mon, 30 May 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/erweima/</guid>
+      <description>安装pip install myqr from MyQR import myqr #注意大小写 myqr.run(words=&amp;quot;You&amp;quot;,save_name=&amp;quot;song.png&amp;quot;) from MyQR import myqr myqr.run( words=&amp;quot;You&#39;re the nicest cub on the street&amp;quot;, # 扫描二维码后，显示的内容，或是跳转的链接 version=5, # 设置容错率 level=&#39;H&#39;, # 控制纠错水平，范围是L、M、Q、H，从左到右依次升高 picture=&#39;sun.jpg&#39;, # 图片所在目录，可以是动图</description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>/posts/suanfa/</link>
+      <pubDate>Thu, 12 May 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/suanfa/</guid>
+      <description>冒泡排序 冒泡排序(Bubble Sort)也是一种简单直观的排序算法. 它重复地走访过要排序的数列,一次比较两个元素,如果他们的顺序错误就把他们交换过来.走访数列的工作是重复地进行直到没有再需要交换,也就</description>
+    </item>
+    
+    <item>
+      <title>python打印💗</title>
+      <link>/posts/python1/</link>
+      <pubDate>Mon, 25 Apr 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/python1/</guid>
+      <description>#打印爱心 import time sentence = &amp;quot;forever&amp;quot; for char in sentence.split(): allChar = [] for y in range(12, -12, -1): lst = [] lst_con = &#39;&#39; for x in range(-30, 30): formula = ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 if formula &amp;lt;= 0: lst_con += char[(x) % len(char)] else: lst_con += &#39; &#39; lst.append(lst_con) allChar += lst print(&#39;\n&#39;.join(allChar)) time.sleep(1) foreverfo rforeverf everforeverforeve reverforeverforev oreverforeverforeverforeverforeverforever foreverforeverforeverforeverforeverforeverf rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo foreverforeverforeverforeverforeverforeverf oreverforeverforeverforeverforeverforever oreverforeverforeverforeverforeverforever everforeverforeverforeverforeverforev verforeverforeverforeverforeverfore erforeverforeverforeverforeverfor foreverforeverforeverforeverf reverforeverforeverforeve verforeverforeverfore foreverforeverf everforev rfo f</description>
+    </item>
+    
+    <item>
+      <title>迭代器和生成器和装饰器</title>
+      <link>/posts/die/</link>
+      <pubDate>Fri, 15 Apr 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/die/</guid>
+      <description>迭代器 含有__iter__和__next__方法 (包含__next__方法的可迭代对象就是迭代器) 生成器 包括含有yield这个关键字，生成器也是迭代器，调动next把函数变成迭代器。 应用场景： range/xrange - py</description>
+    </item>
+    
+    <item>
+      <title>list推导式</title>
+      <link>/posts/list3/</link>
+      <pubDate>Sun, 20 Mar 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/list3/</guid>
+      <description>&amp;quot;&amp;quot;&amp;quot; 列表推导式 &amp;quot;&amp;quot;&amp;quot; target=list(map(lambda x:x*x,[1,2,3,4,5,6,7,8,9,10])) print(target) print(map(str,[1,2,3,4])) #输出对象</description>
+    </item>
+    
+    <item>
+      <title>list 的操作</title>
+      <link>/posts/theme-preview/</link>
+      <pubDate>Fri, 11 Mar 2016 17:49:40 +0800</pubDate>
+      
+      <guid>/posts/theme-preview/</guid>
+      <description>&amp;quot;&amp;quot;&amp;quot; 通过自定义的规律命中list元素中的值，若索引没有命中，直接获取该元素，合成一个新的list， 将list元素合成字符串进行反转。 &amp;quot;&amp;quot;&amp;quot; lista = [&amp;quot;aycc&amp;quot;,&amp;quot;kh&amp;quot;,&amp;quot;llc&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;l&amp;quot;] # 自定义的规律 listb = [1, 0, 2, 0, 3, 0, 4, 0, 5] c = [] lengta = len(lista) for i in range(lengta): length = len(lista[i])</description>
+    </item>
+    
+    <item>
+      <title>list2的基本操作</title>
+      <link>/posts/list2/</link>
+      <pubDate>Wed, 09 Mar 2016 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/list2/</guid>
+      <description>&amp;quot;&amp;quot;&amp;quot; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] 得出结果 ‘a,b,c’ &amp;quot;&amp;quot;&amp;quot; Alist=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] list =&#39;,&#39;.join(Alist) print(&amp;quot;&#39;&amp;quot;+list+&amp;quot;&#39;&amp;quot;) #&#39;a,b,c&#39; 元素个数 len() 方法返回列表元素个数, 最大值与最小值 max() 方法返回列表元素中的最大值。 min() 方法返回列表元素中的最小值。 list() 方法用于将元组转换为列表。 注：元组与列表是非常类似的，</description>
+    </item>
+    
+  </channel>
+</rss>

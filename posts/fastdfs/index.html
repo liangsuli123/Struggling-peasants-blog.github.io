@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="FastDFS客户端与自定义文件存储系统 &amp;lt;1&amp;gt;安装 安装提供给大家的fdfs_client-py-master.zip到虚拟环境中 pip install fdfs_client-py-master.zip pip install mutagen pip install requests &amp;lt;2&amp;gt;使用 使用FastDFS客"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/fastdfs/"/>
+
+  
+
+  <title>FastDFS客户端与自定义文件存储系统 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/fastdfs/'>FastDFS客户端与自定义文件存储系统</a></h2>
+          <span class="date">2019.02.14</span>
+        </div>
+        <div class="post_content markdown"><pre><code>
+FastDFS客户端与自定义文件存储系统
+&lt;1&gt;安装
+
+安装提供给大家的fdfs_client-py-master.zip到虚拟环境中
+pip install fdfs_client-py-master.zip
+pip install mutagen
+pip install requests
+&lt;2&gt;使用
+
+使用FastDFS客户端，需要有配置文件。
+
+我们在mall/utils目录下新建fastdfs目录，将提供给大家的client.conf配置文件放到这个目录中。
+
+需要修改一下client.conf配置文件
+
+base_path=FastDFS客户端存放日志文件的目录
+tracker_server=运行tracker服务的机器ip:22122
+
+
+上传文件需要先创建fdfs_client.client.Fdfs_client的对象，并指明配置文件，如
+from fdfs_client.client import Fdfs_client
+client = Fdfs_client('mall/utils/fastdfs/client.conf')#自己的文件路径
+
+通过创建的客户端对象执行上传文件的方法
+
+client.upload_by_filename(文件名)
+或
+client.upload_by_buffer(文件bytes数据)
+</code></pre>
+
+<p><img src="http://localhost:1313/img/f1.png" alt="" /></p>
+
+<pre><code>生成文件：
+</code></pre>
+
+<p><img src="http://localhost:1313/img/f2.png" alt="" /></p>
+
+<pre><code>共网+8888+Remote file_id 图片名，即可访问成功
+
+ 
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/fastdfs/">fastdfs</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Hugo theme hugo-theme-zozo example site."/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/"/>
+
+  
+  <link rel="alternate" type="application/rss&#43;xml" href="/index.xml">
+  
+
+  <title>梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    
+
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/error/'>OSError: mysql_config not found</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>上次在部署阿里云安装Centos7里 pip3 install mysqlclient 是 一直报 OSError: mysql_config not found 这个错，上网百度了半天终于找到了解决的办法，需要安装依赖包： yum install mysql-devel gcc gcc-devel python-devel 安装这个在pip3 install mysqlclient 就可以了......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2019.04.02</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="/tags/error/">error</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/sql1/'>关于mysql联合索引的最左前缀原则以及b&#43;tree</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>关于mysql联合索引的最左前缀原则以及b+tree 软件版本mysql5.7 根据官网的文档 https://dev.mysql.com/doc/refman/5.7/en/multiple-column-indexes.html 查询条件要符合最左原则才能使用到索引 首先说说联合索引的好处： 覆盖索引，这一点是最重要的，重所周知非主键索引会......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2019.04.02</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="/tags/sql/">sql</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/sql/'>数据库索引</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>索引 主键索引，外键索引，联合索引，唯一索引 索引固然可 以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率 1. 当数据多且字段值有相同的值得时候用普通索引。 2. 当字段多且字段值没有重复的时候用唯一索引。 3. 当有多个......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2019.04.02</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="/tags/sql/">sql</a>
+          
+          <a href="/tags/nosql/">nosql</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/english-preview/'>数据库优化</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>1.sql 语句的优化 1、创建数据表时把固定长度的放在前面（） 2、将固定数据放入内存： 例如：choice字段 （django中有用到，数字1、2、3…… 对应相应内容） 3、char 和 varchar 的区别(char可变, varc......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2019.04.01</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="/tags/sql/">sql</a>
+          
+          <a href="/tags/nosql/">nosql</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pagination">
+  
+  
+  <a href="/page/2/" class="pre">
+    返回上一页
+  </a>
+  
+  
+  <a href="/page/4/" class="next">
+    阅读更多文章
+  </a>
+  
+  
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

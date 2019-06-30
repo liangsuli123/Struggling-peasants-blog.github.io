@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、warning: LF will be replaced by CRLF in .idea/workspace.xml. 参考博客：https://www.cnblogs.com/helloHKTK/p/7351946.html git config --global core.autocrlf true 1.2 phabricator使用arc提交代码步骤 1"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/c10/"/>
+
+  
+
+  <title> git常见报错解决方法  &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/c10/'> git常见报错解决方法 </a></h2>
+          <span class="date">2018.11.07</span>
+        </div>
+        <div class="post_content markdown"><pre><code>　1、warning: LF will be replaced by CRLF in .idea/workspace.xml.
+
+　　　　　　参考博客：https://www.cnblogs.com/helloHKTK/p/7351946.html
+
+　　　　　　git config --global core.autocrlf true
+
+ 1.2 phabricator使用arc提交代码步骤
+　　1、拉取服务器代码
+
+　　　　　　注：提交代码之前，需先从服务器上面拉取代码，以防覆盖别人代码。
+
+　　　　　　git pull origin moniotr-callback 
+
+　　2、查看当前工作目录树的工作修改状态
+
+　　　　　　git status
+
+　　　　　　　　1：Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.
+
+　　　　　　　　2：Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作.
+
+　　　　　　　　3：deleted： 文件已删除，本地删除，服务器上还没有删除.
+
+　　　　　　　　4：renamed：
+
+　　　　　　git reset HEAD   res/tmp_query/query              # 撤销指定文件修改
+
+　　　　　　git checkout webApp/res/tmp_query/query        #  放弃本地某个文件的修改
+
+　　　　　　git diff --cached  static/js/main.js                      # 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
+
+　　3、将状态改变的代码提交至缓存
+
+　　　　　　　　git add + 文件
+　　　　　　　　git add -u + 路径：将修改过的被跟踪代码提交缓存
+　　　　　　　　git add -A + 路径: 将修改过的未被跟踪的代码提交至缓存
+
+　　　　　　　　git stash -u -k        # 忽略其他，关键一步
+
+　　　　　　　　例如：
+
+　　　　　　　　　　1）将 vpaas-frontend/src/components 目录下被跟踪的已修改过的代码提交到缓存中
+
+　　　　　　　　　　　　　　git add -u vpaas-frontend/src/components
+
+　　　　　　　　　　2）将 vpaas-frontend/src/components 目录下未被跟踪的已修改过的代码提交到缓存中
+
+　　　　　　　　　　　　　　git add -A vpaas-frontend/src/components
+
+　　4、将代码提交到本地仓库中
+
+　　　　　　git commit -m “注释部分 ref T3070”
+
+　　5、将本次commit 发送给Phabricator指定人员审核
+
+　　　　　　arc diff            # 提交默认diff
+
+　　　　　　arc diff 时会提示让你指定 Reviewers,意思是本次diff能让谁进行审核
+　　　　　　你必须指定至少一人来审核你的本次提交,例如你的项目负责人,在Phabricator平台的&quot;People&quot;栏目里可以看到所有成员的名字
+
+　　6、将代码推送到服务器
+
+　　　　　　git push
+
+　　　　　　arc land 　　　　# 提交代码，删除该分支 or 使用 git push（等价于 git push）
+
+　　7、回滚
+
+　　　　1）误将代码提交到缓存中（利用 git add 命令误将代码提交的缓存中）
+
+　　　　　　　　git reset d98947726bc454fa5265b2e16645
+
+　　　　　　　　# 回退一个版本,且会将暂存区的内容和本地已提交的内容全部恢复到未暂存的状态,不影响原来本地文件(未提交的也 不受影响) 
+
+　　　　2）误将代码提交到本地仓库（利用 git commit 命令误将代码提交到本地仓库）
+
+　　　　　　　　1. 回退一个版本,不清空暂存区,将已提交的内容恢复到暂存区,不影响原来本地的文件(未提交的也不受影响) 
+
+　　　　　　　　　　　　git reset --soft + 版本号
+
+　　　　　　　　2. 彻底回退到某个版本，本地的代码也会改变上一个版本内容。
+
+　　　　　　　　　　　　git reset --hard + 版本号
+
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

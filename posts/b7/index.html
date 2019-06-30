@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="特点： 1．进程：启用进程非常浪费资源 2．线程：线程多，并且在阻塞过程中无法执行其他任务 3．协程：gevent只用起一个线程，当请求发出去后gevent就不管,永远就只有一个线程工作，谁先回来先处理 1、"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/b7/"/>
+
+  
+
+  <title>使用线程池、进程池、协程向多个url并发获取页面数据比较 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/b7/'>使用线程池、进程池、协程向多个url并发获取页面数据比较</a></h2>
+          <span class="date">2018.08.08</span>
+        </div>
+        <div class="post_content markdown"><pre><code>特点：
+
+　　　　　　1．进程：启用进程非常浪费资源
+　　　　　　2．线程：线程多，并且在阻塞过程中无法执行其他任务
+　　　　　　3．协程：gevent只用起一个线程，当请求发出去后gevent就不管,永远就只有一个线程工作，谁先回来先处理
+
+　　1、使用for循环串行拿取页面数据（第四：性能最差）
+
+
+复制代码
+import requests
+url_list = [
+    'https://www.baidu.com',
+    'http://dig.chouti.com/',
+]
+
+for url in url_list:
+    result = requests.get(url)
+    print(result.text)
+复制代码
+　　2、进程池实现并发（第三）
+
+　　　　缺点：启用进程非常浪费资源
+
+
+复制代码
+import requests
+from concurrent.futures import ProcessPoolExecutor
+
+def fetch_request(url):
+    result = requests.get(url)
+    print(result.text)
+
+url_list = [
+    'https://www.baidu.com',
+    'https://www.google.com/',         #google页面会卡住，知道页面超时后这个进程才结束
+    'http://dig.chouti.com/',          #chouti页面内容会直接返回，不会等待Google页面的返回
+]
+
+if __name__ == '__main__':
+    pool = ProcessPoolExecutor(10)        # 创建线程池
+    for url in url_list:
+        pool.submit(fetch_request,url)    # 去线程池中获取一个进程，进程去执行fetch_request方法
+    pool.shutdown(False)
+复制代码
+　　3、线程池实现并发（第二）
+
+　　　　　　缺点： 创建一个新线程将消耗大量的计算资源，并且在阻塞过程中无法执行其他任务。
+　　　　　　例： 比如线程池中10个线程同时去10个url获取数据，当数据还没来时这些线程全部都在等待，不做事。
+
+
+复制代码
+import requests
+from concurrent.futures import ThreadPoolExecutor
+
+def fetch_request(url):
+    result = requests.get(url)
+    print(result.text)
+
+url_list = [
+    'https://www.baidu.com',
+    'https://www.google.com/',         #google页面会卡住，知道页面超时后这个进程才结束
+    'http://dig.chouti.com/',          #chouti页面内容会直接返回，不会等待Google页面的返回
+]
+
+pool = ThreadPoolExecutor(10)            # 创建一个线程池，最多开10个线程
+for url in url_list:
+    pool.submit(fetch_request,url)       # 去线程池中获取一个线程，线程去执行fetch_request方法
+
+pool.shutdown(True)                      # 主线程自己关闭，让子线程自己拿任务执行
+复制代码
+
+复制代码
+from concurrent.futures import ThreadPoolExecutor
+import requests
+
+def fetch_async(url):
+    response = requests.get(url)
+    return response.text
+
+def callback(future):
+    print(future.result())
+
+url_list = ['http://www.github.com', 'http://www.bing.com']
+pool = ThreadPoolExecutor(5)
+for url in url_list:
+    v = pool.submit(fetch_async, url)
+    v.add_done_callback(callback)
+pool.shutdown(wait=True)
+复制代码
+　　4、协程：微线程实现异步（第一：性能最好）
+
+　　　　　　特点 ：gevent只用起一个线程，当请求发出去后gevent就不管,永远就只有一个线程工作，谁先回来先处理
+
+
+复制代码
+import gevent
+import requests
+from gevent import monkey
+
+monkey.patch_all()
+
+# 这些请求谁先回来就先处理谁
+def fetch_async(method, url, req_kwargs):
+    response = requests.request(method=method, url=url, **req_kwargs)
+    print(response.url, response.content)
+
+# ##### 发送请求 #####
+gevent.joinall([
+    gevent.spawn(fetch_async, method='get', url='https://www.python.org/', req_kwargs={}),
+    gevent.spawn(fetch_async, method='get', url='https://www.google.com/', req_kwargs={}),
+    gevent.spawn(fetch_async, method='get', url='https://github.com/', req_kwargs={}),
+])
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

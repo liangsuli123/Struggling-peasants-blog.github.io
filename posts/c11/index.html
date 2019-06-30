@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、腾讯云SDK使用举例 网址：https://cloud.tencent.com/document/sdk/Python 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException # 导入对应产品模块的client mode"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/c11/"/>
+
+  
+
+  <title> 腾讯云API-云服务器  &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/c11/'> 腾讯云API-云服务器 </a></h2>
+          <span class="date">2018.11.14</span>
+        </div>
+        <div class="post_content markdown"><pre><code>1、腾讯云SDK使用举例
+
+ 　　　　　　网址：https://cloud.tencent.com/document/sdk/Python
+
+
+复制代码
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+from tencentcloud.common import credential
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+# 导入对应产品模块的client models。
+from tencentcloud.cvm.v20170312 import cvm_client, models
+
+secretId = &quot;*********************************&quot;
+secretKey = &quot;*********************************&quot;
+try:
+    # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
+    cred = credential.Credential(secretId=secretId, secretKey=secretKey)
+
+    # 实例化要请求产品(以cvm为例)的client对象
+    client = cvm_client.CvmClient(cred, &quot;ap-shanghai&quot;)     # 以查询可用区接口为例
+
+    # 实例化一个请求对象
+    req = models.DescribeZonesRequest()
+
+
+    # 通过client对象调用想要访问的接口，需要传入请求对象
+    resp = client.DescribeZones(req)
+    # 输出json格式的字符串回包
+    print '##########################'
+    print resp.to_json_string()
+
+except TencentCloudSDKException as err:
+    print(err)
+
+    
+ret = {
+    &quot;TotalCount&quot;: 5,
+    &quot;ZoneSet&quot;: [{
+        &quot;ZoneState&quot;: &quot;UNAVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;上海一区&quot;,
+        &quot;Zone&quot;: &quot;ap-shanghai-1&quot;,
+        &quot;ZoneId&quot;: &quot;200001&quot;
+    }, {
+        &quot;ZoneState&quot;: &quot;AVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;上海二区&quot;,
+        &quot;Zone&quot;: &quot;ap-shanghai-2&quot;,
+        &quot;ZoneId&quot;: &quot;200002&quot;
+    }, {
+        &quot;ZoneState&quot;: &quot;AVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;上海三区&quot;,
+        &quot;Zone&quot;: &quot;ap-shanghai-3&quot;,
+        &quot;ZoneId&quot;: &quot;200003&quot;
+    }, {
+        &quot;ZoneState&quot;: &quot;AVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;上海四区&quot;,
+        &quot;Zone&quot;: &quot;ap-shanghai-4&quot;,
+        &quot;ZoneId&quot;: &quot;200004&quot;
+    }, {
+        &quot;ZoneState&quot;: &quot;UNAVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;上海五区&quot;,
+        &quot;Zone&quot;: &quot;ap-shanghai-5&quot;,
+        &quot;ZoneId&quot;: &quot;200005&quot;
+    }],
+    &quot;RequestId&quot;: &quot;ebd821c7-ac5c-4dfd-8038-762346bd14d1&quot;
+}
+复制代码
+　　2、地域相关接口
+
+ 　　　　　　网址：https://cloud.tencent.com/document/api/213/15708
+
+
+复制代码
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+from tencentcloud.common import credential
+from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.common.profile.http_profile import HttpProfile
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.cvm.v20170312 import cvm_client, models
+from day04.settings import secretKey,secretId  # 导入腾讯云账户secretId，secretKey值
+
+# 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
+def instantiates_auth_obj():
+    cred = credential.Credential(secretId=secretId, secretKey=secretKey)
+    return cred
+
+# 查询地域列表
+def query_zero_list():
+    try:
+        cred = instantiates_auth_obj()
+        httpProfile = HttpProfile()
+        httpProfile.endpoint = &quot;cvm.tencentcloudapi.com&quot;
+        clientProfile = ClientProfile()
+        clientProfile.httpProfile = httpProfile
+        client = cvm_client.CvmClient(cred, &quot;&quot;, clientProfile)
+        req = models.DescribeRegionsRequest()
+        params = '{}'
+        req.from_json_string(params)
+        resp = client.DescribeRegions(req)
+        ret = resp.to_json_string()
+        return ret
+    except TencentCloudSDKException as err:
+        print(err)
+
+print query_zero_list()
+d = {
+    &quot;TotalCount&quot;: 19,
+    &quot;RegionSet&quot;: [{
+        &quot;RegionState&quot;: &quot;AVAILABLE&quot;,
+        &quot;Region&quot;: &quot;ap-bangkok&quot;,
+        &quot;RegionName&quot;: &quot;亚太地区(曼谷)&quot;
+    }, {
+        &quot;RegionState&quot;: &quot;AVAILABLE&quot;,
+        &quot;Region&quot;: &quot;ap-beijing&quot;,
+        &quot;RegionName&quot;: &quot;华北地区(北京)&quot;
+    },{
+        &quot;RegionState&quot;: &quot;AVAILABLE&quot;,
+        &quot;Region&quot;: &quot;na-siliconvalley&quot;,
+        &quot;RegionName&quot;: &quot;美国西部(硅谷)&quot;
+    }, {
+        &quot;RegionState&quot;: &quot;AVAILABLE&quot;,
+        &quot;Region&quot;: &quot;na-toronto&quot;,
+        &quot;RegionName&quot;: &quot;北美地区(多伦多)&quot;
+    }],
+    &quot;RequestId&quot;: &quot;8418f014-9ad1-4292-83f1-cf90d27f8ef8&quot;
+}
+复制代码
+
+复制代码
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+from tencentcloud.common import credential
+from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.common.profile.http_profile import HttpProfile
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.cvm.v20170312 import cvm_client, models
+from day04.settings import secretKey,secretId  # 导入腾讯云账户secretId，secretKey值
+
+# 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
+def instantiates_auth_obj():
+    cred = credential.Credential(secretId=secretId, secretKey=secretKey)
+    return cred
+
+# 查询指定地域可用区列表
+def zero_region_list(zones):
+    try:
+        cred = instantiates_auth_obj()
+        httpProfile = HttpProfile()
+        httpProfile.endpoint = &quot;cvm.tencentcloudapi.com&quot;
+        clientProfile = ClientProfile()
+        clientProfile.httpProfile = httpProfile
+        client = cvm_client.CvmClient(cred, zones, clientProfile)
+        req = models.DescribeZonesRequest()
+        params = '{}'
+        req.from_json_string(params)
+        resp = client.DescribeZones(req)
+        ret = resp.to_json_string()
+        return ret
+
+    except TencentCloudSDKException as err:
+        print(err)
+        return {}
+
+print zero_region_list('ap-beijing')
+d = {
+    &quot;TotalCount&quot;: 5,
+    &quot;ZoneSet&quot;: [{
+        &quot;ZoneState&quot;: &quot;AVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;北京一区&quot;,
+        &quot;Zone&quot;: &quot;ap-beijing-1&quot;,
+        &quot;ZoneId&quot;: &quot;800001&quot;
+    },{
+        &quot;ZoneState&quot;: &quot;UNAVAILABLE&quot;,
+        &quot;ZoneName&quot;: &quot;北京五区&quot;,
+        &quot;Zone&quot;: &quot;ap-beijing-5&quot;,
+        &quot;ZoneId&quot;: &quot;800005&quot;
+    }],
+    &quot;RequestId&quot;: &quot;011d2390-9dfc-4ba2-a73a-038b740be408&quot;
+}
+复制代码
+　　3、实例相关
+
+
+复制代码
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+from tencentcloud.common import credential
+from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.common.profile.http_profile import HttpProfile
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.cvm.v20170312 import cvm_client, models
+from day04.settings import secretKey,secretId  # 导入腾讯云账户secretId，secretKey值
+
+# 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
+def instantiates_auth_obj():
+    cred = credential.Credential(secretId=secretId, secretKey=secretKey)
+    return cred
+
+# 查询指定地域可用区列表(查询北京地域所有主机信息 InstanceId机器唯一ID)
+def zero_hosts_list(zones):
+    try:
+        cred = instantiates_auth_obj()
+        httpProfile = HttpProfile()
+        httpProfile.endpoint = &quot;cvm.tencentcloudapi.com&quot;
+        clientProfile = ClientProfile()
+        clientProfile.httpProfile = httpProfile
+        client = cvm_client.CvmClient(cred, zones, clientProfile)
+        req = models.DescribeInstancesRequest()
+        params = '{}'
+        req.from_json_string(params)
+        resp = client.DescribeInstances(req)
+        return resp
+    except TencentCloudSDKException as err:
+        print(err)
+        return {}
+
+
+print zero_hosts_list('ap-beijing')
+d = {
+    &quot;InstanceSet&quot;: [{
+        &quot;RenewFlag&quot;: &quot;NOTIFY_AND_AUTO_RENEW&quot;,
+        &quot;InstanceState&quot;: &quot;RUNNING&quot;,
+        &quot;LoginSettings&quot;: {
+            &quot;KeyIds&quot;: None,
+            &quot;Password&quot;: None,
+            &quot;KeepImageLogin&quot;: None
+        },
+        &quot;RestrictState&quot;: &quot;NORMAL&quot;,
+        &quot;ExpiredTime&quot;: &quot;2019-04-11T07:25:00Z&quot;,
+        &quot;Memory&quot;: 1,
+        &quot;CreatedTime&quot;: &quot;2019-03-11T07:25:00Z&quot;,
+        &quot;CPU&quot;: 1,
+        &quot;PublicIpAddresses&quot;: [&quot;118.89.245.148&quot;],
+        &quot;Tags&quot;: [{
+            &quot;Key&quot;: &quot;costcenter&quot;,
+            &quot;Value&quot;: &quot;devops&quot;
+        }, {
+            &quot;Key&quot;: &quot;负责人&quot;,
+            &quot;Value&quot;: &quot;zihe.feng&quot;
+        }],
+        &quot;InstanceId&quot;: &quot;ins-3n9jqe9x&quot;,
+        &quot;ImageId&quot;: &quot;img-qp03e2j7&quot;,
+        &quot;StopChargingMode&quot;: &quot;NOT_APPLICABLE&quot;,
+        &quot;InstanceChargeType&quot;: &quot;PREPAID&quot;,
+        &quot;InstanceType&quot;: &quot;S2.SMALL1&quot;,
+        &quot;SystemDisk&quot;: {
+            &quot;DiskSize&quot;: 100,
+            &quot;DiskId&quot;: &quot;disk-bxp7e5c1&quot;,
+            &quot;DiskType&quot;: &quot;CLOUD_SSD&quot;
+        },
+        &quot;Placement&quot;: {
+            &quot;ProjectId&quot;: 0,
+            &quot;HostIds&quot;: None,
+            &quot;Zone&quot;: &quot;ap-beijing-1&quot;
+        },
+        &quot;PrivateIpAddresses&quot;: [&quot;172.20.0.10&quot;],
+        &quot;OsName&quot;: &quot;CentOS 7.3 64位&quot;,
+        &quot;SecurityGroupIds&quot;: [&quot;sg-od0hrpvh&quot;],
+        &quot;InstanceName&quot;: &quot;bj-test-common-ss-1&quot;,
+        &quot;DataDisks&quot;: None,
+        &quot;VirtualPrivateCloud&quot;: {
+            &quot;SubnetId&quot;: &quot;subnet-qebil5dp&quot;,
+            &quot;AsVpcGateway&quot;: False,
+            &quot;VpcId&quot;: &quot;vpc-fbv2dybq&quot;,
+            &quot;PrivateIpAddresses&quot;: None
+        },
+        &quot;InternetAccessible&quot;: {
+            &quot;PublicIpAssigned&quot;: None,
+            &quot;InternetChargeType&quot;: &quot;TRAFFIC_POSTPAID_BY_HOUR&quot;,
+            &quot;BandwidthPackageId&quot;: None,
+            &quot;InternetMaxBandwidthOut&quot;: 200
+        }
+    }, {
+        &quot;RenewFlag&quot;: &quot;NOTIFY_AND_AUTO_RENEW&quot;,
+        &quot;InstanceState&quot;: &quot;RUNNING&quot;,
+        &quot;LoginSettings&quot;: {
+            &quot;KeyIds&quot;: [&quot;skey-h64mpzpz&quot;],
+            &quot;Password&quot;: None,
+            &quot;KeepImageLogin&quot;: None
+        },
+        &quot;RestrictState&quot;: &quot;NORMAL&quot;,
+        &quot;ExpiredTime&quot;: &quot;2019-04-07T11:11:42Z&quot;,
+        &quot;Memory&quot;: 56,
+        &quot;CreatedTime&quot;: &quot;2019-03-07T11:11:42Z&quot;,
+        &quot;CPU&quot;: 28,
+        &quot;PublicIpAddresses&quot;: [&quot;154.8.155.101&quot;],
+        &quot;Tags&quot;: [],
+        &quot;InstanceId&quot;: &quot;ins-33hru7oj&quot;,
+        &quot;ImageId&quot;: &quot;img-qp03e2j7&quot;,
+        &quot;StopChargingMode&quot;: &quot;NOT_APPLICABLE&quot;,
+        &quot;InstanceChargeType&quot;: &quot;PREPAID&quot;,
+        &quot;InstanceType&quot;: &quot;GN2.7XLARGE56&quot;,
+        &quot;SystemDisk&quot;: {
+            &quot;DiskSize&quot;: 50,
+            &quot;DiskId&quot;: &quot;ldisk-czzwc94e&quot;,
+            &quot;DiskType&quot;: &quot;LOCAL_SSD&quot;
+        },
+        &quot;Placement&quot;: {
+            &quot;ProjectId&quot;: 0,
+            &quot;HostIds&quot;: None,
+            &quot;Zone&quot;: &quot;ap-beijing-2&quot;
+        },
+        &quot;PrivateIpAddresses&quot;: [&quot;172.21.0.15&quot;],
+        &quot;OsName&quot;: &quot;CentOS 7.3 64位&quot;,
+        &quot;SecurityGroupIds&quot;: [&quot;sg-od0hrpvh&quot;],
+        &quot;InstanceName&quot;: &quot;bj-prod-research-gpu-2&quot;,
+        &quot;DataDisks&quot;: [{
+            &quot;DeleteWithInstance&quot;: None,
+            &quot;DiskSize&quot;: 1650,
+            &quot;DiskId&quot;: &quot;ldisk-1xfm3yi6&quot;,
+            &quot;DiskType&quot;: &quot;LOCAL_SSD&quot;
+        }],
+        &quot;VirtualPrivateCloud&quot;: {
+            &quot;SubnetId&quot;: &quot;subnet-iyhhdfun&quot;,
+            &quot;AsVpcGateway&quot;: False,
+            &quot;VpcId&quot;: &quot;vpc-pmccgax8&quot;,
+            &quot;PrivateIpAddresses&quot;: None
+        },
+        &quot;InternetAccessible&quot;: {
+            &quot;PublicIpAssigned&quot;: None,
+            &quot;InternetChargeType&quot;: &quot;TRAFFIC_POSTPAID_BY_HOUR&quot;,
+            &quot;BandwidthPackageId&quot;: None,
+            &quot;InternetMaxBandwidthOut&quot;: 200
+        }
+    }],
+    &quot;TotalCount&quot;: 11,
+    &quot;RequestId&quot;: &quot;b68ed268-d528-48e8-aa29-416b126d7489&quot;
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

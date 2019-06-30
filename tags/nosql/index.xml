@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nosql on 梁苏莉的博客</title>
+    <link>/tags/nosql/</link>
+    <description>Recent content in nosql on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Apr 2019 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据库索引</title>
+      <link>/posts/sql/</link>
+      <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/sql/</guid>
+      <description>索引 主键索引，外键索引，联合索引，唯一索引 索引固然可 以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率 1. 当数据多且字段值有相同的值得时候用普通索引。 2. 当字段多且字段值没有重复的时候用唯一索引。 3. 当有多个</description>
+    </item>
+    
+    <item>
+      <title>数据库优化</title>
+      <link>/posts/english-preview/</link>
+      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/english-preview/</guid>
+      <description>1.sql 语句的优化 1、创建数据表时把固定长度的放在前面（） 2、将固定数据放入内存： 例如：choice字段 （django中有用到，数字1、2、3…… 对应相应内容） 3、char 和 varchar 的区别(char可变, varc</description>
+    </item>
+    
+  </channel>
+</rss>

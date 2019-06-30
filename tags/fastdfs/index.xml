@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fastdfs on 梁苏莉的博客</title>
+    <link>/tags/fastdfs/</link>
+    <description>Recent content in fastdfs on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Feb 2019 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/fastdfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fastdfs 中client.conf 文件</title>
+      <link>/posts/fastdfs2/</link>
+      <pubDate>Fri, 15 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/fastdfs2/</guid>
+      <description>fastdfs 中client.conf 文件 # connect timeout in seconds # default value is 30s connect_timeout=30 连接超时 # network timeout in seconds # default value is 30s network_timeout=60 网络超时 # the base path to store log files base_path=/home/yuqing/fastdfs 日志文件目录 # tracker_server can ocur more than once, and tracker_server format is # &amp;quot;host:port&amp;quot;, host can be hostname or ip address tracker_server=10.0.0.42:22122 tracker服务器地址 #standard log level as syslog, case insensitive,</description>
+    </item>
+    
+    <item>
+      <title>FastDFS客户端与自定义文件存储系统</title>
+      <link>/posts/fastdfs/</link>
+      <pubDate>Thu, 14 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/fastdfs/</guid>
+      <description>FastDFS客户端与自定义文件存储系统 &amp;lt;1&amp;gt;安装 安装提供给大家的fdfs_client-py-master.zip到虚拟环境中 pip install fdfs_client-py-master.zip pip install mutagen pip install requests &amp;lt;2&amp;gt;使用 使用FastDFS客</description>
+    </item>
+    
+  </channel>
+</rss>

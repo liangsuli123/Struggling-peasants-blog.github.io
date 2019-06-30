@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、运行程序，会弹出二维码，扫描授权后即可实现自动回复信息 参考01 参考02 复制代码 #coding=utf8 import itchat, time from itchat.content import * @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING]) def text_reply(msg): itchat.send(&#39;%s: %s&#39; % (msg[&#39;Type&#39;], msg[&#39;Text&#39;]), msg[&#39;FromUserName&#39;]) @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO]) def download_files(msg): msg[&#39;Text&#39;](msg[&#39;FileName&#39;]) return &#39;@%s@%s&#39; % ({&#39;Picture&#39;: &#39;img&#39;, &#39;Video&#39;: &#39;vid&#39;}.get(msg[&#39;Type&#39;], &#39;fil&#39;), msg[&#39;FileName&#39;]) @itchat.msg_register(FRIENDS) def add_friend(msg): itchat.add_friend(**msg[&#39;Text&#39;]) # 该操作会自动将新好友的消息录入，不"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="/posts/c1/"/>
+
+  
+
+  <title> itchat发送微信消息  &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.ico"/>
+  <link rel="stylesheet" href="/css/animate.min.css"/>
+  <link rel="stylesheet" href="/css/remixicon.css"/>
+  <link rel="stylesheet" href="/css/zozo.css"/>
+  <link rel="stylesheet" href="/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="/">
+          <span>梁苏莉的博客</span>
+          <img src="/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/c1/'> itchat发送微信消息 </a></h2>
+          <span class="date">2018.10.01</span>
+        </div>
+        <div class="post_content markdown"><pre><code>1、运行程序，会弹出二维码，扫描授权后即可实现自动回复信息 参考01  参考02
+
+
+复制代码
+#coding=utf8
+import itchat, time
+from itchat.content import *
+
+@itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING])
+def text_reply(msg):
+    itchat.send('%s: %s' % (msg['Type'], msg['Text']), msg['FromUserName'])
+
+@itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO])
+def download_files(msg):
+    msg['Text'](msg['FileName'])
+    return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName'])
+
+@itchat.msg_register(FRIENDS)
+def add_friend(msg):
+    itchat.add_friend(**msg['Text']) # 该操作会自动将新好友的消息录入，不需要重载通讯录
+    itchat.send_msg('Nice to meet you!', msg['RecommendInfo']['UserName'])
+
+@itchat.msg_register(TEXT, isGroupChat=True)
+def text_reply(msg):
+    if msg['isAt']:
+        itchat.send(u'@%s\u2005I received: %s' % (msg['ActualNickName'], msg['Content']), msg['FromUserName'])
+
+itchat.auto_login(True)
+itchat.run()
+复制代码
+
+复制代码
+#coding=utf8
+import itchat,time
+
+# 自动回复
+# 封装好的装饰器，当接收到的消息是Text，即文字消息
+@itchat.msg_register('Text')
+def text_reply(msg):
+    # 当消息不是由自己发出的时候
+    if not msg['FromUserName'] == myUserName:
+        # 发送一条提示给文件助手
+        itchat.send_msg(u&quot;[%s]收到好友@%s 的信息：%s\n&quot; %
+                        (time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime(msg['CreateTime'])),
+                         msg['User']['NickName'],
+                         msg['Text']), 'filehelper')
+        # 回复给好友
+        return u'[自动回复]您好，我现在有事不在，一会再和您联系。\n已经收到您的的信息：%s\n' % (msg['Text'])
+
+if __name__ == '__main__':
+    itchat.auto_login()
+
+    # 获取自己的UserName
+    myUserName = itchat.get_friends(update=True)[0][&quot;UserName&quot;]
+    itchat.run()
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/zozo.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<link  href="/css/fancybox.min.css" rel="stylesheet">
+<script src="/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
