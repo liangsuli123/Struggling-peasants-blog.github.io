@@ -2,21 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jwt on 梁苏莉的博客</title>
+<<<<<<< HEAD
+    <link>https://example.com/tags/jwt/</link>
+=======
     <link>/tags/jwt/</link>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     <description>Recent content in jwt on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 08 May 2018 14:26:00 +0800</lastBuildDate>
     
+<<<<<<< HEAD
+	<atom:link href="https://example.com/tags/jwt/index.xml" rel="self" type="application/rss+xml" />
+=======
 	<atom:link href="/tags/jwt/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     
     
     <item>
       <title>jwt原理</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/jwt/</link>
+      <pubDate>Tue, 08 May 2018 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/jwt/</guid>
+=======
       <link>/posts/jwt/</link>
       <pubDate>Tue, 08 May 2018 14:26:00 +0800</pubDate>
       
       <guid>/posts/jwt/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>JWT的实现原理 前言 最近在做一个python项目的改造，将python项目重构为java项目，过程中遇到了这个知识点，觉得这个蛮实用的，所以下班后回来趁热打铁写下这篇总结，希望后面的人能够有所借鉴，少</description>
     </item>
     

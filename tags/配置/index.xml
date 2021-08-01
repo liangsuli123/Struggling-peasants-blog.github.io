@@ -2,102 +2,180 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>配置 on 梁苏莉的博客</title>
+<<<<<<< HEAD
+    <link>https://example.com/tags/%E9%85%8D%E7%BD%AE/</link>
+=======
     <link>/tags/%E9%85%8D%E7%BD%AE/</link>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     <description>Recent content in 配置 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 22 Feb 2019 14:26:00 +0800</lastBuildDate>
     
+<<<<<<< HEAD
+	<atom:link href="https://example.com/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+=======
 	<atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     
     
     <item>
       <title>在Centos下使用Siege对Django服务进行压力测试</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a10/</link>
+      <pubDate>Fri, 22 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a10/</guid>
+=======
       <link>/posts/a10/</link>
       <pubDate>Fri, 22 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a10/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>Siege是linux下的一个web系统的压力测试工具，支持多链接，支持get和post请求，可以对web系统进行多并发下持续请求的压力测试。今天我们就使用Siege来对Django进行一次压力测试，</description>
     </item>
     
     <item>
       <title>在阿里云Centos7.6上利用docker搭建Jenkins来自动化部署Django项目</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a9/</link>
+      <pubDate>Tue, 19 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a9/</guid>
+=======
       <link>/posts/a9/</link>
       <pubDate>Tue, 19 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a9/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>一般情况下，将一个项目部署到生产环境的流程如下： 需求分析—原型设计—开发代码—内网部署-提交测试—确认上线—备份数据—外网更新-最终测试，如果发现外网部署的代码有异常，需要及时回滚。 整个过程相当复杂而</description>
     </item>
     
     <item>
       <title>在阿里云服务器上使用Nginx部署https协议的网站</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a8/</link>
+      <pubDate>Sun, 17 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a8/</guid>
+=======
       <link>/posts/a8/</link>
       <pubDate>Sun, 17 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a8/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>之前写过一篇文章是在阿里云服务器上用Apache切换https协议：将博客迁移阿里云并且切换成https解析的过程 这一次，换成使用Nginx来部署，相比之下，比Apache的配置要简单一些 如何申请SS</description>
     </item>
     
     <item>
       <title>python3.7.3操作FastDfs来进行文件操作</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a7/</link>
+      <pubDate>Fri, 15 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a7/</guid>
+=======
       <link>/posts/a7/</link>
       <pubDate>Fri, 15 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a7/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>在之前的一篇文章中:利用Docker来搭建分布式文件系统FastDfs，我们已经搭建好了FastDfs分布式文件系统，并且已经可以通过命令进行上传操作，那么如何使用python来上传文件呢？ 很简单，还</description>
     </item>
     
     <item>
       <title>利用Docker来搭建分布式文件系统FastDfs</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a6/</link>
+      <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a6/</guid>
+=======
       <link>/posts/a6/</link>
       <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a6/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>对于文件存储来说，一般情况下简单的处理就是在Django配置文件中配置存储目录，按照规则对文件进行上传或者下载。 实际上，当文件较少的时候，Django是可以应付的过来的。但当文件以海量形式出现的时候，</description>
     </item>
     
     <item>
       <title>在阿里云Centos上配置nginx&#43;uwsgi&#43;负载均衡配置</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a5/</link>
+      <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a5/</guid>
+=======
       <link>/posts/a5/</link>
       <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a5/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以</description>
     </item>
     
     <item>
       <title>在阿里云Centos7.6上部署Supervisor来监控和操作各类服务 </title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a4/</link>
+      <pubDate>Tue, 29 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a4/</guid>
+=======
       <link>/posts/a4/</link>
       <pubDate>Tue, 29 Jan 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a4/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>Supervisor 是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。它可以很方便的监听、启动、停止、重启一个或多个进程。用Superv</description>
     </item>
     
     <item>
       <title>在阿里云centos7.6上部署vue.js2.6前端应用</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a2/</link>
+      <pubDate>Tue, 22 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a2/</guid>
+=======
       <link>/posts/a2/</link>
       <pubDate>Tue, 22 Jan 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a2/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>在之前的一篇文章中详细阐述了如何部署Nginx代理uwsgi+django后台服务,现在轮到部署前端应用vue.js了，vue.js的好处就不多说了，其作为一个轻巧、高性能、可组件化的MVVM库，学习</description>
     </item>
     
     <item>
       <title>在阿里云Centos7.6中部署nginx1.16&#43;uwsgi2.0.18&#43;Django2.0.4</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/a1/</link>
+      <pubDate>Thu, 17 Jan 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/a1/</guid>
+=======
       <link>/posts/a1/</link>
       <pubDate>Thu, 17 Jan 2019 14:26:00 +0800</pubDate>
       
       <guid>/posts/a1/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>一直以来想写一篇完整的在阿里云服务器上部署Django服务结合uwsgi，并且通过nginx做反向代理。因为网上的攻略鱼龙混杂，加上技术不断更新，一些年代久远的文章很容易让人在部署的过程中掉坑里，无法</description>
     </item>
     
     <item>
       <title>centos 中 redis 的安装</title>
+<<<<<<< HEAD
+      <link>https://example.com/posts/centos/</link>
+      <pubDate>Mon, 30 May 2016 14:26:00 +0800</pubDate>
+      
+      <guid>https://example.com/posts/centos/</guid>
+=======
       <link>/posts/centos/</link>
       <pubDate>Mon, 30 May 2016 14:26:00 +0800</pubDate>
       
       <guid>/posts/centos/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>centos 中 redis 的安装 安装流程 Wget http://download.redis.io/releases/redis-5.0.4.tar.gz tar xzf redis-5.0.4.tar.gz mv redis-5.0.4 /usr/local/redis cd /usr/local/redis make make install 安装完成后，我们进入目录/usr/local/bin中查看 cd /usr/local/bin ls -all redis-server &amp;amp; 配置 Redis的配置信息在/usr/local/redis/redis.conf下。</description>
     </item>
     

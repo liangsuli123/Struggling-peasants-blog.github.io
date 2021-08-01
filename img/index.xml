@@ -2,20 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Imgs on 梁苏莉的博客</title>
+<<<<<<< HEAD
+    <link>https://example.com/img/</link>
+=======
     <link>/img/</link>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     <description>Recent content in Imgs on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
+<<<<<<< HEAD
+	<atom:link href="https://example.com/img/index.xml" rel="self" type="application/rss+xml" />
+=======
 	<atom:link href="/img/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     
     
     <item>
       <title></title>
+<<<<<<< HEAD
+      <link>https://example.com/img/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/img/1/</guid>
+=======
       <link>/img/1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/img/1/</guid>
+>>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>关于mysql联合索引的最左前缀原则以及b+tree   菜单      Home Python Web Design Db &amp;amp; SQL Mac &amp;amp; Linux Go &amp;amp; Ruby Life &amp;amp; Work Resume Community         关于mysql联合索引的最左前缀原则以及b+tree 首页 - Db &amp;amp; SQL /2019-06-10  &amp;nbsp; &amp;nbsp; 软件版本mysql5.7  &amp;nbsp; &amp;nbsp; 根据官网的文档 https://dev.mysql.com/doc/refman/5.7/en/multiple-column-indexes.html  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;查询条件要符合最左原则才能使用到索引    &amp;nbsp; &amp;nbsp; 首先说说联合索引的好处：   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;覆盖索引，这一点是最重要的，重所周知非主键索引会先查到主键索引的值再从主键索引上拿到想要的值，这样多一次查询索引下推。但是覆盖索引可以直接在非主键索引上拿到相应的值，减少一次查询。
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在一张大表中如果有 (a,b,c)联合索引就等于同时加上了 (a) (ab) (abc) 三个索引减少了存储上的一部分的开销和操作开销
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;梯度漏斗，比如 select *from t where a = 1 and b = 2 and c = 3; 就等于在满足 a = 1 的一部分数据中过滤掉b = 2 的 再从 a = 1 and b = 2 过滤掉 c = 3 的，越多查询越高效。  &amp;nbsp; &amp;nbsp; 到底啥是最左原则?</description>
