@@ -113,6 +113,37 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
+    <h2><a href='/posts/c8/'> Git基本常用命令 </a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>mkdir： XX (创建一个空目录 XX指目录名) pwd： 显示当前目录的路径。 git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。 git add XX 把xx文件添加到暂存区去。 git commit –m “XX” 提交文件 –m 后面......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2018.10.28</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://example.com/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
     <h2><a href='/posts/c7/'>  git &amp; github </a></h2>
   </div>
   
@@ -190,37 +221,6 @@
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
           <span class="date">2018.10.18</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://example.com/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/c4/'> Dockerfile: 构建nginx项目镜像 </a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>1、使用 Dockerfile-nginx 文件构建一个基础镜像 nginx:v1 复制代码 FROM centos:7 MAINTAINER www.ctnrs.com RUN yum install -y gcc gcc-c++ make \ openssl-devel pcre-devel gd-devel \ iproute net-tools telnet wget curl &amp;&amp; \ yum clean all &amp;&amp; \ rm -rf /var/cache/yum/* RUN wget http://nginx.org/download/nginx-1.15.5.tar.gz &amp;&amp; \ tar zxf nginx-1.15.5.tar.gz &amp;&amp; \ cd nginx-1.15.5 &amp;&amp; \ ./configure --prefix=/usr/local/nginx \ --with-http_ssl_module \ --with-http_stub_status_module &amp;&amp; \ make -j 4 &amp;&amp; make install &amp;&amp; \ rm -rf /usr/local/nginx/html/* &amp;&amp; \ echo &quot;ok&quot; &gt;&gt; /usr/local/nginx/html/status.html &amp;&amp; \ cd / &amp;&amp; rm -rf nginx-1.12.2* &amp;&amp; \......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.10.14</span>
         </span>
         
         <span class="field tags">

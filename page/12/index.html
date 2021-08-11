@@ -113,6 +113,37 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
+    <h2><a href='/posts/c4/'> Dockerfile: 构建nginx项目镜像 </a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>1、使用 Dockerfile-nginx 文件构建一个基础镜像 nginx:v1 复制代码 FROM centos:7 MAINTAINER www.ctnrs.com RUN yum install -y gcc gcc-c++ make \ openssl-devel pcre-devel gd-devel \ iproute net-tools telnet wget curl &amp;&amp; \ yum clean all &amp;&amp; \ rm -rf /var/cache/yum/* RUN wget http://nginx.org/download/nginx-1.15.5.tar.gz &amp;&amp; \ tar zxf nginx-1.15.5.tar.gz &amp;&amp; \ cd nginx-1.15.5 &amp;&amp; \ ./configure --prefix=/usr/local/nginx \ --with-http_ssl_module \ --with-http_stub_status_module &amp;&amp; \ make -j 4 &amp;&amp; make install &amp;&amp; \ rm -rf /usr/local/nginx/html/* &amp;&amp; \ echo &quot;ok&quot; &gt;&gt; /usr/local/nginx/html/status.html &amp;&amp; \ cd / &amp;&amp; rm -rf nginx-1.12.2* &amp;&amp; \......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2018.10.14</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://example.com/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
     <h2><a href='/posts/c3/'> docker常用命令 </a></h2>
   </div>
   
@@ -190,37 +221,6 @@
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
           <span class="date">2018.10.01</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://example.com/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/b18/'> python3使用email和smtplib库发送邮件 </a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>注：python代理登录qq邮箱发邮件，是需要更改自己qq邮箱设置的。在这里大家需要做两件事情：邮箱开启SMTP功能 、获得授权码 教程链接 1、给单个人发邮件 参考 复制代码 from email.mime.text import MIMEText from email.header import Header from smtplib import SMTP_SSL #qq邮箱......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.09.26</span>
         </span>
         
         <span class="field tags">

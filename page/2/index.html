@@ -113,6 +113,37 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
+    <h2><a href='/posts/jieba/'>jieba分词</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>使用 wordcloud 构建词云图 from wordcloud import WordCloud from matplotlib import pyplot as plt from PIL import Image import numpy as np 1.准备数据 content = open('豆瓣舌尖中国.txt','rb').read() result = jieba.lcut(content,cut_all=False) #精确模式 content = ' '.join(result) #将list转化为空格分开的str 2.初始化词云......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2019.05.03</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://example.com/tags/%E5%9F%BA%E7%A1%80/">基础</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
     <h2><a href='/posts/chinese-preview/'>React、Vue、Angular</a></h2>
   </div>
   
@@ -204,37 +235,6 @@
           <a href="https://example.com/tags/%E5%90%8E%E7%AB%AF/">后端</a>
           
           <a href="https://example.com/tags/%E4%BD%93%E7%B3%BB/">体系</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/migrations/'>迁移报错</a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run 'python manage.py migrate' to apply them. 数据库迁移时报错， You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run 'python manage.py migrate' to apply them. 可以执行 python manage.py migrate 它可以让我们在修改Model后可以在不影响现有数据的前提下重建表......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.04.10</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://example.com/tags/error/">error</a>
           
         </span>
         
