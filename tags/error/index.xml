@@ -2,84 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>error on 梁苏莉的博客</title>
-<<<<<<< HEAD
     <link>https://example.com/tags/error/</link>
-=======
-    <link>/tags/error/</link>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     <description>Recent content in error on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 20 May 2019 14:26:00 +0800</lastBuildDate>
     
-<<<<<<< HEAD
 	<atom:link href="https://example.com/tags/error/index.xml" rel="self" type="application/rss+xml" />
-=======
-	<atom:link href="/tags/error/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     
     
     <item>
       <title>redis安装成功后get: command not found</title>
-<<<<<<< HEAD
       <link>https://example.com/posts/redis_error/</link>
       <pubDate>Mon, 20 May 2019 14:26:00 +0800</pubDate>
       
       <guid>https://example.com/posts/redis_error/</guid>
-=======
-      <link>/posts/redis_error/</link>
-      <pubDate>Mon, 20 May 2019 14:26:00 +0800</pubDate>
-      
-      <guid>/posts/redis_error/</guid>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>redis安装成功后get: command not found 安装redis后客户端无法使用，即redis-cli执行后报找不到的错误。 这主要是安装redis的时候没有把客户端装上，在StackOverFlow上找到了一种只安装</description>
     </item>
     
     <item>
       <title>websocket</title>
-<<<<<<< HEAD
       <link>https://example.com/posts/websocket/</link>
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://example.com/posts/websocket/</guid>
-=======
-      <link>/posts/websocket/</link>
-      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>/posts/websocket/</guid>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>websocket协议解决消息发送问题 Could not decode a text frame as UTF-8. 在使用websocket 时出现了Could not decode a text frame as UTF-8 首次连接成功当发送消息时，出现了编码作错误 第一请求页面时，连接成功 当发送消息时，不加enc</description>
     </item>
     
     <item>
       <title>迁移报错</title>
-<<<<<<< HEAD
       <link>https://example.com/posts/migrations/</link>
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://example.com/posts/migrations/</guid>
-=======
-      <link>/posts/migrations/</link>
-      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>/posts/migrations/</guid>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run &#39;python manage.py migrate&#39; to apply them. 数据库迁移时报错， You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): shopadmin. Run &#39;python manage.py migrate&#39; to apply them. 可以执行 python manage.py migrate 它可以让我们在修改Model后可以在不影响现有数据的前提下重建表</description>
     </item>
     
     <item>
       <title>OSError: mysql_config not found</title>
-<<<<<<< HEAD
       <link>https://example.com/posts/error/</link>
       <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://example.com/posts/error/</guid>
-=======
-      <link>/posts/error/</link>
-      <pubDate>Tue, 02 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>/posts/error/</guid>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>上次在部署阿里云安装Centos7里 pip3 install mysqlclient 是 一直报 OSError: mysql_config not found 这个错，上网百度了半天终于找到了解决的办法，需要安装依赖包： yum install mysql-devel gcc gcc-devel python-devel 安装这个在pip3 install mysqlclient 就可以了</description>
     </item>
     

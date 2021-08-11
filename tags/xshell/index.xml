@@ -2,36 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xshell on 梁苏莉的博客</title>
-<<<<<<< HEAD
     <link>https://example.com/tags/xshell/</link>
-=======
-    <link>/tags/xshell/</link>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     <description>Recent content in xshell on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 25 May 2019 14:26:00 +0800</lastBuildDate>
     
-<<<<<<< HEAD
 	<atom:link href="https://example.com/tags/xshell/index.xml" rel="self" type="application/rss+xml" />
-=======
-	<atom:link href="/tags/xshell/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
     
     
     <item>
       <title>xshell 常用命令</title>
-<<<<<<< HEAD
       <link>https://example.com/posts/xshell/</link>
       <pubDate>Sat, 25 May 2019 14:26:00 +0800</pubDate>
       
       <guid>https://example.com/posts/xshell/</guid>
-=======
-      <link>/posts/xshell/</link>
-      <pubDate>Sat, 25 May 2019 14:26:00 +0800</pubDate>
-      
-      <guid>/posts/xshell/</guid>
->>>>>>> b71cfc02a2f3b3429fc5238b6604e107c855334b
       <description>Xshell :一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议. 0 帮助 命令 与清屏 help 查看帮助命令 ls 查看ls命令下的具体用法 info ls 查看ls命令的作用 clear 清屏 1。查看当前路径 pwd</description>
     </item>
     

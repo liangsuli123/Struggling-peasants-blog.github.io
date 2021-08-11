@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery_ajax&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&amp;quot;#b2&amp;quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:&#39;GET&#39;, //提交网址 url:&#39;http://192.168.1.238/ajax.php&#39;, //数据格式 dataType:&#39;jsonp&#39;, //具体数据 data:{&#39;phone&#39;:$(&amp;quot;#phone&amp;quot;).val()}, //回调函数 jsonp:&#39;callback&#39;, //通信成"/>
+  <meta name="description" content="Hugo theme hugo-theme-zozo example site."/>
   
 
   
@@ -19,11 +19,13 @@
   
 
   
-  <link rel="canonical" href="https://example.com/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/"/>
+  <link rel="canonical" href="https://example.com/tags/git/"/>
 
   
+  <link rel="alternate" type="application/rss&#43;xml" href="https://example.com/tags/git/index.xml">
+  
 
-  <title>jquery_ajax 异步提交 &middot; 梁苏莉的博客</title>
+  <title>git &middot; 梁苏莉的博客</title>
 
   <link rel="shortcut icon" href="https://example.com/images/favicon.ico"/>
   <link rel="stylesheet" href="https://example.com/css/animate.min.css"/>
@@ -105,75 +107,22 @@
 </div>
 
   <div class="content">
-    <div class="post_page">
-      <div class="post animated fadeInDown">
-        <div class="post_title post_detail_title">
-          <h2><a href='/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/'>jquery_ajax 异步提交</a></h2>
-          <span class="date">2017.02.20</span>
-        </div>
-        <div class="post_content markdown"><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;jquery_ajax&lt;/title&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        //写jquery的单一入口
-        $(function(){
-            //绑定按钮事件
-            $(&quot;#b2&quot;).click(function(){
-            //用异步的形式来提交数据给服务器
-            $.ajax({
-                //提交方式使用get
-                type:'GET',
-                //提交网址
-                url:'http://192.168.1.238/ajax.php',
-                //数据格式
-                dataType:'jsonp',
-                //具体数据
-                data:{'phone':$(&quot;#phone&quot;).val()},
-                //回调函数
-                jsonp:'callback',
-                //通信成功，打印服务器返回的数据
-                success:function(msg){
-                    console.log(msg);
-                }            
-            });        
-            });
-        });
-
-    &lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    手机号：&lt;input id='phone' type=&quot;text&quot; style=&quot;width:200px;padding: 5px&quot; placeholder=&quot;请输入你的手机号&quot;/&gt;
-    &lt;br/&gt;&lt;br/&gt;
-    &lt;input id=&quot;b2&quot; type=&quot;button&quot; value=&quot;提交手机号&quot;/&gt;
-
-
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-</div>
-        <div class="post_footer">
-          
-          <div class="meta">
-            <div class="info">
-              <span class="field tags">
-                <i class="remixicon-stack-line"></i>
-                
-                <a href="https://example.com/tags/%E5%9F%BA%E7%A1%80/">基础</a>
-                
-              </span>
-            </div>
+    <div class="list_with_title">
+      
+      <div class="listing_title">2021</div>
+      <div class="listing">
+        
+        <div class="listing_item">
+          <div class="listing_post">
+            <a href="/posts/git/">hint: Updates were rejected because the remote contains work that you do</a>
+            <div class="post_time"><span class="date">08-11</span></div>
           </div>
-          
         </div>
+        
       </div>
       
-      
     </div>
+    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
