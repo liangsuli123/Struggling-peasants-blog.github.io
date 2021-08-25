@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>体系 on 梁苏莉的博客</title>
-    <link>https://example.com/tags/%E4%BD%93%E7%B3%BB/</link>
+    <link>https://Struggling-peasants-blog.github.io/tags/%E4%BD%93%E7%B3%BB/</link>
     <description>Recent content in 体系 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 11 Apr 2019 14:26:00 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E4%BD%93%E7%B3%BB/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Struggling-peasants-blog.github.io/tags/%E4%BD%93%E7%B3%BB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>React、Vue、Angular</title>
-      <link>https://example.com/posts/chinese-preview/</link>
+      <link>https://Struggling-peasants-blog.github.io/posts/chinese-preview/</link>
       <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://example.com/posts/chinese-preview/</guid>
+      <guid>https://Struggling-peasants-blog.github.io/posts/chinese-preview/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;当前，三大主流前端框架分别是React、Vue、Angular这三个框架。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>web三大框架</title>
-      <link>https://example.com/posts/japanese-preview/</link>
+      <link>https://Struggling-peasants-blog.github.io/posts/japanese-preview/</link>
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://example.com/posts/japanese-preview/</guid>
+      <guid>https://Struggling-peasants-blog.github.io/posts/japanese-preview/</guid>
       <description>python web三大框架，flask、django、tornado Django（ORM、URL分发系统、MTV） Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型</description>
     </item>
     

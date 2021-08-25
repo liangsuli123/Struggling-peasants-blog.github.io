@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on 梁苏莉的博客</title>
-    <link>https://example.com/tags/git/</link>
+    <link>https://Struggling-peasants-blog.github.io/tags/git/</link>
     <description>Recent content in git on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 11 Aug 2021 14:26:00 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Struggling-peasants-blog.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hint: Updates were rejected because the remote contains work that you do</title>
-      <link>https://example.com/posts/git/</link>
+      <link>https://Struggling-peasants-blog.github.io/posts/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
       
-      <guid>https://example.com/posts/git/</guid>
+      <guid>https://Struggling-peasants-blog.github.io/posts/git/</guid>
       <description>问题描述 git push的时候出现了下面的问题 hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., ‘git pull …’) before pushing again. hint: See the ‘Note about fast-forwards’ in ‘git push</description>
     </item>
     
     <item>
       <title>基于搭建Hugo博客后出现样式失效问题</title>
-      <link>https://example.com/posts/git/</link>
+      <link>https://Struggling-peasants-blog.github.io/posts/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
       
-      <guid>https://example.com/posts/git/</guid>
-      <description>hljs is not defined github 配置 进入刚刚新建的仓库，选择Settings,找到GitHubPages。 Theme Chooser随便选择一个提交就可以了，之后会给你username.github.io这样的网址就表示实在对了，因</description>
+      <guid>https://Struggling-peasants-blog.github.io/posts/git/</guid>
+      <description>hljs is not defined github 配置 进入刚刚新建的仓库，选择Settings,找到GitHubPages。 Theme Chooser随便选择一个提交就可以了， 之后会给你username.github.io这样的网址就表示实在对了， 因</description>
     </item>
     
   </channel>

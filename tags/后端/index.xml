@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>后端 on 梁苏莉的博客</title>
-    <link>https://example.com/tags/%E5%90%8E%E7%AB%AF/</link>
+    <link>https://Struggling-peasants-blog.github.io/tags/%E5%90%8E%E7%AB%AF/</link>
     <description>Recent content in 后端 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 Apr 2019 14:26:00 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Struggling-peasants-blog.github.io/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>web三大框架</title>
-      <link>https://example.com/posts/japanese-preview/</link>
+      <link>https://Struggling-peasants-blog.github.io/posts/japanese-preview/</link>
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://example.com/posts/japanese-preview/</guid>
+      <guid>https://Struggling-peasants-blog.github.io/posts/japanese-preview/</guid>
       <description>python web三大框架，flask、django、tornado Django（ORM、URL分发系统、MTV） Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型</description>
     </item>
     
