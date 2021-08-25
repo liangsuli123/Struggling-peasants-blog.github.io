@@ -2,336 +2,336 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>基础 on 梁苏莉的博客</title>
-    <link>https://Struggling-peasants-blog.github.io/tags/%E5%9F%BA%E7%A1%80/</link>
+    <link>https://liangsuli123.github.io/tags/%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in 基础 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 03 May 2019 14:26:00 +0800</lastBuildDate>
     
-	<atom:link href="https://Struggling-peasants-blog.github.io/tags/%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://liangsuli123.github.io/tags/%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jieba分词</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/jieba/</link>
+      <link>https://liangsuli123.github.io/posts/jieba/</link>
       <pubDate>Fri, 03 May 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/jieba/</guid>
+      <guid>https://liangsuli123.github.io/posts/jieba/</guid>
       <description>使用 wordcloud 构建词云图 from wordcloud import WordCloud from matplotlib import pyplot as plt from PIL import Image import numpy as np 1.准备数据 content = open(&#39;豆瓣舌尖中国.txt&#39;,&#39;rb&#39;).read() result = jieba.lcut(content,cut_all=False) #精确模式 content = &#39; &#39;.join(result) #将list转化为空格分开的str 2.初始化词云</description>
     </item>
     
     <item>
       <title>正则3</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/re3/</link>
+      <link>https://liangsuli123.github.io/posts/re3/</link>
       <pubDate>Thu, 03 May 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/re3/</guid>
+      <guid>https://liangsuli123.github.io/posts/re3/</guid>
       <description>python正则表达式中的特殊字符： ^ 表示匹配的字符必须在最前边 $ 表示匹配的字符必须在最后边 * 匹配* 前面的字符0次或n次 + 匹配+ 前面的字符1次或n次 ? 匹配？前面的字符0次或1次 . (小数点）匹配除换行符</description>
     </item>
     
     <item>
       <title>正则2</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/re2/</link>
+      <link>https://liangsuli123.github.io/posts/re2/</link>
       <pubDate>Fri, 20 Apr 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/re2/</guid>
+      <guid>https://liangsuli123.github.io/posts/re2/</guid>
       <description>正达表达式：匹配 爬取 过滤 合法性的判断---------runoob.com网址 四方法：match group compile findall 爬取编码： 两个步骤：爬取（ import urllib.request） 数据清洗（import re） import urllib.resquest 导入爬取</description>
     </item>
     
     <item>
       <title>深拷贝和浅拷贝</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/copy/</link>
+      <link>https://liangsuli123.github.io/posts/copy/</link>
       <pubDate>Thu, 05 Apr 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/copy/</guid>
+      <guid>https://liangsuli123.github.io/posts/copy/</guid>
       <description>定义： 在Python中对象的赋值其实就是对象的引用。当创建一个对象，把它赋值给另一个变量的时候，python并没有拷贝这个对象，只是拷贝了这个对象的引用而已。 浅拷贝：拷贝了最外围的对象本身，内部的元素</description>
     </item>
     
     <item>
       <title>正则1</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/re1/</link>
+      <link>https://liangsuli123.github.io/posts/re1/</link>
       <pubDate>Tue, 03 Apr 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/re1/</guid>
+      <guid>https://liangsuli123.github.io/posts/re1/</guid>
       <description>匹配多个字符----默认greed 贪婪 • * 匹配前一个字符 * 匹配前一个字符 修饰前面的字符出现0次或无限次数 匹配 + 修饰前一位字符至少一次或无限次（至少得有 一个） ? 匹配一个字符出现最多一次或着没有-----</description>
     </item>
     
     <item>
       <title>编码</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/bianma/</link>
+      <link>https://liangsuli123.github.io/posts/bianma/</link>
       <pubDate>Tue, 03 Apr 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/bianma/</guid>
+      <guid>https://liangsuli123.github.io/posts/bianma/</guid>
       <description>import base64 s = &#39;无可挑剔&#39; q=base64.b64encode(bytes(s, &#39;gbk&#39;)) print(q) w=base64.b64decode(base64.b64encode(bytes(s, &#39;gbk&#39;))) print(w) 编码过程 s = &amp;quot;无可挑剔&amp;quot; encoder = base64.b64encode(s.encode(&amp;quot;utf-8&amp;quot;)) print(encoder) str_encoder = encoder.decode(&#39;utf-8&#39;) print(str_encoder) # 解码过程 decoder = base64.b64decode(str_encoder) print(decoder.decode(&#39;utf-8&#39;)) src = &amp;quot;功成名就&amp;quot; tgt = base64.b64encode(src.encode(&#39;UTF-8&#39;)) print (tgt) src = base64.b64decode(tgt).decode(&#39;utf-8&#39;) print (src) &amp;quot;&amp;quot;&amp;quot; b&#39;zt6/ycz0zN4=&#39; b&#39;\xce\xde\xbf\xc9\xcc\xf4\xcc\xde&#39; b&#39;5peg5Y+v5oyR5YmU&#39; 5peg5Y+v5oyR5YmU 无可挑剔 b&#39;5Yqf5oiQ5ZCN5bCx&#39; 功成名就 &amp;quot;&amp;quot;&amp;quot;</description>
     </item>
     
     <item>
       <title>反扒操作</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</link>
+      <link>https://liangsuli123.github.io/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Tue, 01 Aug 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://liangsuli123.github.io/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/</guid>
       <description>先检查是否有API API是网站官方提供的数据接口，如果通过调用API采集数据，则相当于在网站允许的范围内采集，这样既不会有道德法律风险，也没有网站故意设置的障碍；不过调用API接口的访问则处于网站的控</description>
     </item>
     
     <item>
       <title>具体爬虫操作</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</link>
+      <link>https://liangsuli123.github.io/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sat, 29 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://liangsuli123.github.io/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/</guid>
       <description>首先肯定要实现图片抓取这个基本功能 然后实现对用户所给的链接进行抓取 最后要有一定的交互，程序不能太傻吧 一、页面获取 要让python可以进行对网页的访问，那肯定要用到urllib之类的包。So先来个 import urllib u</description>
     </item>
     
     <item>
       <title>selenium破解人人登陆验证码</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</link>
+      <link>https://liangsuli123.github.io/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</link>
       <pubDate>Tue, 18 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</guid>
+      <guid>https://liangsuli123.github.io/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/</guid>
       <description>from selenium import webdriver from PIL import Image from chaojiying import Chaojiying_Client import time driver = webdriver.Chrome() driver.get(&#39;http://ww.renren.com&#39;) driver.find_element_by_xpath(&#39;//*[@id=&amp;quot;email&amp;quot;]&#39;).send_keys(&amp;quot;人人网账号&amp;q</description>
     </item>
     
     <item>
       <title>selenium爬取优酷页面并下载图片</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
+      <link>https://liangsuli123.github.io/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
       <pubDate>Thu, 13 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
+      <guid>https://liangsuli123.github.io/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
       <description>from selenium import webdriver import requests driver = webdriver.Chrome() #打开优酷 driver.get(&amp;quot;http://www.youku.com&amp;quot;) #点开优酷片库 driver.find_element_by_xpath(&amp;quot;//*[@id=&#39;m_2544&#39;]/div/ul/li[6]/span[1]/a&amp;quot;).click() #获取所有img元素 listImg = driver.find_elements_by_xpath(&amp;quot;//div[@class=&#39;vaule_main&#39;]//li/div/div/img&amp;quot;) #取img的src值 listSrc = [] for img in listImg: src = img.get_attribute(&#39;src&#39;) listSrc.append(src) print(len(listImg)) #下载图片 session = requests.session() for index,value in enumerate(listSrc): response = session.get(value) with open(str(index)+&#39;.png&#39;,mode=&#39;wb&#39;) as f: f.write(response.content)</description>
     </item>
     
     <item>
       <title>vue累加计数器</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
+      <link>https://liangsuli123.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
       <pubDate>Sat, 08 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的单击事件&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;.c&amp;quot;, data:{ //定义计数器 counter:0, } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;c&amp;quot;&amp;gt; &amp;lt;!-- 定义一个按钮，使用counter做累加--&amp;gt; &amp;lt;button</description>
     </item>
     
     <item>
       <title>vue样式的动态绑定</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</link>
+      <link>https://liangsuli123.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Mon, 03 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的样式绑定&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .active{ background-color: gold; color:blue; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ //激活 false isactive:true } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;a&amp;quot;&amp;gt;人生</description>
     </item>
     
     <item>
       <title>vue表单选项框</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</link>
+      <link>https://liangsuli123.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</link>
       <pubDate>Sun, 25 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue表单的学习&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ message:&#39;你好&#39; } }); // 多选框的增删改查 var app = new Vue({ el:&amp;quot;#b&amp;quot;, data:{ checknames:[] }</description>
     </item>
     
     <item>
       <title>vue的选项卡功能</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</link>
+      <link>https://liangsuli123.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Tue, 20 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue选项卡学习&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .box{ border:1px solid blueviolet; height: 228px; width: 323px; background-color: bisque; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload= function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ tabId:0 } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- tab 选项 --&amp;gt; &amp;lt;div class=&amp;quot;tab&amp;quot;&amp;gt; &amp;lt;!-- 制作选项卡头部</description>
     </item>
     
     <item>
       <title>vue.js 监听属性的学习/ 千米、米的转换 /时、分、秒 的转换</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <link>https://liangsuli123.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Sat, 10 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue_的监听属性&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app= new Vue({ el:&amp;quot;#app&amp;quot;, data:{ kilometers:0, meters:0 }, //监听属性 watch:{ kilometers:function(val){ this.kilometers = val; this.meters = val * 1000; }, meters:function(val){ this.kilometers = val / 1000; this.meters.val; } } }); var app1 = new Vue({ el:&amp;quot;#app1&amp;quot;, data:{ seconds:0, minutes:0, hours:0 }, //</description>
     </item>
     
     <item>
       <title>vue.js的计算属性</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</link>
+      <link>https://liangsuli123.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</link>
       <pubDate>Mon, 05 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue 计算属性的学习&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ information:&#39;灰色的世界里，只有你的眼睛是色彩斑斓的&#39; }, computed:{ reverseInformation:function(){ return this.information.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- 颠倒字符串 上面的</description>
     </item>
     
     <item>
       <title>vue入门</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/vue%E5%85%A5%E9%97%A8/</link>
+      <link>https://liangsuli123.github.io/posts/vue%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 10 May 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/vue%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue%E5%85%A5%E9%97%A8/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Vue.js 的入门&amp;lt;/title&amp;gt; &amp;lt;!-- 导入 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ //el 属性用来绑定元素节点 el:&amp;quot;#app&amp;quot;, //data属性用来绑定数据 data:{ message:&#39;Hello World&#39; } }); //建立vue对象 var app2 = new Vue({ // 绑定元素节点</description>
     </item>
     
     <item>
       <title>鼠标事件</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</link>
+      <link>https://liangsuli123.github.io/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</link>
       <pubDate>Thu, 20 Apr 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</guid>
+      <guid>https://liangsuli123.github.io/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;mouse 事件&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot; ./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; &amp;gt; $(function(){ // 用id 选择器监听鼠标 悬停事件 $(&amp;quot;#b2&amp;quot;).mouseover(function(){ $(&amp;quot;.c2&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;gold&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;color&amp;quot;,&amp;quot;blue&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;font-size&amp;quot;,&amp;quot;36px&amp;quot;); }); // 用id选择器来修改元素的样式 $(&amp;quot;#b2&amp;quot;).mouseout(function(){ $(&amp;quot;.c2&amp;quot;).css(&amp;quot;background-color&amp;quot;,&amp;quot;pink&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;color&amp;quot;,&amp;quot;red&amp;quot;); $(&amp;quot;.c2&amp;quot;).css(&amp;quot;font-size&amp;quot;,&amp;quot;18px&amp;quot;); }); }); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;b2&amp;quot; value=&amp;quot;悬停改变颜色&amp;qu</description>
     </item>
     
     <item>
       <title>jquery_ajax 跨域</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</link>
+      <link>https://liangsuli123.github.io/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</link>
       <pubDate>Mon, 10 Apr 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</guid>
+      <guid>https://liangsuli123.github.io/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery_ajax&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&amp;quot;#b2&amp;quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:&#39;GET&#39;, //提交网址 url:&#39;http://192.168.1.238/ajax.php&#39;, //数据格式 dataType:&#39;jsonp&#39;, //具体数据 data:{&#39;phone&#39;:$(&amp;quot;#phone&amp;quot;).val()}, //回调函数 jsonp:&#39;callback&#39;, //通信成</description>
     </item>
     
     <item>
       <title>jquery 的鼠标事件/淡入淡出/绑定</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</link>
+      <link>https://liangsuli123.github.io/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Fri, 10 Mar 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</guid>
+      <guid>https://liangsuli123.github.io/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery的学习&amp;lt;/title&amp;gt; &amp;lt;!-- 引入第三方库用单表签 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; /* jquery 代码的入口，用来等待元素的全部加载*/ // $(function() { // /* 用jQuery选择器来选取某</description>
     </item>
     
     <item>
       <title>jquery_ajax 异步提交</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</link>
+      <link>https://liangsuli123.github.io/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</link>
       <pubDate>Mon, 20 Feb 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</guid>
+      <guid>https://liangsuli123.github.io/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery_ajax&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&amp;quot;#b2&amp;quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:&#39;GET&#39;, //提交网址 url:&#39;http://192.168.1.238/ajax.php&#39;, //数据格式 dataType:&#39;jsonp&#39;, //具体数据 data:{&#39;phone&#39;:$(&amp;quot;#phone&amp;quot;).val()}, //回调函数 jsonp:&#39;callback&#39;, //通信成</description>
     </item>
     
     <item>
       <title>前端javascript</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/%E5%89%8D%E7%AB%AFjavascript/</link>
+      <link>https://liangsuli123.github.io/posts/%E5%89%8D%E7%AB%AFjavascript/</link>
       <pubDate>Sun, 15 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/%E5%89%8D%E7%AB%AFjavascript/</guid>
+      <guid>https://liangsuli123.github.io/posts/%E5%89%8D%E7%AB%AFjavascript/</guid>
       <description>前端 JavaScript javaScript----数据库jquery $(function(){ 执行代码 }); 基本语法：$(selector).action() $(&amp;quot;p&amp;quot;).hide() 隐藏所有&amp;lt;p&amp;gt;元素 $(&amp;quot;#test&amp;quot;).hide() - 隐藏所有 id=&amp;quot;test&amp;quot; 的元素 $(this).hide() - 隐藏当前元素 $(&amp;quot;p.test&amp;quot;).hide() 隐藏所有clas</description>
     </item>
     
     <item>
       <title>前端正则匹配手机号</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/re/</link>
+      <link>https://liangsuli123.github.io/posts/re/</link>
       <pubDate>Sun, 15 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/re/</guid>
+      <guid>https://liangsuli123.github.io/posts/re/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;jquery验证表单&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- 写入jquery的单一入口 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; $(function(){ //验证手机号方法 function isPhoneNo(phone){ //写匹配规则 pattern匹配 var pattern = /^1[3-9]\d{9}$/; //返回</description>
     </item>
     
     <item>
       <title>css动画</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/css%E5%8A%A8%E7%94%BB/</link>
+      <link>https://liangsuli123.github.io/posts/css%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Tue, 10 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/css%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://liangsuli123.github.io/posts/css%E5%8A%A8%E7%94%BB/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;animate 学习&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //jquery单一入口 $ (function(){ // $(&amp;quot;#b2&amp;quot;).click(function(){ // 通过标签选择器来进行动画动作 $(&amp;quot;div&amp;quot;).animate({ left: &#39;400px&#39;, width: &#39;400px&#39;, height:&#39;400px&#39; }); $(&amp;quot;div&amp;quot;).animate({ right: &#39;400px&#39;, width: &#39;400px&#39;, height:&#39;400px&#39; }); }); }); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;quot; width : 200px; height : 200px; font-size: 30px; text-align: center;line-height ;position:absolute;&amp;quot;&amp;gt; 我是你爸爸&amp;lt</description>
     </item>
     
     <item>
       <title>正则表达式</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/%E6%AD%A3%E5%88%99/</link>
+      <link>https://liangsuli123.github.io/posts/%E6%AD%A3%E5%88%99/</link>
       <pubDate>Tue, 10 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/%E6%AD%A3%E5%88%99/</guid>
+      <guid>https://liangsuli123.github.io/posts/%E6%AD%A3%E5%88%99/</guid>
       <description>正达表达式：匹配 过滤 爬取编码： 两个步骤：爬取（ import urllib.request） 数据清洗（import re） import urllib.resquest 导入爬取模块 import re 导入正则表达式 response=urllib.request.urlopen(&amp;quot;http://t.cn/RttEZZa&amp;quot;) html=response.read() html=html.decode(&amp;quot;utf-8</description>
     </item>
     
     <item>
       <title>html 表单</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/html-%E8%A1%A8%E5%8D%95/</link>
+      <link>https://liangsuli123.github.io/posts/html-%E8%A1%A8%E5%8D%95/</link>
       <pubDate>Sun, 08 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/html-%E8%A1%A8%E5%8D%95/</guid>
+      <guid>https://liangsuli123.github.io/posts/html-%E8%A1%A8%E5%8D%95/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;form 表单的学习&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- 表单的标签 提交方式两种： get (默认 长度有限制)和 post（安全性高） --&amp;gt; &amp;lt;form action=&amp;quot;http://192.168.1.238&amp;quot; method=&amp;quot;get&amp;quot;&amp;gt; 用户名：&amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;请</description>
     </item>
     
     <item>
       <title>html table</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/html-table/</link>
+      <link>https://liangsuli123.github.io/posts/html-table/</link>
       <pubDate>Fri, 06 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/html-table/</guid>
+      <guid>https://liangsuli123.github.io/posts/html-table/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;/&amp;gt; &amp;lt;title&amp;gt;表格制作&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;table border=&amp;quot;2&amp;quot; width=&amp;quot;500&amp;quot; align=&amp;quot;center&amp;quot; height=&amp;quot;300&amp;quot; cellspacing=&amp;quot;0&amp;quot; cellpadding=&amp;quot;20&amp;quot;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;12&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;1234&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;12345&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;red&amp;quot; face=&amp;quot;楷体&amp;quot; size=&#39;16&#39;&amp;gt;这个世界好可怕&amp;lt;</description>
     </item>
     
     <item>
       <title>html超文本标记语言</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</link>
+      <link>https://liangsuli123.github.io/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Thu, 05 Jan 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://liangsuli123.github.io/posts/html%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;/&amp;gt; &amp;lt;title align=center&amp;gt;哼哼&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./jquery.moatext-min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./ls.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;center&amp;gt; &amp;lt;h1 class=&amp;quot;moatext_lens&amp;quot;&amp;gt; 愤怒的一天&amp;amp;lt;哈哈&amp;amp;gt;&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;今天</description>
     </item>
     
     <item>
       <title>时间复杂度</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/time/</link>
+      <link>https://liangsuli123.github.io/posts/time/</link>
       <pubDate>Sat, 25 Jun 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/time/</guid>
+      <guid>https://liangsuli123.github.io/posts/time/</guid>
       <description>算法复杂度分为时间复杂度和空间复杂度。 时间复杂度 是指执行算法所需要的计算工作量 空间复杂度 是指执行这个算法所需要的内存空间 算法的时间复杂度反映了算法执行的时间长短，它是度量一个算法好坏的重要指标。 度量一</description>
     </item>
     
     <item>
       <title>二维码生成</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/erweima/</link>
+      <link>https://liangsuli123.github.io/posts/erweima/</link>
       <pubDate>Mon, 30 May 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/erweima/</guid>
+      <guid>https://liangsuli123.github.io/posts/erweima/</guid>
       <description>安装pip install myqr from MyQR import myqr #注意大小写 myqr.run(words=&amp;quot;You&amp;quot;,save_name=&amp;quot;song.png&amp;quot;) from MyQR import myqr myqr.run( words=&amp;quot;You&#39;re the nicest cub on the street&amp;quot;, # 扫描二维码后，显示的内容，或是跳转的链接 version=5, # 设置容错率 level=&#39;H&#39;, # 控制纠错水平，范围是L、M、Q、H，从左到右依次升高 picture=&#39;sun.jpg&#39;, # 图片所在目录，可以是动图</description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/suanfa/</link>
+      <link>https://liangsuli123.github.io/posts/suanfa/</link>
       <pubDate>Thu, 12 May 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/suanfa/</guid>
+      <guid>https://liangsuli123.github.io/posts/suanfa/</guid>
       <description>冒泡排序 冒泡排序(Bubble Sort)也是一种简单直观的排序算法. 它重复地走访过要排序的数列,一次比较两个元素,如果他们的顺序错误就把他们交换过来.走访数列的工作是重复地进行直到没有再需要交换,也就</description>
     </item>
     
     <item>
       <title>python打印💗</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/python1/</link>
+      <link>https://liangsuli123.github.io/posts/python1/</link>
       <pubDate>Mon, 25 Apr 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/python1/</guid>
+      <guid>https://liangsuli123.github.io/posts/python1/</guid>
       <description>#打印爱心 import time sentence = &amp;quot;forever&amp;quot; for char in sentence.split(): allChar = [] for y in range(12, -12, -1): lst = [] lst_con = &#39;&#39; for x in range(-30, 30): formula = ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 if formula &amp;lt;= 0: lst_con += char[(x) % len(char)] else: lst_con += &#39; &#39; lst.append(lst_con) allChar += lst print(&#39;\n&#39;.join(allChar)) time.sleep(1) foreverfo rforeverf everforeverforeve reverforeverforev oreverforeverforeverforeverforeverforever foreverforeverforeverforeverforeverforeverf rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo rforeverforeverforeverforeverforeverforeverfo foreverforeverforeverforeverforeverforeverf oreverforeverforeverforeverforeverforever oreverforeverforeverforeverforeverforever everforeverforeverforeverforeverforev verforeverforeverforeverforeverfore erforeverforeverforeverforeverfor foreverforeverforeverforeverf reverforeverforeverforeve verforeverforeverfore foreverforeverf everforev rfo f</description>
     </item>
     
     <item>
       <title>迭代器和生成器和装饰器</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/die/</link>
+      <link>https://liangsuli123.github.io/posts/die/</link>
       <pubDate>Fri, 15 Apr 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/die/</guid>
+      <guid>https://liangsuli123.github.io/posts/die/</guid>
       <description>迭代器 含有__iter__和__next__方法 (包含__next__方法的可迭代对象就是迭代器) 生成器 包括含有yield这个关键字，生成器也是迭代器，调动next把函数变成迭代器。 应用场景： range/xrange - py</description>
     </item>
     
     <item>
       <title>list推导式</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/list3/</link>
+      <link>https://liangsuli123.github.io/posts/list3/</link>
       <pubDate>Sun, 20 Mar 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/list3/</guid>
+      <guid>https://liangsuli123.github.io/posts/list3/</guid>
       <description>&amp;quot;&amp;quot;&amp;quot; 列表推导式 &amp;quot;&amp;quot;&amp;quot; target=list(map(lambda x:x*x,[1,2,3,4,5,6,7,8,9,10])) print(target) print(map(str,[1,2,3,4])) #输出对象</description>
     </item>
     
     <item>
       <title>list 的操作</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/theme-preview/</link>
+      <link>https://liangsuli123.github.io/posts/theme-preview/</link>
       <pubDate>Fri, 11 Mar 2016 17:49:40 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/theme-preview/</guid>
+      <guid>https://liangsuli123.github.io/posts/theme-preview/</guid>
       <description>&amp;quot;&amp;quot;&amp;quot; 通过自定义的规律命中list元素中的值，若索引没有命中，直接获取该元素，合成一个新的list， 将list元素合成字符串进行反转。 &amp;quot;&amp;quot;&amp;quot; lista = [&amp;quot;aycc&amp;quot;,&amp;quot;kh&amp;quot;,&amp;quot;llc&amp;quot;,&amp;quot;u&amp;quot;,&amp;quot;l&amp;quot;] # 自定义的规律 listb = [1, 0, 2, 0, 3, 0, 4, 0, 5] c = [] lengta = len(lista) for i in range(lengta): length = len(lista[i])</description>
     </item>
     
     <item>
       <title>list2的基本操作</title>
-      <link>https://Struggling-peasants-blog.github.io/posts/list2/</link>
+      <link>https://liangsuli123.github.io/posts/list2/</link>
       <pubDate>Wed, 09 Mar 2016 14:26:00 +0800</pubDate>
       
-      <guid>https://Struggling-peasants-blog.github.io/posts/list2/</guid>
+      <guid>https://liangsuli123.github.io/posts/list2/</guid>
       <description>&amp;quot;&amp;quot;&amp;quot; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] 得出结果 ‘a,b,c’ &amp;quot;&amp;quot;&amp;quot; Alist=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] list =&#39;,&#39;.join(Alist) print(&amp;quot;&#39;&amp;quot;+list+&amp;quot;&#39;&amp;quot;) #&#39;a,b,c&#39; 元素个数 len() 方法返回列表元素个数, 最大值与最小值 max() 方法返回列表元素中的最大值。 min() 方法返回列表元素中的最小值。 list() 方法用于将元组转换为列表。 注：元组与列表是非常类似的，</description>
     </item>
     
