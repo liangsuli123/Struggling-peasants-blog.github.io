@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>hint: Updates were rejected because the remote contains work that you do</title>
+      <title>fatal: unable to access ‘https://github.com/Homebrew/brew/‘: Error in the HTTP2 framing layer</title>
       <link>https://liangsuli123.github.io/posts/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/git/</guid>
-      <description>问题描述 git push的时候出现了下面的问题 hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., ‘git pull …’) before pushing again. hint: See the ‘Note about fast-forwards’ in ‘git push</description>
+      <description>问题描述 解决：fatal: unable to access ‘https://github.com/Homebrew/brew/’: Error in the HTTP2 framing layer fatal: unable to access &#39;https://github.com/homebrew/brew/&#39;: 1 更新了新的系统，安装homebrew的时候老失败。 解决方案： git config --global --unset http.proxy git</description>
     </item>
     
     <item>

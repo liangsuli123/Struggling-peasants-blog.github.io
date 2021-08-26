@@ -6,18 +6,27 @@
     <description>Recent content in Posts on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Aug 2021 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Aug 2021 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>hint: Updates were rejected because the remote contains work that you do</title>
+      <title>django 中间件</title>
+      <link>https://liangsuli123.github.io/posts/%E5%90%8E%E7%AB%AF/</link>
+      <pubDate>Thu, 26 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/%E5%90%8E%E7%AB%AF/</guid>
+      <description>Middlewares 是修改 Django request 或者 response 对象的钩子。中间件顾名思义，是介于request 与response处理之间的一道处理过程，相对比较轻量级并且在全局上改变django的输入与输出。因为改变的是 全局，所以需要谨慎实用，</description>
+    </item>
+    
+    <item>
+      <title>fatal: unable to access ‘https://github.com/Homebrew/brew/‘: Error in the HTTP2 framing layer</title>
       <link>https://liangsuli123.github.io/posts/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/git/</guid>
-      <description>问题描述 git push的时候出现了下面的问题 hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., ‘git pull …’) before pushing again. hint: See the ‘Note about fast-forwards’ in ‘git push</description>
+      <description>问题描述 解决：fatal: unable to access ‘https://github.com/Homebrew/brew/’: Error in the HTTP2 framing layer fatal: unable to access &#39;https://github.com/homebrew/brew/&#39;: 1 更新了新的系统，安装homebrew的时候老失败。 解决方案： git config --global --unset http.proxy git</description>
     </item>
     
     <item>
@@ -27,6 +36,69 @@
       
       <guid>https://liangsuli123.github.io/posts/git/</guid>
       <description>hljs is not defined github 配置 进入刚刚新建的仓库，选择Settings,找到GitHubPages。 Theme Chooser随便选择一个提交就可以了， 之后会给你username.github.io这样的网址就表示实在对了， 因</description>
+    </item>
+    
+    <item>
+      <title>唯有美食不可辜负 </title>
+      <link>https://liangsuli123.github.io/posts/cate/</link>
+      <pubDate>Sat, 10 Apr 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/cate/</guid>
+      <description>我一不高兴就喜欢吃东西，一吃东西就发胖，一发胖我就很不高兴。 这辈子唯一拿得起，放不下的就是——筷子。</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目1，2，3，4组成多少个互不相同且不重复的数字</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Fri, 28 Feb 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>i = 0 for x in range(1,5): for y in range(1,5): for z in range(1,5): if (x!=y) and (y!=z) and (z!=x): i += 1 if i%4: print(&amp;quot;%d%d%d&amp;quot; % (x, y, z), end=&amp;quot; | &amp;quot;) else: print(&amp;quot;%d%d%d&amp;quot; % (x, y, z)) 结果如下： 123 | 124 | 132 | 134 142 | 143 | 213 | 214 231 | 234 | 241 | 243 312 | 314 | 321 | 324 341 | 342 | 412 | 413 421 | 423 | 431 | 432</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目实现“合并两个有序链表”的两种方法</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Tue, 28 Jan 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>合并两个有序链表，并返回一个新的链表。新链表由前两个链表拼接而成 Input: 1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 Output: 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 1：将l2链表中的结点一个一个的单独插入l1链表中 class Solution(object): def mergeTwoLists(self, l1, l2): &amp;quot;&amp;quot;&amp;quot; :type l1: ListNode :type l2: ListNode :rtype: ListNode &amp;quot;&amp;quot;&amp;quot; if not l1 and not l2: #l1和l2链表均不存在 return None if not</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目最大字符串长度</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Sat, 25 Jan 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>最大字符串长度 给定一个字符串，找出不含有重复字符的最长子串的长度。 示例： 给定 &amp;quot;abcabcbb&amp;quot; ，没有重复字符的最长子串是 &amp;quot;abc&amp;quot; ，那么长度就是3。 给定 &amp;quot;bbbbb&amp;quot; ，最长的子串就是 &amp;quot;b&amp;quot; ，长度是1。 给定 &amp;quot;himhbgghc&amp;quot; ，最长子串是 &amp;quot;imhbg&amp;quot; ，长度是5。请注意答</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目最长回文子串</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Sat, 25 Jan 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>最长回文子串 回文是指正着读和倒着读，结果一些样，比如abcba或abba。 题目是要在一个字符串中要到最长的回文子串。 最容易想到的就是暴力破解，求出每一个子串，之后判断是不是回文，找到最长的那个。 求每一</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目中位数</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Thu, 23 Jan 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>中位数是一个可将数值集合划分为相等的上下两部分的一个数值。 如果列表数据的个数是奇数，则列表中间那个数据就是列表数据的中位数； 如果列表数据的个数是偶数，则列表中间那2个数据的算术平均值就是列表数据的中位</description>
+    </item>
+    
+    <item>
+      <title>leetcode题目两数和</title>
+      <link>https://liangsuli123.github.io/posts/leetcode/</link>
+      <pubDate>Wed, 22 Jan 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/leetcode/</guid>
+      <description>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 这道题目比较容易</description>
     </item>
     
     <item>

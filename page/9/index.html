@@ -57,7 +57,7 @@
       </li>
       
       <li>
-        <a href="/about/">关于我</a>
+        <a href="">关于我</a>
       </li>
       
     </ul>
@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d4/'> 数据库-消息队列 &amp; 缓存系统 </a></h2>
+    <h2><a href='/posts/a1/'>在阿里云Centos7.6中部署nginx1.16&#43;uwsgi2.0.18&#43;Django2.0.4</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>RabbitMQ 1.1 RabbitMq与Redis队列对比 返回顶部 1、RabbitMQ与Redis作用 1. RabbitMQ: RabbitMQ是一个可以在不同程序间共享数据的代理，是实现AMQP（高级消息队列协议）的消息中间件的一种 2. Redis: 是......</p>
+      <p>一直以来想写一篇完整的在阿里云服务器上部署Django服务结合uwsgi，并且通过nginx做反向代理。因为网上的攻略鱼龙混杂，加上技术不断更新，一些年代久远的文章很容易让人在部署的过程中掉坑里，无法......</p>
     </div>
   </div>
   
@@ -127,7 +127,38 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.12.08</span>
+          <span class="date">2019.01.17</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/d10/'>  Django &#43; Uwsgi &#43; Nginx 的生产环境部署  </a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>1、Web协议介绍 Web协议出现顺序： CGI -&gt; FCGI -&gt; WSGI -&gt; uwsgi 1. CGI： 最早的协议 2. FCGI： 比CGI快 3. WSGI： Python专用的协议 4. uwsgi： 比FCGI和WSGI都快，是uWSGI项目自有的协议，主要......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2018.12.30</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d3/'> 通讯录管理 </a></h2>
+    <h2><a href='/posts/d10/'>  Django中的缓存  </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1.1 概述 &amp; 开启API接口同步 返回顶部 官方文档：http://work.weixin.qq.com/api/doc#10016 1.2 成员管理 返回顶部 1、创建成员 官方文档：http://work.weixin.......</p>
+      <p>1、Django缓存作用 1. 由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显 2. 缓存将一个某个views的返回值保存至内存或者memcache中，5分......</p>
     </div>
   </div>
   
@@ -158,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.12.03</span>
+          <span class="date">2018.12.29</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d2/'> 消息推送 </a></h2>
+    <h2><a href='/posts/d9/'> Django序列化操作 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1.1 概述 返回顶部 官方文档：http://work.weixin.qq.com/api/doc#12739 1.2 发送应用消息 返回顶部 参考文档：http://work.weixin.qq.com/api/doc......</p>
+      <p>1、为什么需要需要序列化操作 1. python中很多格式的数据类型不能通过简单的json直接序列化转换成字符串格式传递到前端 2. 比如：form提交出现错误，返回的是Django的errors.dict对象，......</p>
     </div>
   </div>
   
@@ -189,38 +220,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.29</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/d1/'> 企业微信API开发前准备 </a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>1.1 术语介绍 返回顶部 参考文档：http://work.weixin.qq.com/api/doc#10013 企业微信管理后台： https://work.weixin.qq.com/wework_admin/frame 1、corpid：ww2f9a1a85f1806981 每个企业都拥有唯一的......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.25</span>
+          <span class="date">2018.12.28</span>
         </span>
         
         <span class="field tags">

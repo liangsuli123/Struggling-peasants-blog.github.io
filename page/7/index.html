@@ -57,7 +57,7 @@
       </li>
       
       <li>
-        <a href="/about/">关于我</a>
+        <a href="">关于我</a>
       </li>
       
     </ul>
@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a1/'>在阿里云Centos7.6中部署nginx1.16&#43;uwsgi2.0.18&#43;Django2.0.4</a></h2>
+    <h2><a href='/posts/a8/'>在阿里云服务器上使用Nginx部署https协议的网站</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>一直以来想写一篇完整的在阿里云服务器上部署Django服务结合uwsgi，并且通过nginx做反向代理。因为网上的攻略鱼龙混杂，加上技术不断更新，一些年代久远的文章很容易让人在部署的过程中掉坑里，无法......</p>
+      <p>之前写过一篇文章是在阿里云服务器上用Apache切换https协议：将博客迁移阿里云并且切换成https解析的过程 这一次，换成使用Nginx来部署，相比之下，比Apache的配置要简单一些 如何申请SS......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.01.17</span>
+          <span class="date">2019.02.17</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d10/'>  Django &#43; Uwsgi &#43; Nginx 的生产环境部署  </a></h2>
+    <h2><a href='/posts/fastdfs2/'>fastdfs 中client.conf 文件</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、Web协议介绍 Web协议出现顺序： CGI -&gt; FCGI -&gt; WSGI -&gt; uwsgi 1. CGI： 最早的协议 2. FCGI： 比CGI快 3. WSGI： Python专用的协议 4. uwsgi： 比FCGI和WSGI都快，是uWSGI项目自有的协议，主要......</p>
+      <p>fastdfs 中client.conf 文件 # connect timeout in seconds # default value is 30s connect_timeout=30 连接超时 # network timeout in seconds # default value is 30s network_timeout=60 网络超时 # the base path to store log files base_path=/home/yuqing/fastdfs 日志文件目录 # tracker_server can ocur more than once, and tracker_server format is # &quot;host:port&quot;, host can be hostname or ip address tracker_server=10.0.0.42:22122 tracker服务器地址 #standard log level as syslog, case insensitive,......</p>
     </div>
   </div>
   
@@ -158,13 +158,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.12.30</span>
+          <span class="date">2019.02.15</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          <a href="https://liangsuli123.github.io/tags/fastdfs/">fastdfs</a>
           
         </span>
         
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d10/'>  Django中的缓存  </a></h2>
+    <h2><a href='/posts/a7/'>python3.7.3操作FastDfs来进行文件操作</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、Django缓存作用 1. 由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显 2. 缓存将一个某个views的返回值保存至内存或者memcache中，5分......</p>
+      <p>在之前的一篇文章中:利用Docker来搭建分布式文件系统FastDfs，我们已经搭建好了FastDfs分布式文件系统，并且已经可以通过命令进行上传操作，那么如何使用python来上传文件呢？ 很简单，还......</p>
     </div>
   </div>
   
@@ -189,13 +189,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.12.29</span>
+          <span class="date">2019.02.15</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
           
         </span>
         
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/d9/'> Django序列化操作 </a></h2>
+    <h2><a href='/posts/fastdfs/'>FastDFS客户端与自定义文件存储系统</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、为什么需要需要序列化操作 1. python中很多格式的数据类型不能通过简单的json直接序列化转换成字符串格式传递到前端 2. 比如：form提交出现错误，返回的是Django的errors.dict对象，......</p>
+      <p>FastDFS客户端与自定义文件存储系统 &lt;1&gt;安装 安装提供给大家的fdfs_client-py-master.zip到虚拟环境中 pip install fdfs_client-py-master.zip pip install mutagen pip install requests &lt;2&gt;使用 使用FastDFS客......</p>
     </div>
   </div>
   
@@ -220,13 +220,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.12.28</span>
+          <span class="date">2019.02.14</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          <a href="https://liangsuli123.github.io/tags/fastdfs/">fastdfs</a>
           
         </span>
         
