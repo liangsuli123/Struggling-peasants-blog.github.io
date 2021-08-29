@@ -57,7 +57,7 @@
       </li>
       
       <li>
-        <a href="">关于我</a>
+        <a href="/about/">关于我</a>
       </li>
       
     </ul>
@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/sql/'>数据库索引</a></h2>
+    <h2><a href='/posts/leetcode/'>leetcode题目两数和</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>索引 主键索引，外键索引，联合索引，唯一索引 索引固然可 以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率 1. 当数据多且字段值有相同的值得时候用普通索引。 2. 当字段多且字段值没有重复的时候用唯一索引。 3. 当有多个......</p>
+      <p>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1] 这道题目比较容易......</p>
     </div>
   </div>
   
@@ -127,15 +127,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.04.02</span>
+          <span class="date">2020.01.22</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
-          
-          <a href="https://liangsuli123.github.io/tags/nosql/">nosql</a>
+          <a href="https://liangsuli123.github.io/tags/leetcode/">leetcode</a>
           
         </span>
         
@@ -146,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/english-preview/'>数据库优化</a></h2>
+    <h2><a href='/posts/redis_error/'>redis安装成功后get: command not found</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1.sql 语句的优化 1、创建数据表时把固定长度的放在前面（） 2、将固定数据放入内存： 例如：choice字段 （django中有用到，数字1、2、3…… 对应相应内容） 3、char 和 varchar 的区别(char可变, varc......</p>
+      <p>redis安装成功后get: command not found 安装redis后客户端无法使用，即redis-cli执行后报找不到的错误。 这主要是安装redis的时候没有把客户端装上，在StackOverFlow上找到了一种只安装......</p>
     </div>
   </div>
   
@@ -160,15 +158,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.04.01</span>
+          <span class="date">2019.05.20</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
-          
-          <a href="https://liangsuli123.github.io/tags/nosql/">nosql</a>
+          <a href="https://liangsuli123.github.io/tags/error/">error</a>
           
         </span>
         
@@ -179,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a10/'>在Centos下使用Siege对Django服务进行压力测试</a></h2>
+    <h2><a href='/posts/jieba/'>jieba分词</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>Siege是linux下的一个web系统的压力测试工具，支持多链接，支持get和post请求，可以对web系统进行多并发下持续请求的压力测试。今天我们就使用Siege来对Django进行一次压力测试，......</p>
+      <p>使用 wordcloud 构建词云图 from wordcloud import WordCloud from matplotlib import pyplot as plt from PIL import Image import numpy as np 1.准备数据 content = open('豆瓣舌尖中国.txt','rb').read() result = jieba.lcut(content,cut_all=False) #精确模式 content = ' '.join(result) #将list转化为空格分开的str 2.初始化词云......</p>
     </div>
   </div>
   
@@ -193,13 +189,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.02.22</span>
+          <span class="date">2019.05.03</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/%E5%9F%BA%E7%A1%80/">基础</a>
           
         </span>
         
@@ -210,12 +206,16 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a9/'>在阿里云Centos7.6上利用docker搭建Jenkins来自动化部署Django项目</a></h2>
+    <h2><a href='/posts/chinese-preview/'>React、Vue、Angular</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>一般情况下，将一个项目部署到生产环境的流程如下： 需求分析—原型设计—开发代码—内网部署-提交测试—确认上线—备份数据—外网更新-最终测试，如果发现外网部署的代码有异常，需要及时回滚。 整个过程相当复杂而......</p>
+      <p><blockquote>
+<p>当前，三大主流前端框架分别是React、Vue、Angular这三个框架。</p>
+</blockquote>
+
+<p>React</p>......</p>
     </div>
   </div>
   
@@ -224,13 +224,15 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.02.19</span>
+          <span class="date">2019.04.11</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+          
+          <a href="https://liangsuli123.github.io/tags/%E4%BD%93%E7%B3%BB/">体系</a>
           
         </span>
         

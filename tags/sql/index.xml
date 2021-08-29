@@ -6,10 +6,28 @@
     <description>Recent content in sql on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Apr 2019 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Aug 2021 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql常见的三种数据库引擎</title>
+      <link>https://liangsuli123.github.io/posts/mysql/sql/</link>
+      <pubDate>Sun, 01 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/mysql/sql/</guid>
+      <description>MySQL中的数据用各种不同的技术存储在文件（或内存）中，这些技术中的每一种技术都使用不同的存储机制， 索引技巧，锁定水平并且最终提供广泛的不同功能和能力。在MySQL中将这些不同的技术及配套的相关功能</description>
+    </item>
+    
+    <item>
+      <title>MySql数据库备份的几种方式</title>
+      <link>https://liangsuli123.github.io/posts/mysql/sql/</link>
+      <pubDate>Fri, 02 Jul 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/mysql/sql/</guid>
+      <description>mysqldump工具备份 备份整个数据库 $&amp;gt; mysqldump -u root -h host -p dbname &amp;gt; backdb.sql 备份数据库中的某个表 $&amp;gt; mysqldump -u root -h host -p dbname tbname1, tbname2 &amp;gt; backdb.sql 备份多个数据库 $&amp;gt; mysqldump -u root -h host -p --databases dbname1, dbname2 &amp;gt; backdb.sql 备份系统中所有数据库 $&amp;gt; mysqldump -u root -h host -p --all-databases &amp;gt; backdb.sql 直接复制整个数据库</description>
+    </item>
     
     <item>
       <title>数据库分表分库</title>

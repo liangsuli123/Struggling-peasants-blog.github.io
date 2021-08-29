@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、VueJS 浏览器的兼容性 2、如何获得当前点击的元素（整体） methods: { showDeleteIcon:function($event){ console.log(event.currentTarget); } } 3、如何获得当前点击的元素（个体） showDeleteIcon:function($event){ console.log(event.target); } 4、获取dom元素样式 &amp;lt;template&amp;gt; &amp;lt;div style=&amp;quot;display: block;&amp;quot; ref=&amp;quot;abc&amp;quot;&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { mounted () { console.log(this.$refs.abc.style.cssText) } } &amp;lt;/script&amp;gt; 5、在for渲染的li"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue6/"/>
+
+  
+
+  <title>前端框架Vue（6）——Vue 介绍和相关操作 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue6/'>前端框架Vue（6）——Vue 介绍和相关操作</a></h2>
+          <span class="date">2020.05.06</span>
+        </div>
+        <div class="post_content markdown"><pre><code>1、VueJS 浏览器的兼容性
+</code></pre>
+
+<p><img src="http://localhost:1313/img/vue1.png" alt="" /></p>
+
+<pre><code>
+2、如何获得当前点击的元素（整体）
+    methods: {
+                showDeleteIcon:function($event){
+                    console.log(event.currentTarget);
+                }
+            }
+
+3、如何获得当前点击的元素（个体）
+    showDeleteIcon:function($event){
+                    console.log(event.target);
+                }
+
+
+4、获取dom元素样式
+    &lt;template&gt;
+      &lt;div style=&quot;display: block;&quot; ref=&quot;abc&quot;&gt;
+        &lt;!-- ... --&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    
+    &lt;script&gt;
+    export default {
+      mounted () {
+        console.log(this.$refs.abc.style.cssText)
+      }
+    }
+    &lt;/script&gt;
+        
+
+5、在for渲染的list中如何在数组对象中新增一项
+    addNewList:function(){
+                    this.items.push({
+                        &quot;name&quot;:&quot;案件新增&quot;
+                    })
+                }
+
+
+6、如何引入jQuery
+    npm install jquery --save
+    
+    alias: {
+          'vue$': 'vue/dist/vue.esm.js',
+          // 如果使用NPM安装的jQuery
+          'jquery': 'jquery' 
+        }
+    
+     // 增加一个plugins
+      plugins: [
+          new webpack.ProvidePlugin({
+              $: &quot;jquery&quot;,
+              jQuery: &quot;jquery&quot;
+          })
+       ],
+    
+    import $ from 'jquery'
+
+
+7、为什么 vue 不支持 IE9 以下。
+  VueJS 则使用 ES5 提供的 Object.defineProperty() 方法，监控对数据的操作，从而可以自动触发数据同步。
+  并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的视图，而不是对所有的数据都执行一次检测。
+
+  数据与视图的绑定与同步，最终体现在对数据的读写处理过程中，也就是 Object.defineProperty() 定义的数
+  据 set、get 函数中。
+
+  ES5 提供的 Object.defineProperty()，这也是为什么 vue 不支持 IE9 以下。
+
+
+8、vue 双向数据绑定
+  MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据
+  变化，通过Compile来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数
+  据变化 -&gt; 视图更新；视图交互变化(input) -&gt; 数据model变更的双向绑定效果。
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

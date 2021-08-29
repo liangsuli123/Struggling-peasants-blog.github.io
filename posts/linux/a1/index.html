@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Linux大部分操作是通过命令实现的，并不像windows那么直观。 linux查看硬件信息也是需要通过linux查看硬件信息命令查询的 系统 # uname -a # 查看内核/操作系统/CPU信息 # head -n 1 /etc/issue # 查看操作系统"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/linux/a1/"/>
+
+  
+
+  <title>linux查看硬件信息命令 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/linux/a1/'>linux查看硬件信息命令</a></h2>
+          <span class="date">2021.07.20</span>
+        </div>
+        <div class="post_content markdown"><p>Linux大部分操作是通过命令实现的，并不像windows那么直观。</p>
+
+<p>linux查看硬件信息也是需要通过linux查看硬件信息命令查询的</p>
+
+<p>系统</p>
+
+<pre><code># uname -a # 查看内核/操作系统/CPU信息
+
+# head -n 1 /etc/issue # 查看操作系统版本
+
+# cat /proc/cpuinfo # 查看CPU信息
+
+# hostname # 查看计算机名
+
+# lspci -tv # 列出所有PCI设备
+
+# lsusb -tv # 列出所有USB设备
+
+# lsmod # 列出加载的内核模块
+
+# env # 查看环境变量
+</code></pre>
+
+<p>资源</p>
+
+<pre><code># free -m # 查看内存使用量和交换区使用量
+
+# df -h # 查看各分区使用情况
+
+# du -sh &lt;目录名&gt; # 查看指定目录的大小
+
+# grep MemTotal /proc/meminfo # 查看内存总量
+
+# grep MemFree /proc/meminfo # 查看空闲内存量
+
+# uptime # 查看系统运行时间、用户数、负载
+
+# cat /proc/loadavg # 查看系统负载
+</code></pre>
+
+<p>磁盘和分区</p>
+
+<pre><code># mount | column -t # 查看挂接的分区状态
+
+# fdisk -l # 查看所有分区
+
+# swapon -s # 查看所有交换分区
+
+# hdparm -i /dev/hda # 查看磁盘参数(仅适用于IDE设备)
+
+# dmesg | grep IDE # 查看启动时IDE设备检测状况
+</code></pre>
+
+<p>网络</p>
+
+<pre><code># ifconfig # 查看所有网络接口的属性
+
+# iptables -L # 查看防火墙设置
+
+# route -n # 查看路由表
+
+# netstat -lntp # 查看所有监听端口
+
+# netstat -antp # 查看所有已经建立的连接
+
+# netstat -s # 查看网络统计信息
+</code></pre>
+
+<p>进程</p>
+
+<pre><code># ps -ef # 查看所有进程
+
+# top # 实时显示进程状态
+</code></pre>
+
+<p>用户</p>
+
+<pre><code># w # 查看活动用户
+
+# id &lt;用户名&gt; # 查看指定用户信息
+
+# last # 查看用户登录日志
+
+# cut -d: -f1 /etc/passwd # 查看系统所有用户
+
+# cut -d: -f1 /etc/group # 查看系统所有组
+
+# crontab -l # 查看当前用户的计划任务
+</code></pre>
+
+<p>服务</p>
+
+<pre><code># chkconfig --list # 列出所有系统服务
+
+# chkconfig --list | grep on # 列出所有启动的系统服务
+</code></pre>
+
+<p>程序</p>
+
+<pre><code># rpm -qa # 查看所有安装的包
+</code></pre>
+
+<p>其他常用命令整理如下：
+    查看主板的：dmidecode | grep -i 'serial number'</p>
+
+<pre><code>用硬件检测程序kuduz探测新硬件：service kudzu start ( or restart)
+
+查看CPU信息：cat /proc/cpuinfo [dmesg | grep -i 'cpu'][dmidecode -t processor]
+
+查看内存信息：cat /proc/meminfo [free -m][vmstat]
+
+查看板卡信息：cat /proc/pci
+
+查看显卡/声卡信息：lspci |grep -i 'VGA'[dmesg | grep -i 'VGA']
+
+查看网卡信息：dmesg | grep -i 'eth'[cat /etc/sysconfig/hwconf 
+| grep -i eth][lspci | grep -i 'eth']
+
+查看PCI信息：lspci (相比cat /proc/pci更直观)
+
+查看USB设备：cat /proc/bus/usb/devices
+
+查看键盘和鼠标：cat /proc/bus/input/devices
+
+查看系统硬盘信息和使用情况：fdisk disk – l df
+
+查看各设备的中断请求(IRQ)：cat /proc/interrupts
+
+查看系统体系结构：uname -a
+
+查看及启动系统的32位或64位内核模式：isalist –v [isainfo –v][isainfo –b]
+
+查看硬件信息，包括bios、cpu、内存等信息：dmidecode
+
+测定当前的显示器刷新频率：/usr/sbin/ffbconfig –rev ?
+
+查看系统配置：/usr/platform/sun4u/sbin/prtdiag –v
+
+查看当前系统中已经应用的补丁：showrev –p
+
+显示当前的运行级别：who –rH
+
+查看当前的bind版本信息：nslookup –class=chaos –q=txt version.bind
+
+查看硬件信息：dmesg | more
+
+显示外设信息， 如usb，网卡等信息：lspci
+
+查看已加载的驱动：lsnod lshw
+
+查看当前处理器的类型和速度(主频)：psrinfo -v
+
+打印当前的OBP版本号：prtconf -v
+
+查看硬盘物理信息(vendor， RPM， Capacity)：iostat –E
+
+查看磁盘的几何参数和分区信息：prtvtoc /dev/rdsk/c0t0d0s
+
+显示已经使用和未使用的i-node数目：
+
+df –F ufs –o i
+
+isalist –v
+</code></pre>
+
+<p>对于“/proc”中文件可使用文件查看命令浏览其内容，文件中包含系统特定信息：</p>
+
+<pre><code>主机CPU信息：Cpuinfo
+
+主机DMA通道信息：Dma
+
+文件系统信息：Filesystems
+
+主机中断信息：Interrupts
+
+主机I/O端口号信息：Ioprots
+
+主机内存信息：Meninfo
+
+Linux内存版本信息：Version
+</code></pre>
+
+<p>备注： proc – process information pseudo-filesystem 进程信息伪装文件系统</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+                
+                <a href="https://liangsuli123.github.io/tags/linux/">linux</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
+��时按住z键）了！
+
+CTRL-z 的用途就是将当前进程挂起（Suspend），然后我们就可以用jobs命令来查询它的作业号，再用bg jobspec
+来将它放入后台并继续运行。需要注意的是，如果挂起会影响当前进程的运行结果，请慎用此方法。
+
+disown 示例1（如果提交命令时已经用“&amp;”将命令放入后台运行，则可以直接使用“disown”）
+
+[root@pvcent107 build]# cp -r testLargeFile largeFile &amp;
+[1] 4825
+[root@pvcent107 build]# jobs
+[1]+  Running                 cp -i -r testLargeFile largeFile &amp;
+[root@pvcent107 build]# disown -h %1
+[root@pvcent107 build]# ps -ef |grep largeFile
+root      4825   968  1 09:46 pts/4    00:00:00 cp -i -r testLargeFile largeFile
+root      4853   968  0 09:46 pts/4    00:00:00 grep largeFile
+[root@pvcent107 build]# logout
+
+disown 示例2（如果提交命令时未使用“&amp;”将命令放入后台运行，可使用 CTRL-z 和“bg”将其放入后台，再使用“disown”）
+
+[root@pvcent107 build]# cp -r testLargeFile largeFile2
+
+[1]+  Stopped                 cp -i -r testLargeFile largeFile2
+[root@pvcent107 build]# bg %1
+[1]+ cp -i -r testLargeFile largeFile2 &amp;
+[root@pvcent107 build]# jobs
+[1]+  Running                 cp -i -r testLargeFile largeFile2 &amp;
+[root@pvcent107 build]# disown -h %1
+[root@pvcent107 build]# ps -ef |grep largeFile2
+root      5790  5577  1 10:04 pts/3    00:00:00 cp -i -r testLargeFile largeFile2
+root      5824  5577  0 10:05 pts/3    00:00:00 grep largeFile2
+[root@pvcent107 build]#
+
+灵活运用 CTRL-z
+在我们的日常工作中，我们可以用 CTRL-z 来将当前进程挂起到后台暂停运行，执行一些别的操作，然后再用 fg 来将挂起
+的进程重新放回前台（也可用 bg 来将挂起的进程放在后台）继续运行。这样我们就可以在一个终端内灵活切换运行多个任务，
+这一点在调试代码时尤为有用。因为将代码编辑器挂起到后台再重新放回时，光标定位仍然停留在上次挂起时的位置，避免了重
+新定位的麻烦。
+</code></pre>
+
+<p>第三种  screen</p>
+
+<pre><code>场景：
+
+我们已经知道了如何让进程免受 HUP 信号的影响，但是如果有大量这种命令需要在稳定的后台里运行，如何避免对每条命令
+都做这样的操作呢？
+
+解决方法：
+
+此时最方便的方法就是 screen 了。简单的说，screen 提供了 ANSI/VT100 的终端模拟器，使它能够在一个真实终端
+下运行多个全屏的伪终端。screen 的参数很多，具有很强大的功能，我们在此仅介绍其常用功能以及简要分析一下为什么使用
+ screen 能够避免 HUP 信号的影响。我们先看一下 screen 的帮助信息：
+
+SCREEN(1)                                                           SCREEN(1)
+
+NAME
+       screen - screen manager with VT100/ANSI terminal emulation
+
+SYNOPSIS
+       screen [ -options ] [ cmd [ args ] ]
+       screen -r [[pid.]tty[.host]]
+       screen -r sessionowner/[[pid.]tty[.host]]
+
+DESCRIPTION
+       Screen  is  a  full-screen  window manager that multiplexes a physical
+       terminal between several  processes  (typically  interactive  shells).
+       Each  virtual  terminal provides the functions of a DEC VT100 terminal
+       and, in addition, several control functions from the  ISO  6429  (ECMA
+       48,  ANSI  X3.64)  and ISO 2022 standards (e.g. insert/delete line and
+       support for multiple character sets).  There is a  scrollback  history
+       buffer  for  each virtual terminal and a copy-and-paste mechanism that
+       allows moving text regions between windows.
+
+使用 screen 很方便，有以下几个常用选项：
+
+用screen -dmS session name来建立一个处于断开模式下的会话（并指定其会话名）。
+用screen -list 来列出所有会话。
+用screen -r session name来重新连接指定会话。
+用快捷键CTRL-a d 来暂时断开当前会话。
+screen 示例
+
+[root@pvcent107 ~]# screen -dmS Urumchi
+[root@pvcent107 ~]# screen -list
+There is a screen on:
+        12842.Urumchi   (Detached)
+1 Socket in /tmp/screens/S-root.
+
+[root@pvcent107 ~]# screen -r Urumchi
+
+当我们用“-r”连接到 screen 会话后，我们就可以在这个伪终端里面为所欲为，再也不用担心 HUP 信号会对我们的进程造成影响，
+也不用给每个命令前都加上“nohup”或者“setsid”了。这是为什么呢？让我来看一下下面两个例子吧。
+
+未使用 screen 时新进程的进程树
+[root@pvcent107 ~]# ping www.google.com &amp;
+[1] 9499
+[root@pvcent107 ~]# pstree -H 9499
+init─┬─Xvnc
+     ├─acpid
+     ├─atd
+     ├─2*[sendmail] 
+     ├─sshd─┬─sshd───bash───pstree
+     │       └─sshd───bash───ping
+
+我们可以看出，未使用 screen 时我们所处的 bash 是 sshd 的子进程，当 ssh 断开连接时，HUP 信号自然会影响到它下面的
+所有子进程（包括我们新建立的 ping 进程）。
+
+使用了 screen 后新进程的进程树
+[root@pvcent107 ~]# screen -r Urumchi
+[root@pvcent107 ~]# ping www.ibm.com &amp;
+[1] 9488
+[root@pvcent107 ~]# pstree -H 9488
+init─┬─Xvnc
+     ├─acpid
+     ├─atd
+     ├─screen───bash───ping
+     ├─2*[sendmail]
+
+而使用了 screen 后就不同了，此时 bash 是 screen 的子进程，而 screen 是 init（PID为1）的子进程。那么当 ssh 
+断开连接时，HUP 信号自然不会影响到 screen 下面的子进程了。
+</code></pre>
+
+<p>总结
+现在几种方法已经介绍完毕，我们可以根据不同的场景来选择不同的方案。nohup/setsid 无疑是临时需要时最方便的方法，
+disown 能帮助我们来事后补救当前已经在运行了的作业，而 screen 则是在大批量操作时不二的选择了。</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+                
+                <a href="https://liangsuli123.github.io/tags/linux/">linux</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

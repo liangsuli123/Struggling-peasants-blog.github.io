@@ -13,19 +13,28 @@
     
     <item>
       <title>fatal: unable to access ‘https://github.com/Homebrew/brew/‘: Error in the HTTP2 framing layer</title>
-      <link>https://liangsuli123.github.io/posts/git/</link>
+      <link>https://liangsuli123.github.io/posts/git/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/git/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/git/</guid>
       <description>问题描述 解决：fatal: unable to access ‘https://github.com/Homebrew/brew/’: Error in the HTTP2 framing layer fatal: unable to access &#39;https://github.com/homebrew/brew/&#39;: 1 更新了新的系统，安装homebrew的时候老失败。 解决方案： git config --global --unset http.proxy git</description>
     </item>
     
     <item>
-      <title>基于搭建Hugo博客后出现样式失效问题</title>
-      <link>https://liangsuli123.github.io/posts/git/</link>
-      <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
+      <title> git分支管理 </title>
+      <link>https://liangsuli123.github.io/posts/git/c9/</link>
+      <pubDate>Sat, 03 Nov 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/git/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/c9/</guid>
+      <description>参考博客：https://www.cnblogs.com/gzpblog/p/5463031.html 1、git常用命令 echo &amp;quot;#Description&amp;quot; &amp;gt; README.md， 添加一个文件 git status， 查看当前状态，发现有未跟踪</description>
+    </item>
+    
+    <item>
+      <title>基于搭建Hugo博客后出现样式失效问题</title>
+      <link>https://liangsuli123.github.io/posts/git/git/</link>
+      <pubDate>Tue, 11 Aug 2015 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/git/git/</guid>
       <description>hljs is not defined github 配置 进入刚刚新建的仓库，选择Settings,找到GitHubPages。 Theme Chooser随便选择一个提交就可以了， 之后会给你username.github.io这样的网址就表示实在对了， 因</description>
     </item>
     

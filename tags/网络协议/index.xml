@@ -112,10 +112,10 @@
     
     <item>
       <title> 云监控 </title>
-      <link>https://liangsuli123.github.io/posts/c12/</link>
+      <link>https://liangsuli123.github.io/posts/git/c12/</link>
       <pubDate>Tue, 20 Nov 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/c12/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/c12/</guid>
       <description>1、云监控相关接口 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.profile.client_profile import ClientProfile from tencentcloud.common.profile.http_profile import HttpProfile from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException from tencentcloud.monitor.v20180724 import monitor_client, models from day04.settings import secretKey,secretId # 导入腾讯云账户secretId，secretKey值 # 实例化一个认证对象，入参需要传入腾讯云账户secre</description>
     </item>
     
@@ -129,38 +129,29 @@
     </item>
     
     <item>
-      <title> git常见报错解决方法 </title>
-      <link>https://liangsuli123.github.io/posts/c10/</link>
-      <pubDate>Wed, 07 Nov 2018 14:26:00 +0800</pubDate>
-      
-      <guid>https://liangsuli123.github.io/posts/c10/</guid>
-      <description>1、warning: LF will be replaced by CRLF in .idea/workspace.xml. 参考博客：https://www.cnblogs.com/helloHKTK/p/7351946.html git config --global core.autocrlf true 1.2 phabricator使用arc提交代码步骤 1</description>
-    </item>
-    
-    <item>
       <title> git分支管理 </title>
-      <link>https://liangsuli123.github.io/posts/c9/</link>
+      <link>https://liangsuli123.github.io/posts/git/c9/</link>
       <pubDate>Sat, 03 Nov 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/c9/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/c9/</guid>
       <description>参考博客：https://www.cnblogs.com/gzpblog/p/5463031.html 1、git常用命令 echo &amp;quot;#Description&amp;quot; &amp;gt; README.md， 添加一个文件 git status， 查看当前状态，发现有未跟踪</description>
     </item>
     
     <item>
       <title> Git基本常用命令 </title>
-      <link>https://liangsuli123.github.io/posts/c8/</link>
+      <link>https://liangsuli123.github.io/posts/git/c8/</link>
       <pubDate>Sun, 28 Oct 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/c8/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/c8/</guid>
       <description>mkdir： XX (创建一个空目录 XX指目录名) pwd： 显示当前目录的路径。 git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。 git add XX 把xx文件添加到暂存区去。 git commit –m “XX” 提交文件 –m 后面</description>
     </item>
     
     <item>
       <title>  git &amp; github </title>
-      <link>https://liangsuli123.github.io/posts/c7/</link>
+      <link>https://liangsuli123.github.io/posts/git/c7/</link>
       <pubDate>Wed, 24 Oct 2018 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/c7/</guid>
+      <guid>https://liangsuli123.github.io/posts/git/c7/</guid>
       <description>1. 为什么要使用版本控制 1、举例说明： 1）假设你在的公司要上线一个新功能，你们开发团队为实现这个新功能，写了大约5000行代码，上线没2 天，就发现这个功能用户并不喜欢，你老板让你去掉这个功能，你怎么办？</description>
     </item>
     
@@ -180,15 +171,6 @@
       
       <guid>https://liangsuli123.github.io/posts/c5/</guid>
       <description>Docker Compose 1、Docker Compose 介绍 1. Compose是一个定义和管理多容器的工具，使用Python语言编写。 2. 使用Compose配置文件描述多个容器应用的架构，比如使用什么镜像、数据卷、网络、映射端口等； 3. 然后</description>
-    </item>
-    
-    <item>
-      <title> Dockerfile: 构建nginx项目镜像 </title>
-      <link>https://liangsuli123.github.io/posts/c4/</link>
-      <pubDate>Sun, 14 Oct 2018 14:26:00 +0800</pubDate>
-      
-      <guid>https://liangsuli123.github.io/posts/c4/</guid>
-      <description>1、使用 Dockerfile-nginx 文件构建一个基础镜像 nginx:v1 复制代码 FROM centos:7 MAINTAINER www.ctnrs.com RUN yum install -y gcc gcc-c++ make \ openssl-devel pcre-devel gd-devel \ iproute net-tools telnet wget curl &amp;amp;&amp;amp; \ yum clean all &amp;amp;&amp;amp; \ rm -rf /var/cache/yum/* RUN wget http://nginx.org/download/nginx-1.15.5.tar.gz &amp;amp;&amp;amp; \ tar zxf nginx-1.15.5.tar.gz &amp;amp;&amp;amp; \ cd nginx-1.15.5 &amp;amp;&amp;amp; \ ./configure --prefix=/usr/local/nginx \ --with-http_ssl_module \ --with-http_stub_status_module &amp;amp;&amp;amp; \ make -j 4 &amp;amp;&amp;amp; make install &amp;amp;&amp;amp; \ rm -rf /usr/local/nginx/html/* &amp;amp;&amp;amp; \ echo &amp;quot;ok&amp;quot; &amp;gt;&amp;gt; /usr/local/nginx/html/status.html &amp;amp;&amp;amp; \ cd / &amp;amp;&amp;amp; rm -rf nginx-1.12.2* &amp;amp;&amp;amp; \</description>
     </item>
     
     <item>
@@ -297,15 +279,6 @@
       
       <guid>https://liangsuli123.github.io/posts/b10/</guid>
       <description>1:tcp/ip基本知识 1.1 tcp常识 1、网络七层 2、TCP三层握手 复制代码 ####1、第一次握手 # 建立连接时，客户端发送SYN包到服务器，其中包含客户端的初始序号seq=x，并进入SYN_SENT状态</description>
-    </item>
-    
-    <item>
-      <title>greenlet:轻量级的并发编程</title>
-      <link>https://liangsuli123.github.io/posts/b9/</link>
-      <pubDate>Wed, 15 Aug 2018 14:26:00 +0800</pubDate>
-      
-      <guid>https://liangsuli123.github.io/posts/b9/</guid>
-      <description>1、greenlet原理 &amp;amp; 使用 1. greenle间切换 1）一个 “greenlet” 是一个很小的独立微线程，可以把它想像成一个堆栈帧，栈底是初始调用，而栈顶是当前greenlet的暂停位置。 2）你使用gr</description>
     </item>
     
     <item>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、最简单：html&#43;js全在一个文件中 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;动态路由匹配&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue-router/dist/vue-router.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;h1&amp;gt;Hello App!&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; &amp;lt;!-- 使用router-link 组件来导航 --&amp;gt; &amp;lt;!-- 通过传入 &#39;to&#39; 属性指"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue2/"/>
+
+  
+
+  <title>前端框架Vue（2）——Vue-Router 路由跳转 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue2/'>前端框架Vue（2）——Vue-Router 路由跳转</a></h2>
+          <span class="date">2020.05.02</span>
+        </div>
+        <div class="post_content markdown"><p>1、最简单：html+js全在一个文件中</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;动态路由匹配&lt;/title&gt;
+    &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;h1&gt;Hello App!&lt;/h1&gt;
+        &lt;p&gt;
+            &lt;!-- 使用router-link 组件来导航 --&gt;
+            &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
+            &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
+            &lt;router-link to=&quot;/foo&quot;&gt;GO TO FOO&lt;/router-link&gt;
+            &lt;router-link to=&quot;/bar&quot;&gt;GO TO BAR&lt;/router-link&gt;
+        &lt;/p&gt;
+        &lt;!-- 路由出口 --&gt;
+        &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
+        &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;
+&lt;script&gt;
+    // 1、定义组件
+    const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
+    const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};
+    // 2、定义路由
+    // 每一个路由映射一个组件
+  const routes = [
+    {path:'/foo',component:Foo},
+    {path:'/bar',component:Bar}
+  ]
+    // 3、创建router实例，然后传'routes'配置
+    const router = new VueRouter({
+        routes
+    });
+
+    // 4、创建和挂载根实例
+    const app = new Vue({
+        router
+    }).$mount('#app');
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>2、命名路由 用name属性链接地址</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;命名路由&lt;/title&gt;
+  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Hello App!&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;!-- 使用router-link 组件来导航 --&gt;
+    &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
+    &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
+    &lt;router-link :to=&quot;{name:'user',params:{id:123}}&quot;&gt;GO TO FOO&lt;/router-link&gt;
+    &lt;router-link :to=&quot;{name:'user',params:{id:456}}&quot;&gt;GO TO BAR&lt;/router-link&gt;
+  &lt;/p&gt;
+  &lt;!-- 路由出口 --&gt;
+  &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  // 1、定义组件
+  const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
+  const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};
+  const User = {
+    template:'&lt;div&gt;User {{$route.params.id}}&lt;/div&gt;',
+  }
+  // 2、定义路由
+  
+  // 每一个路由映射一个组件
+
+
+  // 3、创建router实例，然后传'routes'配置
+  const router = new VueRouter({
+    routes:[
+      {
+        path:'/user/:id',
+        name:'user',
+        component: User
+      }
+    ]
+  });
+
+  // 4、创建和挂载根实例
+  const app = new Vue({
+    router
+  }).$mount('#app');
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>3、嵌套路由</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;路由嵌套&lt;/title&gt;
+  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Hello App!&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;!-- 使用router-link 组件来导航 --&gt;
+    &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
+    &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
+    &lt;router-link to=&quot;/user/foo/profile&quot;&gt;GO TO FOO&lt;/router-link&gt;
+    &lt;router-link to=&quot;/user/bar/posts&quot;&gt;GO TO BAR&lt;/router-link&gt;
+  &lt;/p&gt;
+  &lt;!-- 路由出口 --&gt;
+  &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  // 1、定义组件
+  /*const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
+   const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};*/
+  const User = {
+    template:'&lt;div class=&quot;user&quot;&gt;' +
+    '&lt;h2&gt;User {{$route.params.id}}&lt;/h2&gt;' +
+    '&lt;router-view&gt;&lt;/router-view&gt;' +
+    '&lt;/div&gt;'
+  }
+  const UserProfile = {
+    template:'&lt;div&gt;profile&lt;/div&gt;'
+  }
+  const UserPosts = {
+    template:'&lt;div&gt;posts&lt;/div&gt;'
+  }
+  // 2、定义路由
+  // 每一个路由映射一个组件
+
+
+  // 3、创建router实例，然后传'routes'配置
+  const router = new VueRouter({
+    routes:[
+      {path:'/user/:id',component: User,
+        children:[
+          {
+            //当/user/:id/profile匹配成功
+            //UserProfile会被渲染在User的&lt;router-view&gt;
+            path:'profile',
+            component:UserProfile
+          },
+          {
+            path:'posts',
+            component:UserPosts
+          }
+        ]
+      }
+    ]
+  });
+
+  // 4、创建和挂载根实例
+  const app = new Vue({
+    router
+  }).$mount('#app');
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>4、命名视图</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;命名视图&lt;/title&gt;
+  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;Hello Views!&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;router-link to=&quot;/&quot;&gt;/&lt;/router-link&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;router-link to=&quot;/other&quot;&gt;/other&lt;/router-link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;router-view class=&quot;view one&quot;&gt;&lt;/router-view&gt;
+    &lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;
+    &lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  const Header = {template:'&lt;div&gt;头部&lt;/div&gt;'}
+  const Section = {template:'&lt;div&gt;中间部分&lt;/div&gt;'}
+  const Footer = {template:'&lt;div&gt;尾部&lt;/div&gt;'}
+
+  const router = new VueRouter({
+      mode:'history',
+      routes:[
+        {
+            path:'/',
+            //redirect:'/other',//重定向
+            components:{
+                default:Header,
+                a:Section,
+                b:Footer
+            }
+        },
+        {
+            path:'/other',
+            components:{
+                default:Footer,
+                a:Section,
+                b:Header
+            }
+        }
+      ]
+  })
+
+  new Vue({
+      router,
+      el:'#app'
+  })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+*当使用 Vue-cli 时如何进行 vue-router 路由跳转
+
+如果没有使用vue-cli开发环境，请移步
+http://blog.csdn.net/docallen/article/details/68490256
+
+项目目录结构：
+
+1、npm 安装 vue-router
+
+cnpm install vue-router --save
+1
+2、首先建上图结构中的3个组件,写点内容即可
+3、配置 router.js 文件
+
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Hello from '../component/Hello.vue'
+import firstPage from '../pages/firstPage.vue'
+import secondPage from '../pages/secondPage.vue'
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+  routes:[
+    {
+      path:'/',
+      name:'Hello',
+      component:Hello
+    },
+    {
+      path:'/first',
+      name:'first',
+      component:firstPage
+    },
+    {
+      path:'/second',
+      name:'second',
+      component:secondPage
+    }
+  ]
+})
+</code></pre>
+
+<p>4、修改 APP.vue 中的 template</p>
+
+<pre><code>    &lt;template&gt;
+      &lt;div id=&quot;app&quot;&gt;
+        &lt;img src=&quot;./assets/logo.png&quot;&gt;
+        &lt;div class=&quot;nav-list&quot;&gt;
+          &lt;router-link class=&quot;nav-item&quot; to=&quot;/&quot;&gt;首页&lt;/router-link&gt;
+          &lt;router-link class=&quot;nav-item&quot; to=&quot;/first&quot;&gt;页面一&lt;/router-link&gt;
+          &lt;router-link class=&quot;nav-item&quot; to=&quot;/second&quot;&gt;页面二&lt;/router-link&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;router-view&gt;&lt;/router-view&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+</code></pre>
+
+<p>5、修改 main.js</p>
+
+<pre><code>    引入router.js
+    
+    import router from './router/router.js'
+    
+    修改 Vue 实例
+    
+    new Vue({
+      el: '#app',
+      router,
+      render: h =&gt; h(App)
+    })
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

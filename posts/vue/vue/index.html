@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="阅读本文需要注意的地方 本文所有组件示例都基于vuecli2。其中大部分组件，使用了vue.use()方法。 这里解释一下为什么使用vue.use()。因为，当插件是一个方法的时候， 我们只需要把该方法定义"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue/"/>
+
+  
+
+  <title>vue 常用组件 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue/'>vue 常用组件</a></h2>
+          <span class="date">2020.06.26</span>
+        </div>
+        <div class="post_content markdown"><p>阅读本文需要注意的地方
+    本文所有组件示例都基于vuecli2。其中大部分组件，使用了vue.use()方法。
+    这里解释一下为什么使用vue.use()。因为，当插件是一个方法的时候，
+    我们只需要把该方法定义到vue的prototype上就可以使用：</p>
+
+<pre><code>   
+    import axios from 'axios'
+    Vue.prototype.axios = axios
+    
+    但是如果插件是一个对象，我们就需要通过vue.use()来引入该对象：
+    
+    import Vue from 'vue'
+    import Router from 'vue-router'
+    
+    Vue.use(Router)
+    ok，那么我们先从vue全家桶那几个核心组件开始介绍。
+</code></pre>
+
+<p>核心组件 路由：vue-route</p>
+
+<pre><code>    
+    有很多小伙伴在学习vue到了route这一步就放弃了。因为要解释route是非常困难的，route的存在证明我们做的是一个SPA单页应用，而不是一大堆静态html页面。
+    
+    那么到底什么是route呢？我们抛开服务端。换个说法，你知道什么是响应式吧。响应式布局，通过媒体查询出对方的手机型号和屏幕的分辨率， 为其切换展示的样式。
+    
+    route你可以理解它就是url的“媒体查询”。通过在url输入不同的路径，可以响应不同的vue页面。
+    
+    首先，我们打开vuecli中的main.js文件，可以发现route在这里被引入并且配置到vue上了。
+    
+    
+    //第一步引入route，form后面是你的route文件地址
+    import router from './router'
+    
+    //加载route
+    new Vue({
+      el: '#app',
+      render: h =&gt; h(App), //h=createElement 即渲染app中所有节点
+      router, //route是在这一步装载到vue中的
+      store,
+      components: {
+        App
+      },
+      template: '&lt;App/&gt;',
+    })
+    我们顺藤摸瓜找到这个route的index.js配置文件，就可以发现里面都是为访问url做的配置。
+    
+    
+    import Vue from 'vue'
+    import Router from 'vue-router'
+    import index from '@/components/index'
+    
+    Vue.use(Router)
+    
+    export default new Router({
+        mode: 'history',
+        routes: [{
+            path: '/',
+            name: 'index',
+            component: index
+        }]
+    })
+    如果你嫌麻烦你可以直接在这个routes中多复制几个path这一段，然后把路径修改成你自己的。
+    
+    这里需要注意的是，route还涉及到了子路由和路由拆分的功能，这里不做过多阐述，
+    异步数据请求：axios
+    还记得jquery中的这个方法吗？  
+    
+    $.ajax()
+    它实际上是对javascript中原生ajax方法的一个封装。
+    
+    axios也是，只不过它作用于vue中。它的引入方法跟route不太一样，因为它仅仅是一套方法，所以我们直接定义到vue的prototype上即可。
+    首先，我们通过npm进行安装：
+    
+    npm install axios -s-d
+    然后打开main.js：    
+    
+    import axios from 'axios'
+    Vue.prototype.axios = axios
+    调用的时候，你可以写在methods或者mounted等生命周期中。    
+    
+    let that = this;
+    this.axios({
+      method: 'get',//请求方式
+      url: 'URL',//请求地址
+      params: {
+        id: this.$route.query.id//发送的参数
+      }
+    }).then(function(response) {
+      //请求成功后获得的内容进行哪些操作
+      that.title = response.data.result[0].title
+    })
+    另外，你还可以通过axios在打包时区分线上和线下环境
+    
+    
+    //配置axios区别线上和测试环境
+    if (location.hostname === 'localhost') {
+      axios.defaults.baseURL = process.env.API_PATH_TEST;
+      //配置本地webSocketIO地址
+      Vue.use(new VueSocketIO({
+        debug: false,
+        connection: 'localhost',
+      }))
+    } else if (location.hostname === 'www.dangyunlong.com') {
+      //配置线上webSocketIO地址
+      Vue.use(new VueSocketIO({
+        debug: false,
+        connection: 'www.dangyunlong.com',
+      }))
+      axios.defaults.baseURL = process.env.API_PATH_PROD
+    }
+</code></pre>
+
+<p>vuex 状态管理</p>
+
+<pre><code>    首先使用npm进行安装：  
+    npm i vuex --save
+    在使用vuex的时候，我们需要在src目录下新建一个store文件夹，然后在里面创建我们的状态树js。
+    
+    并且在main.js中引入它  
+    
+    //加载vue store
+    import store from './store'
+    
+    new Vue({
+      el: '#app',
+      render: h =&gt; h(App),
+      router,
+      store,
+      components: {
+        App
+      },
+      template: '&lt;App/&gt;'
+    })
+    从这里我们不难看出，vuex是基于store的。并且，vuex还是单一状态树。那么store状态树又怎么来配置呢？
+    
+    打开store中的这个index.js   
+    
+    export default new Vuex.Store({
+      state: {
+        name: &quot;dangyunlong&quot;,
+        age: 30,
+        index: {} //首页信息
+      },
+      getters:{
+        //getters 相当于是vuex的计算属性,主要作用是对state中的值进行处理
+        jia(state,num){
+          return state.age + 1;
+        },
+        jian(state,num){
+          return state.age - 1;
+        }
+      },
+      mutations: {
+        //vuex用于修改state中数据的方法
+        gaiming(state, name) {
+          state.name = name
+        },
+        getIndex(state, indexData) {
+          state.index = indexData
+        }
+      },
+      actions:{
+          //actions 用于异步执行vuex mutations中的方法 它不会直接修改state而是作用于mutations
+          //actions 中的方法可以接收一个context参数,这里的context就指vuex
+          increment (context) {
+            setTimeout(function(){
+              //调用方式跟在.vue中一样
+              context.commit('gaiming',&quot;abc&quot;)
+              //1秒后调用mutations中的gaiming方法,名字已经修改了
+              console.log(context.state.name);
+            }, 1000)
+          }
+      },
+      modules: {
+        // 子状态树
+        a: model1
+      }
+    });
+    我们可以发现store其实主要就是依靠这5个参数在发会作用：
+    
+    参数名称    作用
+    state   数据
+    getters 相当于vuex的计算属性，主要用于对值进行计算处理
+    mutations   用于修改vuex值的方法
+    actions 用于异步调用mutations中的方法
+    modules 当你准备把状态树分为多个模块的时候，modules用于储存子状态树
+    子状态树的写法也完全一样：  
+    
+    const model1 = {
+      state: {
+        name: &quot;longge&quot;,
+        age:31
+      },
+      getters:{
+    
+      },
+      mutations: {
+    
+      },
+      actions:{
+    
+      }
+    };
+    
+    export default model1;
+    混入其中的高手冷门知识
+    vuex有一个鲜为人知的辅助方法：mapState
+    
+    
+    computed:mapState({
+      ageadd (state) {
+        return state.count + this.localCount
+      }
+    }),
+    有很多同学不知道这个函数是干啥用的，用最简单的方法来介绍一下，这里涉及到了computed这个比较常用
+    的vue属性，这个东西就是前面提到的计算属性，它主要是在不改变原始值的情况下对值做一些处理。
+    
+    如果，你一个一个通过    
+    
+    this.$store.state.xx
+    的当时去调用store的值放到这个计算属性里面，你不是老得写这个this.$store吗。于是vuex官方就提供
+    了一个让你可以省略前面这一段的方法。你可以通过这个方式一次获得所有store中的state中的数据，然后
+    传入state直接用就行了。
+    
+    这里面还有一个混入写法...mapState。vuex详细教程中找一下，这里就不过多介绍了。
+</code></pre>
+
+<p>UI库</p>
+
+<pre><code>    Element UI
+    依然使用npm进行安装，当然如果你有cnpm就更好了：    
+    
+    cnpm install element-ui -s-d
+    element作为你必须掌握的ui库，它和iview的区别再于用户量更大，研发团队人员更多，发现错误的机率更高，
+    在组件支持项中也超过iview。更屌的是element还支持Sketch和Axure，让产品经理和设计师也能从容参与
+    到开发中来。所以element成为了本文首选。
+    
+    引入element ui的方式也非常简单，通过npm安装后，打开main.js
+       
+    import ElementUI from 'element-ui';
+    import 'element-ui/lib/theme-chalk/index.css';
+    
+    Vue.use(ElementUI);
+    调用的时候也非常简单：
+       
+    &lt;el-menu default-active=&quot;1&quot; class=&quot;el-menu-vertical-demo&quot;&gt;
+        &lt;el-submenu index=&quot;1&quot;&gt;
+          &lt;template slot=&quot;title&quot;&gt;
+            &lt;img src=&quot;&quot;&gt;
+            &lt;span&gt;&lt;/span&gt;
+          &lt;/template&gt;
+          &lt;el-menu-item-group&gt;
+            &lt;template slot=&quot;title&quot;&gt;&lt;/template&gt;
+            &lt;el-menu-item index=&quot;1-1&quot;&gt;&lt;/el-menu-item&gt;
+            &lt;el-menu-item index=&quot;1-2&quot;&gt;&lt;/el-menu-item&gt;
+            &lt;el-menu-item index=&quot;1-3&quot;&gt;&lt;/el-menu-item&gt;
+          &lt;/el-menu-item-group&gt;
+        &lt;/el-submenu&gt;
+    &lt;/el-menu&gt;
+    直接把这种el开头的标签插入到你的.vue文件中即可。
+    
+    element支持的组件非常多，你可以查看这里，里面的组件代码已经写的非常清楚了，直接复制粘贴到你的.vue中即可。
+</code></pre>
+
+<p>焦点图 / 轮播图</p>
+
+<pre><code>    swiper
+    你可能会问了，轮播图组件多了去了，为什么就介绍swiper呢？过去在制作非spa页面的时候，对swiper可以说是情有
+    独钟，无论是兼容性还是在移动/非移动端，swiper的表现都可圈可点。官方提供完整的api手册，让扩展修改也非常得
+    心应手。
+    
+    使用cnpm安装
+    
+    
+    cnpm install swiper -S -d
+    安装完毕以后，我们需要把swiper封装成一个组件。这个是非常简单的，新建一个swiper.vue即可。
+    
+    
+    &lt;template&gt;
+        &lt;div&gt;
+            &lt;div class=&quot;swiper-container&quot;&gt;
+                &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;
+                    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;
+                    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+    
+    &lt;script&gt;
+        import Swiper from &quot;swiper&quot;;
+        export default{
+            name:&quot;swiper&quot;,
+            mounted(){
+                var mySwiper = new Swiper ('.swiper-container', {
+    
+                })
+            }
+        }
+    &lt;/script&gt;
+    &lt;style&gt;
+        @import 'swiper/css/swiper.css';
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+    &lt;/style&gt;
+    因为是局部的，我们甚至都不需要再main中去引入它。用的时候直接定义到components上即可。
+      
+    components: {
+      swiper
+    },
+    然后把标签写到你的项目中：    
+    
+    &lt;swiper&gt;&lt;/swiper&gt;
+    
+</code></pre>
+
+<p>图表vue-echarts</p>
+
+<pre><code>    vue-echarts是echarts的一个封装，它和百度echarts的区别在于，它是基于vue的一个对象..操作上更加
+    的简单，如果你仅仅是为了展示图表，建议你使用vue-echarts。但是如果你的项目中含有对echarts的深度
+    定制，例如改变了原始图表的展示方式或者点击事件和较为复杂的逻辑，还是建议你使用百度echarts。
+    
+    安装方式跟其他vue组件一样：    
+    
+    npm install echarts vue-echarts
+    然后打开main.js输入    
+    
+    import ECharts from 'vue-echarts';
+    import 'echarts/lib/chart/line';
+    Vue.component('chart', ECharts);
+    这样vue-echarts就变成了一个全局组件，我们直接在页面中调用即可。    
+    
+    &lt;chart ref=&quot;chart1&quot; :options=&quot;orgOptions&quot; :auto-resize=&quot;true&quot;&gt;&lt;/chart&gt;
+    另外在data中添加一个配置文件的变量，再mounted生命周期中注入内容即可。
+        
+    export default {
+        name: 'index',
+        data() {
+            return {
+                orgOptions: {},
+            }
+        },
+        mounted: function() {
+              //echarts
+              this.orgOptions = {
+                  xAxis: {
+                      type: 'category',
+                      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                  },
+                  yAxis: {
+                      type: 'value'
+                  },
+                  series: [{
+                      data: [820, 932, 901, 934, 1290, 1330, 1320],
+                      type: 'line',
+                      smooth: true
+                  }]
+              }
+        },
+    }
+    其中具体图表设置请查看这里。
+    你可以下载其中的例子然后打开http://localhost:8080/demo查看。
+</code></pre>
+
+<p>视频播放vue-video-player</p>
+
+<pre><code>    vue-video-player是一个视频播放解决方案，功能非常全。
+    
+    使用cnpm命令安装，可以加快安装速度。
+        
+    cnpm install vue-video-player -S -d
+    然后老规矩打开main.js填入以下内容：
+        
+    import VideoPlayer from 'vue-video-player'
+    require('video.js/dist/video-js.css')
+    require('vue-video-player/src/custom-theme.css')
+    Vue.use(VideoPlayer)
+    然后在我们要使用的页面上：
+        
+    &lt;video-player  class=&quot;video-player vjs-custom-skin&quot;
+    ref=&quot;videoPlayer&quot;
+    :playsinline=&quot;true&quot;
+    :options=&quot;playerOptions&quot;
+    &gt;&lt;/video-player&gt;
+    最后增加一个配置变量：
+        
+    playerOptions : {
+        playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+        autoplay: false, //如果true,浏览器准备好时开始回放。
+        muted: false, // 默认情况下将会消除任何音频。
+        loop: false, // 导致视频一结束就重新开始。
+        preload: 'auto', // 建议浏览器在&lt;video&gt;加载元素后是否应该开始下载视频数据。auto浏览器选择
+        最佳行为,立即开始加载视频（如果浏览器支持）
+        language: 'zh-CN',
+        aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个
+        比例 - 用冒号分隔的两个数字（例如&quot;16:9&quot;或&quot;4:3&quot;）
+        fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+        sources: [{
+          type: &quot;&quot;,//这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
+          src: &quot;&quot; //url地址
+        }],
+        poster: &quot;../../static/images/test.jpg&quot;, //你的封面地址
+        // width: document.documentElement.clientWidth, //播放器宽度
+        notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的
+        默认信息。
+        controlBar: {
+          timeDivider: true,
+          durationDisplay: true,
+          remainingTimeDisplay: false,
+          fullscreenToggle: true  //全屏按钮
+        }
+    }
+    每次要切换视频的时候，修改src即可。
+</code></pre>
+
+<p>相册vue-photo-preview</p>
+
+<pre><code>    有的时候，我们会遇到一个需求，就是把小图放大或者多个图片方大后轮播的情况，这个时候用element ui
+    中自带的组件已经没办法满足我们的使用了。这里推荐一个相册插件：vue-photo-preview。
+    
+    安装：
+        
+    cnpm install vue-photo-preview -S -d
+    添加main.js中
+        
+    //加载图片查看工具
+    import preview from 'vue-photo-preview'
+    import 'vue-photo-preview/dist/skin.css'
+    var options={
+      fullscreenEl:false //关闭全屏按钮
+    }
+    Vue.use(preview,options)
+    使用方法非常简单，只要再img中添加两个属性即可。
+    
+    
+    //在img标签添加preview属性 preview值相同即表示为同一组
+    &lt;img src=&quot;xxx.jpg&quot; preview=&quot;0&quot; preview-text=&quot;描述文字&quot;&gt;
+    //分组
+    &lt;img src=&quot;xxx.jpg&quot; preview=&quot;1&quot; preview-text=&quot;描述文字&quot;&gt;&lt;img src=&quot;xxx.jpg&quot; preview=&quot;1&quot; preview-text=&quot;描述文字&quot;&gt;&lt;img src=&quot;xxx.jpg&quot; preview=&quot;2&quot; preview-text=&quot;描述文字&quot;&gt;&lt;img src=&quot;xxx.jpg&quot; preview=&quot;2&quot; preview-text=&quot;描述文字&quot;&gt;  
+    安全性
+    传输加密：sha256、md5、base64
+    前端进行she256，md5和base64非常的简单，只需要下载一套算法即可：
+    
+    
+    cnpm install js-md5 -S -d
+    cnpm install js-sha256 -S -d
+    cnpm install js-base64 -S -d
+    然后把下载好的算法全部定义到vue到prototype上：
+        
+    //3种加密方式
+    import md5 from 'js-md5';
+    Vue.prototype.$md5 = md5;
+    
+    import sha256 from 'js-sha256';
+    Vue.prototype.$sha256 = sha256;
+    
+    import base64 from 'js-base64';
+    Vue.prototype.$base64 = base64;
+    使用方法：
+        
+    console.log(&quot;md5加密方式：&quot;+this.$md5('holle'));
+    console.log(&quot;sha256加密方式：&quot;+this.$sha256('holle'));
+    console.log(&quot;base加密方式：&quot;+this.$sha256('holle'));
+</code></pre>
+
+<p>交互数据模拟mockjs</p>
+
+<pre><code>    大部分时候，我们可能需要根据设计图做一个静态页面，因为我们不知道好多地方填上数据以后是什么样子的。
+    这个时候我们肯定不能等着后端开发人员的接口开发完了再去填数据，这样效率太低了。
+    
+    这里推荐使用mockjs。mock是一个可以拦截http请求生成一个微数据短的插件，
+    让我们不用等着后端人员就可以自己先填入一部分数据。
+    
+    使用cnpm命令安装，可以加快安装速度。
+    
+    cnpm install mockjs --save-dev
+    使用上是非常方便的，因为mock会自动拦截http请求。
+    首先，我们再src中创建一个mock文件夹，并且再里面创建index.js：
+    
+    
+    //引入mockjs
+    const Mock = require('mockjs')
+    
+    //响应模拟数据
+    Mock.mock('http://api.com', {
+        &quot;user|5-100&quot;: [{
+            'name': '@cname',   //中文名称
+            'age|1-100': 100,   //100以内随机整数
+            'birthday': '@date(&quot;yyyy-MM-dd&quot;)',  //日期
+            'city': '@city(true)'   //中国城市
+        }]
+    });
+    你可以理解这个mock就是你的数据端，这里面配置的url，就是你获取虚拟数据要使用到的url。
+    
+    然后打开main.js把这个js给引用上。
+    
+    
+    require('./mock/index')
+    最后我们再组件中请求这个地址即可获得数据：
+    
+    
+    //mock
+    this.axios({
+        method: 'get',
+        url: 'http://api.com'
+    }).then(function(response) {
+        console.log(response);
+    })
+    
+    
+</code></pre>
+
+<p>动态标题vue-meta-info</p>
+
+<pre><code>    spa有一个非常大的问题就是，它实际上没有那么多页面，我们所有的页面逻辑关系都是通过route完成的。
+    
+    可是，这样就诞生了一个问题，页面的title部分并没有切换掉。我们就需要动态的去处理这个titile了。
+    这里推荐使用vue-meta-info来解决这个问题，说实话，
+    我曾经一度认为这个东西是一个核心组件。因为你的title不切换的话，总感觉好像少点什么一样。    
+    安装：
+        
+    cnpm i vue-meta-info -S -d
+    main.js中
+       
+    import MetaInfo from 'vue-meta-info'
+    Vue.use(MetaInfo)
+    使用方法
+    
+    
+    metaInfo: {
+        title: '生活随记—党云龙个人博客',
+        meta: [{
+            name: '党云龙个人博客',
+            content: '党云龙,web前端开发,vue,vuecli,webpack,canvas,html5,css3'
+        }]
+    }
+</code></pre>
+
+<p>#优化篇
+图片懒加载 vue-lazyload</p>
+
+<pre><code>    vue-lazyload的作用就是：当你滚动条还没有滚动到这一片区域的时候，就不加载一片区域中的图片，
+    会用loading中的gif图去代替。
+    
+    使用npm安装方式：
+    
+    
+    npm install vue-lazyload   --save
+    然后在main.js中加入   
+    
+    //图片懒加载 ----------------------------------------
+    import VueLazyload from 'vue-lazyload';
+    //初始化
+    Vue.use(VueLazyload, {
+      preLoad: 1.3,
+      //loading: ‘../static/loading.gif',
+      loading: require('./assets/loading.gif'),
+      attempt: 1
+    })
+    注意，loading的图片在static和assets中路径的写法稍微有点区别。
+</code></pre>
+
+<p>上传图片压缩 lrz</p>
+
+<pre><code>    在图片上传的时候，我们肯定不能直接把一张大图给传上去，这里我们需要限制一下大小。然后，
+    可能更好的方法就是，进行压缩。
+    这里推荐使用lrz插件。
+    安装：
+        
+    cnpm install lrz -S -d
+    然后再main中加载lrz:    
+    
+    import lrz from 'lrz'
+    使用的时候:    
+    
+    &lt;template&gt;
+      &lt;div&gt;
+        &lt;div @click.stop=&quot;addPic&quot; ref=&quot;upload&quot; class=&quot;btn&quot;&gt;
+          &lt;input 
+          type=&quot;file&quot; 
+          accept=&quot;image/*&quot; 
+          @change=&quot;onFileChange&quot; 
+          style=&quot;display: none&quot; 
+          multiple /&gt;chooseImg
+        &lt;/div&gt;
+        &lt;p v-if=&quot;!isNaN(before)&quot;&gt;压缩前:{{before|number}}kb&lt;/p&gt;
+        &lt;p v-if=&quot;!isNaN(after)&quot;&gt;压缩后:{{after|number}}kb&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+    
+    import lrz from &quot;lrz&quot;;
+    export default {
+      data() {
+        return {
+          imgUrl: [],
+          before: NaN,
+          after: NaN
+        };
+      },
+      methods: {
+        onFileChange(e) {
+          // 获取文件对象
+          var file = e.target.files[0];
+          // 压缩前文件大小
+          this.before = file.size / 1024;
+          this.imgUrl = URL.createObjectURL(file, { quality: 0 });
+          lrz(this.imgUrl).then(rst =&gt; {
+            // 压缩后文件大小
+            this.after = rst.fileLen / 1024;
+          });
+        }
+      }
+}
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

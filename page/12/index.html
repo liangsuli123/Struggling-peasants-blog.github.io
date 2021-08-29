@@ -57,7 +57,7 @@
       </li>
       
       <li>
-        <a href="">关于我</a>
+        <a href="/about/">关于我</a>
       </li>
       
     </ul>
@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/c12/'> 云监控 </a></h2>
+    <h2><a href='/posts/d10/'>  Django中的缓存  </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、云监控相关接口 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.profile.client_profile import ClientProfile from tencentcloud.common.profile.http_profile import HttpProfile from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException from tencentcloud.monitor.v20180724 import monitor_client, models from day04.settings import secretKey,secretId # 导入腾讯云账户secretId，secretKey值 # 实例化一个认证对象，入参需要传入腾讯云账户secre......</p>
+      <p>1、Django缓存作用 1. 由于Django是动态网站，所有每次请求均会去数据进行相应的操作，当程序访问量大时，耗时必然会更加明显 2. 缓存将一个某个views的返回值保存至内存或者memcache中，5分......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.20</span>
+          <span class="date">2018.12.29</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/c11/'> 腾讯云API-云服务器 </a></h2>
+    <h2><a href='/posts/d9/'> Django序列化操作 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、腾讯云SDK使用举例 网址：https://cloud.tencent.com/document/sdk/Python 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException # 导入对应产品模块的client mode......</p>
+      <p>1、为什么需要需要序列化操作 1. python中很多格式的数据类型不能通过简单的json直接序列化转换成字符串格式传递到前端 2. 比如：form提交出现错误，返回的是Django的errors.dict对象，......</p>
     </div>
   </div>
   
@@ -158,7 +158,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.14</span>
+          <span class="date">2018.12.28</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/c10/'> git常见报错解决方法 </a></h2>
+    <h2><a href='/posts/d8/'> Django进阶篇 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、warning: LF will be replaced by CRLF in .idea/workspace.xml. 参考博客：https://www.cnblogs.com/helloHKTK/p/7351946.html git config --global core.autocrlf true 1.2 phabricator使用arc提交代码步骤 1......</p>
+      <p>1.1 Cookie 返回顶部 1、cookie简介 1. cookie实质就是客户端硬盘中存放的键值对，利用这个特性可以用来做用户验证 2. 比如：{“username”: “dachengzi”} #再次访问url就会携带这些信息过......</p>
     </div>
   </div>
   
@@ -189,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.07</span>
+          <span class="date">2018.12.24</span>
         </span>
         
         <span class="field tags">
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/c9/'> git分支管理 </a></h2>
+    <h2><a href='/posts/d7/'> Django基础篇 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>参考博客：https://www.cnblogs.com/gzpblog/p/5463031.html 1、git常用命令 echo &quot;#Description&quot; &gt; README.md， 添加一个文件 git status， 查看当前状态，发现有未跟踪......</p>
+      <p>1、web框架本质 1. 对于所有的Web应用，本质上其实就是一个socket服务端，用户的浏览器其实就是一个socket客户端。 2. 真实web框架一般会分为两部分：服务器程序和应用程序。 1）服务器程序负责对......</p>
     </div>
   </div>
   
@@ -220,7 +220,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.11.03</span>
+          <span class="date">2018.12.20</span>
         </span>
         
         <span class="field tags">

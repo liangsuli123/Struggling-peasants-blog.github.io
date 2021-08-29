@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on 梁苏莉的博客</title>
+    <link>https://liangsuli123.github.io/tags/vue/</link>
+    <description>Recent content in vue on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 26 Jun 2020 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://liangsuli123.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vue 常用组件</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue/</link>
+      <pubDate>Fri, 26 Jun 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue/</guid>
+      <description>阅读本文需要注意的地方 本文所有组件示例都基于vuecli2。其中大部分组件，使用了vue.use()方法。 这里解释一下为什么使用vue.use()。因为，当插件是一个方法的时候， 我们只需要把该方法定义</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（6）——Vue 介绍和相关操作</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue6/</link>
+      <pubDate>Wed, 06 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue6/</guid>
+      <description>1、VueJS 浏览器的兼容性 2、如何获得当前点击的元素（整体） methods: { showDeleteIcon:function($event){ console.log(event.currentTarget); } } 3、如何获得当前点击的元素（个体） showDeleteIcon:function($event){ console.log(event.target); } 4、获取dom元素样式 &amp;lt;template&amp;gt; &amp;lt;div style=&amp;quot;display: block;&amp;quot; ref=&amp;quot;abc&amp;quot;&amp;gt; &amp;lt;!-- ... --&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { mounted () { console.log(this.$refs.abc.style.cssText) } } &amp;lt;/script&amp;gt; 5、在for渲染的li</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（5）——Vue&#43;Echarts</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue5/</link>
+      <pubDate>Tue, 05 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue5/</guid>
+      <description>Echarts 是数据可视化中佼佼者！推荐大家可以玩一玩，非常实用！ 如果第一次接触Echarts的同学，这边有我以前写过的一篇入门：浅谈Echarts3.0 Vue+Echarts 现附上代码： &amp;lt;template&amp;gt; &amp;lt;!--为echarts准备一个具备</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（4）——vue-cli 目录结构</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue4/</link>
+      <pubDate>Mon, 04 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue4/</guid>
+      <description>目录/文件 说明 bulid 项目构建的一些 js 文件 config 配置文件项，index.js 比较重要，打包上线需要修改配置 dist 项目打包后的文件 node_modules npm安装包位置 src 项目的开发目录 assets:图片、字体等资源 components:</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（2）——Vue-Router 路由跳转</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue2/</link>
+      <pubDate>Sat, 02 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue2/</guid>
+      <description>1、最简单：html+js全在一个文件中 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;动态路由匹配&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue-router/dist/vue-router.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;h1&amp;gt;Hello App!&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; &amp;lt;!-- 使用router-link 组件来导航 --&amp;gt; &amp;lt;!-- 通过传入 &#39;to&#39; 属性指</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（3）—— vue.resource 、axios、ajax 异步通信</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue2/</link>
+      <pubDate>Sat, 02 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue2/</guid>
+      <description>vue 中如何支持异步请求 一、vue 支持开发者引入 jquery 使用 $.ajax() 1、首先，在 package.json 中添加 jQuery，然后 npm install &amp;quot;dependencies&amp;quot;: { &amp;quot;jquery&amp;quot;: &amp;quot;^3.2.1&amp;quot;, }, 2、在 webpack.config.js ( 这边用的 vue-cli-simple 脚手架 ) // 增加一个plugins plugins: [ new webpack.ProvidePlugin({ $: &amp;quot;jquery&amp;quot;, jQuery: &amp;quot;jquery&amp;quot; }) ], 3、最后，在全局（mai</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（1）——vue（脚手架） 推荐开发环境</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue1/</link>
+      <pubDate>Fri, 01 May 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue1/</guid>
+      <description>1、安装了淘宝镜像 npm install -g cnpm --registry= https://registry.npm.taobao.org 2、全局安装webpack npm install webpack -g cnpm install webpack -g 3、安装vue脚手架 npm install vue-cli -g 4、创建一个文件夹，最好有自己的worksapce 5、根据模板创建项目 vue init webpack-simple 工程名字&amp;lt;工程名字</description>
+    </item>
+    
+  </channel>
+</rss>

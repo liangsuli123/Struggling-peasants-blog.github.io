@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="mysqldump工具备份 备份整个数据库 $&amp;gt; mysqldump -u root -h host -p dbname &amp;gt; backdb.sql 备份数据库中的某个表 $&amp;gt; mysqldump -u root -h host -p dbname tbname1, tbname2 &amp;gt; backdb.sql 备份多个数据库 $&amp;gt; mysqldump -u root -h host -p --databases dbname1, dbname2 &amp;gt; backdb.sql 备份系统中所有数据库 $&amp;gt; mysqldump -u root -h host -p --all-databases &amp;gt; backdb.sql 直接复制整个数据库"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/mysql/sql/"/>
+
+  
+
+  <title>MySql数据库备份的几种方式 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/mysql/sql/'>MySql数据库备份的几种方式</a></h2>
+          <span class="date">2021.07.02</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="mysqldump工具备份">mysqldump工具备份</h1>
+
+<pre><code>备份整个数据库
+    $&gt; mysqldump -u root -h host -p dbname &gt; backdb.sql
+备份数据库中的某个表
+    $&gt; mysqldump -u root -h host -p dbname tbname1, tbname2 &gt; backdb.sql
+备份多个数据库
+    $&gt; mysqldump -u root -h host -p --databases dbname1, dbname2 &gt; backdb.sql
+备份系统中所有数据库
+    $&gt; mysqldump -u root -h host -p --all-databases &gt; backdb.sql
+直接复制整个数据库目录(对于InnoDB存储引擎不适用)备份   
+    windowns: installpath/mysql/data
+    linux: /var/lib/mysql
+
+在复制前需要先执行如下命令：
+    MYSQL&gt; LOCK TABLES;
+在复制过程中允许客户继续查询表，   
+    MYSQL&gt; FLUSH TABLES;
+将激活的索引页写入硬盘。    
+    mysqlhotcopy工具备份
+备份数据库或表最快的途径，只能运行在数据库目录所在的机器上，并且只能备份MyISAM类型的表。
+要使用该备份方法必须可以访问备份的表文件。
+    $&gt; mysqlhotcopy -u root -p dbname /path/to/new_directory;   
+将数据库复制到new_directory目录。   
+    mysql命令导入sql文件还原
+    $&gt; mysql -u root -p [dbname] &lt; backup.sql
+
+执行前需要先创建dbname数据库，如果backup.sql是mysqldump创建的备份文件则执行是不需要dbname。    
+    MYSQL&gt; source backup.sql;    
+执行source命令前需要先选择数据库。   
+    直接复制数据库目录还原
+    注： 该方式必须确保原数据库和待还原的数据库主版本号一致，并且只适用于MyISAM引擎的表。
+
+关闭mysql服务。
+
+将备份的文件或目录覆盖mysql的data目录。
+
+启动mysql服务。
+
+对于linux系统，复制完文件后需要将文件的用户和组更改为mysql运行的用户和组。
+
+mysqlhotcopy快速恢复
+
+停止mysql服务，将备份数据库文件复制到存放数据的位置（mysql的data文件夹），
+重先启动mysql服务即可(可能需要指定数据库文件的所有者)。
+
+    $&gt; cp -R /usr/backup/test /usr/local/mysql/data
+如果恢复的数据库已经存在，则使用DROP语句删除已经存在的数据库之后，恢复才能成功，还需要保证数据库
+版本兼容。相同版本数据库之间迁移
+    
+    $&gt; mysqldump -h www.abc.com -uroot -p password dbname | 
+    $&gt; mysqldump -h www.bcd.com -uroot -p password
+将服务器www.abc.com的数据库dbname迁移到服务器www.bcd.com的相同版本数据库上。
+</code></pre>
+
+<pre><code>不同版本的mysql数据库之间的迁移
+备份原数据库。   
+卸载原数据库。    
+安装新数据库。    
+在新数据库中还原备份的数据库数据。    
+数据库用户访问信息需要备份mysql数据库。    
+默认字符集问题，MySQL4.x中使用latin1作为默认字符集，mysql5.x使用utf8作为默认字符集。如果有中文数据需要对默认字符集进行更改。        
+不同数据库之间的迁移
+
+l_log_bin = {0|1}   #暂停或启动二进制日志。MyODBC工具实现MySQL和SQL Server之间的迁移。
+
+MySQL Migration Toolkit工具。
+
+表的导出和导入
+
+SELECT ...... INTO OUTFILE 导出文本文件,该方法只能导出到数据库服务器上，并且导出文件不能已存在。
+
+MYSQL&gt; SELECT ...... INTO OUTFILE filename [OPTIONS]
+MYSQL&gt; SELECT * FROM test.person INTO OUTFILE &quot;C:\person0.txt&quot;;
+
+# 将表person里的数据导入为文本文件person0.txt。
+mysqldump文件导出文本文件(和INTO OUTFILE不一样的是该方法所有的选项不需要添加引号)
+
+$&gt; mysqldump -T path -u root -p dbname [tables] [OPTIONS]
+
+# -T参数表明导出文本文件。path导出数据的目录。
+
+$&gt; mysqldump -T C:\test person -u root -p
+
+# 将test表中的person表导出到文本文件。执行成功后test目录下会有两个文件，person.sql和person.txt
+
+mysql命令导出文本文件
+
+MYSQL&gt; mysql -u root -p --execute=&quot;SELECT * FROM person;&quot; test &gt; C:\person3.txt;
+
+# 将test数据库中的person表数据导出到person3.txt文本文件中。--vartical参数可以将一行分为多行显示。
+
+MYSQL&gt; mysql -u root -p --vartical --execute=&quot;SELECT * FROM person;&quot; test &gt; C:\person3.txt;
+
+# --html将表导出为html文件，--xml文件将表导出为xml文件
+
+LOAD DATA INFILE导入文本文件
+
+MYSQL&gt; LOAD DATA INFILE 'filename.txt' INTO TABLE tablename [OPTIONS] [IGNORE number LINES];
+
+# [IGNORE number LINES]表示忽略行数
+
+MYSQL&gt; LOAD DATA INFILE 'C:\person0.txt' INTO TABLE test.person;
+mysqlimport导入文本文件
+
+$&gt; mysqlimport -u root -p dbname filename.txt [OPSTONS]
+
+# 导入的表名有文件名决定，导入数据之前表必须存在
+
+$&gt; mysqlimport -uroot -p test C:\backup\person.txt
+
+# 将数据导入到test数据库的person表中。
+
+使用mysqlbinlog恢复数据
+$&gt; mysqlbinlog [option] filename | mysql -u user -p password
+
+# filename为二进制日志文件，
+
+$&gt; mysqlbinlog --stop-date=&quot;2013-03-30 15:27:47&quot; D:\MySQL\log\binlog\binlog.000008 | mysql -u root -p password
+
+# 根据日志文件binlog.000008将数据恢复到2013-03-30 15:27:47以前的操作。
+
+启动二进制日志
+log-bin = path/filename #日志文件存储目录和文件名
+expire_log_days = 10    #日志自动删除时间
+max_binlog_size = 100M  # 日志文件最大大小
+
+查看二进制日志
+MYSQL&gt; SHOW VARIABLES LIKE 'log_%';
+MYSQL&gt; SHOW BINARY LOGS;
+$&gt; mysqlbinlog filename
+# filename为二进制日志文件名。
+
+删除二进制日志
+MYSQL&gt; RESET MASTER; #删除所有二进制日志
+MYSQL&gt; PURGE {MASTER | BINARY} LOGS TO 'log_name';  #删除文件编号小于log_name编号的文件
+MYSQL&gt; PURGE {MASTER | BINARY} LOGS BEFORE 'date';  #删除指定日期以前的文件
+
+暂时停止二进制日志（不需要重启mysql服务）
+MYSQL&gt; SET sq
+</code></pre>
+
+<p>```</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

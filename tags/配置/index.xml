@@ -6,10 +6,28 @@
     <description>Recent content in 配置 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 22 Feb 2019 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jul 2021 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux查看硬件信息命令</title>
+      <link>https://liangsuli123.github.io/posts/linux/a1/</link>
+      <pubDate>Tue, 20 Jul 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/linux/a1/</guid>
+      <description>Linux大部分操作是通过命令实现的，并不像windows那么直观。 linux查看硬件信息也是需要通过linux查看硬件信息命令查询的 系统 # uname -a # 查看内核/操作系统/CPU信息 # head -n 1 /etc/issue # 查看操作系统</description>
+    </item>
+    
+    <item>
+      <title>linux技巧让进程后台可靠运行的几种方法</title>
+      <link>https://liangsuli123.github.io/posts/linux/a1/</link>
+      <pubDate>Mon, 17 May 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/linux/a1/</guid>
+      <description>我们经常会碰到这样的问题，用 telnet/ssh 登录了远程的 Linux 服务器，运行了一些耗时较长的任务， 结果却由于网络的 不稳定导致任务中途失败。如何让命令提交后不受本地关闭终端窗口/网络断开连接的干扰呢？下面举了一些例子， 您可</description>
+    </item>
     
     <item>
       <title>在Centos下使用Siege对Django服务进行压力测试</title>
@@ -53,7 +71,7 @@
       <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/a6/</guid>
-      <description>对于文件存储来说，一般情况下简单的处理就是在Django配置文件中配置存储目录，按照规则对文件进行上传或者下载。 实际上，当文件较少的时候，Django是可以应付的过来的。但当文件以海量形式出现的时候，</description>
+      <description>对于文件存储来说，一般情况下简单的处理就是在Django配置文件中配置存储目录，按照规则对文件进行上传 或者下载。 实际上，当文件较少的时候，Django是可以应付的过来的。但当文件以海量形式出现的时候，</description>
     </item>
     
     <item>
@@ -62,7 +80,7 @@
       <pubDate>Wed, 13 Feb 2019 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/a5/</guid>
-      <description>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以</description>
+      <description>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于 反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以</description>
     </item>
     
     <item>
@@ -76,10 +94,10 @@
     
     <item>
       <title>在阿里云centos7.6上部署vue.js2.6前端应用</title>
-      <link>https://liangsuli123.github.io/posts/a2/</link>
+      <link>https://liangsuli123.github.io/posts/vue/a2/</link>
       <pubDate>Tue, 22 Jan 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/a2/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/a2/</guid>
       <description>在之前的一篇文章中详细阐述了如何部署Nginx代理uwsgi+django后台服务,现在轮到部署前端应用vue.js了，vue.js的好处就不多说了，其作为一个轻巧、高性能、可组件化的MVVM库，学习</description>
     </item>
     

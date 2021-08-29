@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以"/>
+  <meta name="description" content="负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于 反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以"/>
   
 
   
@@ -54,7 +54,7 @@
       </li>
       
       <li>
-        <a href="">关于我</a>
+        <a href="/about/">关于我</a>
       </li>
       
     </ul>
@@ -111,19 +111,17 @@
           <h2><a href='/posts/a5/'>在阿里云Centos上配置nginx&#43;uwsgi&#43;负载均衡配置</a></h2>
           <span class="date">2019.02.13</span>
         </div>
-        <div class="post_content markdown"><pre><code>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以分发给后台服务端(backend servers, 后面简称backend)来做复杂的计算、处理和响应，并且在业务量增加的时候可以方便地扩容后台服务器。
+        <div class="post_content markdown"><pre><code>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于
+反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以分发给后台服务端
+(backend servers, 后面简称backend)来做复杂的计算、处理和响应，并且在业务量增加的时候可以方便地
+扩容后台服务器。
 
-    说白了就是，随着业务和用户规模的增长，仅仅一台服务器无法肩负起高并发的响应，所以需要两台以上的服务器共同分担压力，而分担压力的媒介就是万能的Nginx。
-
-
-    
-
+    说白了就是，随着业务和用户规模的增长，仅仅一台服务器无法肩负起高并发的响应，所以需要
+    两台以上的服务器共同分担压力，而分担压力的媒介就是万能的Nginx。
 
     首先，利用wsgi在不同的端口上起两个Django服务，比如8002和8003
 
-    然后修改nginx网站配置 vim /etc/nginx/conf.d/default.conf，将原uwsgi_pass注释，改成变量绑定
-
-    
+    然后修改nginx网站配置 vim /etc/nginx/conf.d/default.conf，将原uwsgi_pass注释，改成变量绑定    
 
 server {
     listen       80;

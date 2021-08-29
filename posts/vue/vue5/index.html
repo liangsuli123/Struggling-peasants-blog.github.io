@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Echarts 是数据可视化中佼佼者！推荐大家可以玩一玩，非常实用！ 如果第一次接触Echarts的同学，这边有我以前写过的一篇入门：浅谈Echarts3.0 Vue&#43;Echarts 现附上代码： &amp;lt;template&amp;gt; &amp;lt;!--为echarts准备一个具备"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue5/"/>
+
+  
+
+  <title>前端框架Vue（5）——Vue&#43;Echarts &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue5/'>前端框架Vue（5）——Vue&#43;Echarts</a></h2>
+          <span class="date">2020.05.05</span>
+        </div>
+        <div class="post_content markdown"><pre><code>
+Echarts 是数据可视化中佼佼者！推荐大家可以玩一玩，非常实用！
+
+  如果第一次接触Echarts的同学，这边有我以前写过的一篇入门：浅谈Echarts3.0
+
+ Vue+Echarts
+
+
+ 现附上代码：
+
+&lt;template&gt;
+  &lt;!--为echarts准备一个具备大小的容器dom--&gt;
+  &lt;div id=&quot;main&quot; style=&quot;width: 600px;height: 400px;&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  import echarts from 'echarts'
+    export default {
+        name: '',
+        data () {
+            return {
+                charts: '',
+                opinion:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+                opinionData:[
+                  {value:335, name:'直接访问'},
+                  {value:310, name:'邮件营销'},
+                  {value:234, name:'联盟广告'},
+                  {value:135, name:'视频广告'},
+                  {value:1548, name:'搜索引擎'}
+                ]
+            }
+        },
+        methods:{
+            drawPie(id){
+               this.charts = echarts.init(document.getElementById(id))
+               this.charts.setOption({
+                 tooltip: {
+                   trigger: 'item',
+                   formatter: '{a}&lt;br/&gt;{b}:{c} ({d}%)'
+                 },
+                 legend: {
+                   orient: 'vertical',
+                   x: 'left',
+                   data:this.opinion
+                 },
+                 series: [
+                   {
+                     name:'访问来源',
+                     type:'pie',
+                     radius:['50%','70%'],
+                     avoidLabelOverlap: false,
+                     label: {
+                       normal: {
+                         show: false,
+                         position: 'center'
+                       },
+                       emphasis: {
+                         show: true,
+                         textStyle: {
+                           fontSize: '30',
+                           fontWeight: 'blod'
+                         }
+                       }
+                     },
+                     labelLine: {
+                       normal: {
+                         show: false
+                       }
+                     },
+                     data:this.opinionData
+                   }
+                 ]
+               })
+            }
+        },
+      //调用
+        mounted(){
+            this.$nextTick(function() {
+                this.drawPie('main')
+            })
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+&lt;/style&gt;
+
+这是其中一个vue组件
+
+1.安装 echarts 安装包
+
+    npm install echarts --save
+
+2.引入依赖
+
+    import echarts from 'echarts'
+
+3.准备echarts容器
+
+    &lt;div id=&quot;main&quot; style=&quot;width: 600px;height: 400px;&quot;&gt;&lt;/div&gt;
+
+4.数据和 charts 变量可以描述在 data 中
+
+5.methods 中 定义一个方法，内容就是平时echarts的步骤。
+
+6.mounted 中调用 （mounted 是 vue 的生命周期，表示挂载完毕，html 已经渲染）
+
+    mounted(){
+            this.$nextTick(function() {
+                this.drawPie('main')
+            })
+        }
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

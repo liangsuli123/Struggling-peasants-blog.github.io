@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>甘特图 on 梁苏莉的博客</title>
+    <link>https://liangsuli123.github.io/tags/%E7%94%98%E7%89%B9%E5%9B%BE/</link>
+    <description>Recent content in 甘特图 on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Mar 2020 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://liangsuli123.github.io/tags/%E7%94%98%E7%89%B9%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vue element-ui甘特图</title>
+      <link>https://liangsuli123.github.io/posts/%E7%94%98%E7%89%B9%E5%9B%BE/</link>
+      <pubDate>Sun, 15 Mar 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/%E7%94%98%E7%89%B9%E5%9B%BE/</guid>
+      <description>甘特图（Gantt chart）又称为横道图、条状图(Bar chart)。其通过条状图来显示项目，进度，和其他时间相关的系统进展的内在关系随着时间进展的情况。以提出者亨利·L·甘特（Henrry L·Ga</description>
+    </item>
+    
+  </channel>
+</rss>

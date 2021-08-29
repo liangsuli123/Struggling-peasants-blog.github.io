@@ -57,7 +57,7 @@
       </li>
       
       <li>
-        <a href="">关于我</a>
+        <a href="/about/">关于我</a>
       </li>
       
     </ul>
@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a6/'>利用Docker来搭建分布式文件系统FastDfs</a></h2>
+    <h2><a href='/posts/error/'>OSError: mysql_config not found</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>对于文件存储来说，一般情况下简单的处理就是在Django配置文件中配置存储目录，按照规则对文件进行上传或者下载。 实际上，当文件较少的时候，Django是可以应付的过来的。但当文件以海量形式出现的时候，......</p>
+      <p>上次在部署阿里云安装Centos7里 pip3 install mysqlclient 是 一直报 OSError: mysql_config not found 这个错，上网百度了半天终于找到了解决的办法，需要安装依赖包： yum install mysql-devel gcc gcc-devel python-devel 安装这个在pip3 install mysqlclient 就可以了......</p>
     </div>
   </div>
   
@@ -127,13 +127,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.02.13</span>
+          <span class="date">2019.04.02</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/error/">error</a>
           
         </span>
         
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a5/'>在阿里云Centos上配置nginx&#43;uwsgi&#43;负载均衡配置</a></h2>
+    <h2><a href='/posts/sql1/'>关于mysql联合索引的最左前缀原则以及b&#43;tree</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>负载均衡在服务端开发中算是一个比较重要的特性。因为Nginx除了作为常规的Web服务器外，还会被大规模的用于反向代理后端，Nginx的异步框架可以处理很大的并发请求，把这些并发请求hold住之后就可以......</p>
+      <p>关于mysql联合索引的最左前缀原则以及b+tree 软件版本mysql5.7 根据官网的文档 https://dev.mysql.com/doc/refman/5.7/en/multiple-column-indexes.html 查询条件要符合最左原则才能使用到索引 首先说说联合索引的好处： 覆盖索引，这一点是最重要的，重所周知非主键索引会......</p>
     </div>
   </div>
   
@@ -158,13 +158,13 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.02.13</span>
+          <span class="date">2019.04.02</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
           
         </span>
         
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a4/'>在阿里云Centos7.6上部署Supervisor来监控和操作各类服务 </a></h2>
+    <h2><a href='/posts/sql/'>数据库索引</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>Supervisor 是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。它可以很方便的监听、启动、停止、重启一个或多个进程。用Superv......</p>
+      <p>索引 主键索引，外键索引，联合索引，唯一索引 索引固然可 以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率 1. 当数据多且字段值有相同的值得时候用普通索引。 2. 当字段多且字段值没有重复的时候用唯一索引。 3. 当有多个......</p>
     </div>
   </div>
   
@@ -189,13 +189,15 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.01.29</span>
+          <span class="date">2019.04.02</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
+          
+          <a href="https://liangsuli123.github.io/tags/nosql/">nosql</a>
           
         </span>
         
@@ -206,12 +208,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/a2/'>在阿里云centos7.6上部署vue.js2.6前端应用</a></h2>
+    <h2><a href='/posts/english-preview/'>数据库优化</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>在之前的一篇文章中详细阐述了如何部署Nginx代理uwsgi+django后台服务,现在轮到部署前端应用vue.js了，vue.js的好处就不多说了，其作为一个轻巧、高性能、可组件化的MVVM库，学习......</p>
+      <p>1.sql 语句的优化 1、创建数据表时把固定长度的放在前面（） 2、将固定数据放入内存： 例如：choice字段 （django中有用到，数字1、2、3…… 对应相应内容） 3、char 和 varchar 的区别(char可变, varc......</p>
     </div>
   </div>
   
@@ -220,13 +222,15 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2019.01.22</span>
+          <span class="date">2019.04.01</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
-          <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
+          
+          <a href="https://liangsuli123.github.io/tags/nosql/">nosql</a>
           
         </span>
         

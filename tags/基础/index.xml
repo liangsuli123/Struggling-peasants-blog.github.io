@@ -103,64 +103,64 @@
     
     <item>
       <title>vue累加计数器</title>
-      <link>https://liangsuli123.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
       <pubDate>Sat, 08 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的单击事件&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;.c&amp;quot;, data:{ //定义计数器 counter:0, } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;c&amp;quot;&amp;gt; &amp;lt;!-- 定义一个按钮，使用counter做累加--&amp;gt; &amp;lt;button</description>
     </item>
     
     <item>
       <title>vue样式的动态绑定</title>
-      <link>https://liangsuli123.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Mon, 03 Jul 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue的样式绑定&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .active{ background-color: gold; color:blue; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ //激活 false isactive:true } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;a&amp;quot;&amp;gt;人生</description>
     </item>
     
     <item>
       <title>vue表单选项框</title>
-      <link>https://liangsuli123.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</link>
       <pubDate>Sun, 25 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue%E8%A1%A8%E5%8D%95%E9%80%89%E9%A1%B9%E6%A1%86/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue表单的学习&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ el:&amp;quot;#a&amp;quot;, data:{ message:&#39;你好&#39; } }); // 多选框的增删改查 var app = new Vue({ el:&amp;quot;#b&amp;quot;, data:{ checknames:[] }</description>
     </item>
     
     <item>
       <title>vue的选项卡功能</title>
-      <link>https://liangsuli123.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Tue, 20 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue%E7%9A%84%E9%80%89%E9%A1%B9%E5%8D%A1%E5%8A%9F%E8%83%BD/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue选项卡学习&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .box{ border:1px solid blueviolet; height: 228px; width: 323px; background-color: bisque; } &amp;lt;/style&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload= function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ tabId:0 } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- tab 选项 --&amp;gt; &amp;lt;div class=&amp;quot;tab&amp;quot;&amp;gt; &amp;lt;!-- 制作选项卡头部</description>
     </item>
     
     <item>
       <title>vue.js 监听属性的学习/ 千米、米的转换 /时、分、秒 的转换</title>
-      <link>https://liangsuli123.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Sat, 10 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue_的监听属性&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app= new Vue({ el:&amp;quot;#app&amp;quot;, data:{ kilometers:0, meters:0 }, //监听属性 watch:{ kilometers:function(val){ this.kilometers = val; this.meters = val * 1000; }, meters:function(val){ this.kilometers = val / 1000; this.meters.val; } } }); var app1 = new Vue({ el:&amp;quot;#app1&amp;quot;, data:{ seconds:0, minutes:0, hours:0 }, //</description>
     </item>
     
     <item>
       <title>vue.js的计算属性</title>
-      <link>https://liangsuli123.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</link>
       <pubDate>Mon, 05 Jun 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;vue 计算属性的学习&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.onload = function(){ var app = new Vue({ el:&amp;quot;#app&amp;quot;, data:{ information:&#39;灰色的世界里，只有你的眼睛是色彩斑斓的&#39; }, computed:{ reverseInformation:function(){ return this.information.split(&#39;&#39;).reverse().join(&#39;&#39;) } } }); } &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;!-- 颠倒字符串 上面的</description>
     </item>
     
     <item>
       <title>vue入门</title>
-      <link>https://liangsuli123.github.io/posts/vue%E5%85%A5%E9%97%A8/</link>
+      <link>https://liangsuli123.github.io/posts/vue/vue%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 10 May 2017 14:26:00 +0800</pubDate>
       
-      <guid>https://liangsuli123.github.io/posts/vue%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://liangsuli123.github.io/posts/vue/vue%E5%85%A5%E9%97%A8/</guid>
       <description>&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Vue.js 的入门&amp;lt;/title&amp;gt; &amp;lt;!-- 导入 --&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;./js/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; //单一入口 window.onload = function(){ var app = new Vue({ //el 属性用来绑定元素节点 el:&amp;quot;#app&amp;quot;, //data属性用来绑定数据 data:{ message:&#39;Hello World&#39; } }); //建立vue对象 var app2 = new Vue({ // 绑定元素节点</description>
     </item>
     

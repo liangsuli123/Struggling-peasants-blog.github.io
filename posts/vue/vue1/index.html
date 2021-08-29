@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="1、安装了淘宝镜像 npm install -g cnpm --registry= https://registry.npm.taobao.org 2、全局安装webpack npm install webpack -g cnpm install webpack -g 3、安装vue脚手架 npm install vue-cli -g 4、创建一个文件夹，最好有自己的worksapce 5、根据模板创建项目 vue init webpack-simple 工程名字&amp;lt;工程名字"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue1/"/>
+
+  
+
+  <title>前端框架Vue（1）——vue（脚手架） 推荐开发环境 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue1/'>前端框架Vue（1）——vue（脚手架） 推荐开发环境</a></h2>
+          <span class="date">2020.05.01</span>
+        </div>
+        <div class="post_content markdown"><p>1、安装了淘宝镜像
+npm install -g cnpm --registry= <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></p>
+
+<p>2、全局安装webpack
+npm install webpack -g</p>
+
+<p>cnpm install webpack -g</p>
+
+<p>3、安装vue脚手架
+npm install vue-cli -g</p>
+
+<p>4、创建一个文件夹，最好有自己的worksapce
+5、根据模板创建项目
+vue init webpack-simple 工程名字&lt;工程名字不能用中文&gt;</p>
+
+<p>或者创建 vue1.0 的项目</p>
+
+<p>vue init webpack-simple#1.0 工程名字&lt;工程名字不能用中文&gt;</p>
+
+<p>会有一些初始化的设置，如下输入:</p>
+
+<p>Target directory exists. Continue? (Y/n) 直接回车默认(然后会下载 vue2.0模板，这里可能需要连代理)</p>
+
+<p>Project name (vue-test) 直接回车默认</p>
+
+<p>Project description (A Vue.js project) 直接回车默认</p>
+
+<p>6、安装项目依赖
+*必须这么写</p>
+
+<p>npm install</p>
+
+<p>7、启动项目
+npm run dev</p>
+
+<p>总结一下不能成功的原因：
+1、node 、npm版本
+2、遗漏步骤</p>
+
+<p>8、使用ElementUI
+    如果不熟悉移步官网：<a href="http://element.eleme.io/#/zh-CN">http://element.eleme.io/#/zh-CN</a>
+    1、cnpm i element-ui@1.2.5 -S（推荐1.2.5版本）
+    2、然后在 main.js 引入并注册</p>
+
+<pre><code>import Element from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+Vue.use(Element)
+
+3、须安装
+
+cnpm install style-loader --save-dev
+
+cnpm install css-loader --save-dev
+
+cnpm install file-loader --save-dev
+
+安装好后package.json下的内容
+
+{
+  &quot;name&quot;: &quot;vue-router-cli&quot;,
+  &quot;description&quot;: &quot;A Vue.js project&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;author&quot;: &quot;Allen 13402202685@163.com&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;cross-env NODE_ENV=development webpack-dev-server --open --hot&quot;,
+    &quot;build&quot;: &quot;cross-env NODE_ENV=production webpack --progress --hide-modules&quot;
+  },
+  &quot;dependencies&quot;: {
+    *&quot;element-ui&quot;: &quot;^1.2.5&quot;,*
+    &quot;vue&quot;: &quot;^2.2.1&quot;,
+    &quot;vue-resource&quot;: &quot;^1.2.1&quot;,
+    &quot;vue-router&quot;: &quot;^2.3.1&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;babel-core&quot;: &quot;^6.0.0&quot;,
+    &quot;babel-loader&quot;: &quot;^6.0.0&quot;,
+    &quot;babel-preset-latest&quot;: &quot;^6.0.0&quot;,
+    &quot;cross-env&quot;: &quot;^3.0.0&quot;,
+    *&quot;css-loader&quot;: &quot;^0.25.0&quot;,*
+    *&quot;file-loader&quot;: &quot;^0.9.0&quot;,*
+    *&quot;style-loader&quot;: &quot;^0.16.1&quot;,*
+    &quot;vue-loader&quot;: &quot;^11.1.4&quot;,
+    &quot;vue-template-compiler&quot;: &quot;^2.2.1&quot;,
+    &quot;webpack&quot;: &quot;^2.2.0&quot;,
+    &quot;webpack-dev-server&quot;: &quot;^2.2.0&quot;
+  }
+}
+4、在 webpack.config.js 中的 loaders 数组加入以下配置
+
+{
+    test: /\.css$/,
+    loader: &quot;style-loader!css-loader&quot;
+},
+{
+    test: /\.(eot|woff|woff2|ttf)([\\?]?.*)$/,
+    loader: &quot;file&quot;
+}
+</code></pre>
+
+<p>现在就可以使用Element了，如果你想用其他的UI框架也可以自行安装的</p>
+
+<p>9、编译
+npm run build</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

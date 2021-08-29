@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 梁苏莉的博客</title>
+    <link>https://liangsuli123.github.io/tags/linux/</link>
+    <description>Recent content in linux on 梁苏莉的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Jul 2021 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://liangsuli123.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux查看硬件信息命令</title>
+      <link>https://liangsuli123.github.io/posts/linux/a1/</link>
+      <pubDate>Tue, 20 Jul 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/linux/a1/</guid>
+      <description>Linux大部分操作是通过命令实现的，并不像windows那么直观。 linux查看硬件信息也是需要通过linux查看硬件信息命令查询的 系统 # uname -a # 查看内核/操作系统/CPU信息 # head -n 1 /etc/issue # 查看操作系统</description>
+    </item>
+    
+    <item>
+      <title>linux技巧让进程后台可靠运行的几种方法</title>
+      <link>https://liangsuli123.github.io/posts/linux/a1/</link>
+      <pubDate>Mon, 17 May 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/linux/a1/</guid>
+      <description>我们经常会碰到这样的问题，用 telnet/ssh 登录了远程的 Linux 服务器，运行了一些耗时较长的任务， 结果却由于网络的 不稳定导致任务中途失败。如何让命令提交后不受本地关闭终端窗口/网络断开连接的干扰呢？下面举了一些例子， 您可</description>
+    </item>
+    
+  </channel>
+</rss>

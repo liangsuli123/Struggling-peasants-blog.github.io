@@ -6,7 +6,7 @@
     <description>Recent content in 后端 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 Aug 2021 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/tags/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>django 中间件</title>
       <link>https://liangsuli123.github.io/posts/%E5%90%8E%E7%AB%AF/</link>
-      <pubDate>Thu, 26 Aug 2021 14:26:00 +0800</pubDate>
+      <pubDate>Wed, 26 Aug 2020 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/%E5%90%8E%E7%AB%AF/</guid>
       <description>Middlewares 是修改 Django request 或者 response 对象的钩子。中间件顾名思义，是介于request 与response处理之间的一道处理过程，相对比较轻量级并且在全局上改变django的输入与输出。因为改变的是 全局，所以需要谨慎实用，</description>

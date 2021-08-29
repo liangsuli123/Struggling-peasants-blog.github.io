@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="使用Hugo搭建个人博客 Hugo是一个用Go语言编写的静态网站生成器。静态网页是指存放在服务器中的的HTML文件，经渲染后呈现给用户， 相比一些动态网站，其内容相对稳定，不需要数据库支持 Hugo官方网站"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/git/github/"/>
+
+  
+
+  <title>基于Github使用Hugo搭建个人博客 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/git/github/'>基于Github使用Hugo搭建个人博客</a></h2>
+          <span class="date">2015.07.10</span>
+        </div>
+        <div class="post_content markdown"><p>使用Hugo搭建个人博客</p>
+
+<pre><code>    Hugo是一个用Go语言编写的静态网站生成器。静态网页是指存放在服务器中的的HTML文件，经渲染后呈现给用户，
+    相比一些动态网站，其内容相对稳定，不需要数据库支持 Hugo官方网站：https://gohugo.io/，使用前需准
+    备好Git（方便操作）和Github账户（如果想搭建基于Github的博客的话）即可
+    
+    下载及安装
+        下载最新版本https://github.com/gohugoio/hugo/releases
+    
+    压缩到任意位置（如果长久使用可以放在系统目录下，如果是在window上的话，则是C盘），然后设置环境变量
+    （不设置也行，使用时加路径即可）
+    
+    使用下述命令，无报错输出则为正常
+    
+        ./hugo.exe version
+        ./hugo.exe --help
+    生成博客目录
+    新建一个博客路径
+    
+        ./hugo.exe new site myblog
+        cd myblog/
+        提示：Congratulations! Your new Hugo site is created in XXX 说明OK了
+    
+    hugo会生成以下几个文件夹以及config.toml文件：
+    
+        archetypes：设定自定义的头文件
+        content：存放网站内容页，也就是博客文章，.md格式
+        data：存放网站所要用到的一些配置、数据文件、自定义模板，toml/yaml/json格式
+        layouts：存放的是网站的模板文件，渲染content目录下的内容
+        static：存放js/css/img等静态资源
+        themes：存放主题相关文件
+    接着挑选主题，可以在Hugo官网上选择https://themes.gohugo.io/
+    
+    我选择了hugo-nuo主题（PS. 觉得hermit也不错），切换到themes目录，下载该主题
+    
+        git clone https://github.com/laozhu/hugo-nuo.git
+    
+    激活hugo-nuo主题需要将./themes/hugo-nuo/exampleSite/config.toml文件替换当前myblog
+    目录下的config.toml文件；config.toml文件是hugo的全局配置文件，用来配置整个站点的信息
+    
+    尝试运行下hugo看看主题是否生效：
+    
+        ../hugo.exe server -D
+    然后浏览器中打开http://localhost:1313/
+    
+    创建博客post目录，并利用hugo生成第一个post.md
+    
+        ../hugo.exe new post/first-post.md
+    我们会发现first-post.md头文件部分跟主题是一样的哈，里面draft: true表示这篇文章还是草稿状态，
+    hugo默认是不会渲染草稿状态的文章，可以在完成博客后将其改成false；PS. 上述启动hugo网站时我加了-D参数，
+    所以其还是会显示草稿
+    
+    因为是测试，所以可以先将主题中示例的内容以及配置文件先都搬过来，后续在依次修改
+    
+        cp -R ./themes/hugo-nuo/archetypes/post.md ./archetypes/
+        cp -R ./themes/hugo-nuo/exampleSite/content/* ./content/
+        cp -R ./themes/hugo-nuo/static/* ./static/
+        cp -R ./themes/hugo-nuo/exampleSite/data/* ./data/
+        cp -R ./themes/hugo-nuo/exampleSite/assets/* ./
+    接下来则是按照个人情况修改网站的一些配置，比如博客名称等等
+    
+    如果是使用某个主题的话，可以先查看主题主页的使用说明：
+    https://github.com/laozhu/hugo-nuo
+    
+    hugo-nuo主题还有中文帮助文档（更加方便了~）：
+    https://laozhu.me/post/hugo-nuo-theme/，因为各个主题的配置不尽相同，
+    需要根据文档来修改
+    
+    部署到Github上
+    首先在Github上建个仓库，命名为：XXX.github.io（其中XXX是github用户名），然后修改config.toml配置文件
+    
+    baseURL = &quot;https://XXX.github.io&quot;
+    接着运行../hugo.exe -D命令调试下，其会在站点目录下生成一个public文件夹（如果你在配置文件中加入publishDir = &quot;xxx&quot;，
+    那么则会生成xxx文件夹）
+    
+    然后将public文件夹里的所有文件push到上述仓库中
+    
+    cd public/
+    git init
+    git add .
+    git commit -m 'Add a first blog'
+    git remote add origin https://github.com/XXX/XXX.github.io.git
+    git push -u origin master
+    最后我的备用站点（静态网页）就OK了，如https://XXX.github.io/
+    
+    后续只剩下慢慢添加文章以及以主题模板为基础，做一些个性化的配置修改
+    
+    以我现在的粗浅的理解来看，静态博客网站比较简洁，选择好主题后，只要把文章以md格式上传即可；
+    对于类似wordpress等博客系统而言，其功能更加多点，通过鼠标点点点即可添加好多插件。。。
+    所以如果喜欢简单页面的人来说，hugo足够满足一般的需求（总能找到满意的主题~），但想增加一些好玩的插件，
+    而自己不会写代码的话，就有点心有余而力不足了（比如我想添加分类页，就暂时不知道咋搞）。。。
+    
+    参考资料：
+    在Github使用Hugo搭建个人博客
+    用 Hugo 30 分钟搭建静态博客
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/hugo/">hugo</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
