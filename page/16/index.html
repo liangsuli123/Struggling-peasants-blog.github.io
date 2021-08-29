@@ -113,6 +113,37 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
+    <h2><a href='/posts/c6/'>  CI（持续集成）/CD（持续交付/持续部署） </a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2018.10.20</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
     <h2><a href='/posts/c5/'> docker高级篇 </a></h2>
   </div>
   
@@ -190,37 +221,6 @@
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
           <span class="date">2018.10.06</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/c1/'> itchat发送微信消息 </a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>1、运行程序，会弹出二维码，扫描授权后即可实现自动回复信息 参考01 参考02 复制代码 #coding=utf8 import itchat, time from itchat.content import * @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING]) def text_reply(msg): itchat.send('%s: %s' % (msg['Type'], msg['Text']), msg['FromUserName']) @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO]) def download_files(msg): msg['Text'](msg['FileName']) return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName']) @itchat.msg_register(FRIENDS) def add_friend(msg): itchat.add_friend(**msg['Text']) # 该操作会自动将新好友的消息录入，不......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.10.01</span>
         </span>
         
         <span class="field tags">
