@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="为什么需要用表单验证插件，想想自己重写过几次表单验证，重复造轮子相当的痛苦，当然你可以自己造一套通用的组件。我比较懒，表单验证就用现成的，VeeValidate 可扩展性也不错，所以就使用它来做表单验证"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue10/"/>
+
+  
+
+  <title>前端框架Vue（10）——vue validate验证 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue10/'>前端框架Vue（10）——vue validate验证</a></h2>
+          <span class="date">2020.07.15</span>
+        </div>
+        <div class="post_content markdown"><p><img src="http://localhost:1313/img/11_1.jpg" alt="" /></p>
+
+<p><img src="http://localhost:1313/img/11_2.gif" alt="" /></p>
+
+<pre><code>  为什么需要用表单验证插件，想想自己重写过几次表单验证，重复造轮子相当的痛苦，当然你可以自己造一套通用的组件。我比较懒，表单验证就用现成的，VeeValidate 可扩展性也不错，所以就使用它来做表单验证。
+
+  jquery.validate 也是不错的选择，这是后话了，本文就只介绍 VeeValidate 在 Vue 中的实践。
+
+1、安装
+  支持3中方式的引入项目
+
+npm
+
+npm install vee-validate --save
+bower
+
+bower install vee-validate#2.0.0-rc.4 --save
+
+CDN
+
+https://cdn.jsdelivr.net/vee-validate/2.0.0-rc.3/vee-validate.min.js
+
+2、配置和使用
+  我是使用 npm 安装，注入依赖。这边配置使用主要是3个文件。
+
+=====validate.js ：自己创建一个文件，单独将关于表单验证的代码抽离出来，从 node_modules 中引入 VeeValidate，配置相关项
+=====main.js ：vue 主文件入口，引入validate.js
+=====form.vue ：表单组件
+
+首先附上validate.js中的代码：
+
+import Vue from 'vue'
+import VeeValidate, {Validator} from 'vee-validate'
+import zh from 'vee-validate/dist/locale/zh_CN';//引入中文文件
+
+// 配置中文
+Validator.addLocale(zh);
+
+const config = {
+  locale: 'zh_CN'
+};
+
+Vue.use(VeeValidate,config);
+
+// 自定义validate 
+const dictionary = {
+   zh_CN: {
+      messages: {
+        email: () =&gt; '请输入正确的邮箱格式',
+        required: ( field )=&gt; &quot;请输入&quot; + field
+      },
+      attributes:{
+        email:'邮箱',
+        password:'密码',
+        name: '账号',
+        phone: '手机'
+      }
+  }
+};
+
+Validator.updateDictionary(dictionary);
+
+Validator.extend('phone', {
+  messages: {
+    zh_CN:field =&gt; field + '必须是11位手机号码',
+  },
+  validate: value =&gt; {
+    return value.length == 11 &amp;&amp; /^((13|14|15|17|18)[0-9]{1}\d{8})$/.test(value)
+  }
+});
+
+从上往下分别是:
+
+1、引入表单验证依赖文件，并且引入的是支持中文错误提示的文件。
+
+import Vue from 'vue'
+import VeeValidate, {Validator} from 'vee-validate'
+import zh from 'vee-validate/dist/locale/zh_CN';//引入中文文件
+
+2、进行中文错误提示的配置。
+
+// 配置中文
+Validator.addLocale(zh);
+
+const config = {
+  locale: 'zh_CN'
+};
+
+Vue.use(VeeValidate,config);
+
+3、如果你想自定义表单验证的提示语，不配置有默认。
+
+// 自定义validate 
+const dictionary = {
+   zh_CN: {
+      messages: {
+        email: () =&gt; '请输入正确的邮箱格式',
+        required: ( field )=&gt; &quot;请输入&quot; + field
+      },
+      attributes:{
+        email:'邮箱',
+        password:'密码',
+        name: '账号',
+        phone: '手机'
+      }
+  }
+};
+
+Validator.updateDictionary(dictionary);
+
+message ： 提示语。
+attributes： 就是 filed。
+
+4、扩展自定义的验证，比如这边自定义了电话的表单验证。
+
+Validator.extend('phone', {
+  messages: {
+    zh_CN:field =&gt; field + '必须是11位手机号码',
+  },
+  validate: value =&gt; {
+    return value.length == 11 &amp;&amp; /^((13|14|15|17|18)[0-9]{1}\d{8})$/.test(value)
+  }
+});
+
+main.js中的代码：
+
+import './static/js/validate.js'
+1
+只需要将 validate.js 引入主文件入口就完成了铺路工作，现在就可以开始写表单界面了。
+
+form.vue 组件中的代码：
+
+&lt;div class=&quot;layui-form-item&quot;&gt;
+    &lt;label class=&quot;layui-form-label&quot;&gt;账户&lt;/label&gt;
+    &lt;div class=&quot;layui-block&quot;&gt;
+        &lt;input v-model=&quot;name&quot; v-validate=&quot;'required|min:3|alpha'&quot; :class=&quot;{'input': true, 'is-danger': errors.has('name') }&quot; type=&quot;text&quot; name=&quot;name&quot; class=&quot;layui-input&quot; placeholder=&quot;账户&quot;&gt;
+        &lt;span v-show=&quot;errors.has('name')&quot; class=&quot;text-style&quot; v-cloak&gt; {{ errors.first('name') }} &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+这是其中的一个 input 拿出来讲：
+
+1、首先在 input 中你得有 name 属性。
+
+2、v-validate 属性：管道形式进行过滤，验证条件。
+
+3、span 就是错误提示 。
+
+errors.first('field') -- 获取关于当前field的第一个错误信息
+collect('field') -- 获取关于当前field的所有错误信息(list)
+has('field') -- 当前filed是否有错误(true/false)
+all() -- 当前表单所有错误(list)
+any() -- 当前表单是否有任何错误(true/false)
+
+  到这边你可以完成基础的表单验证了，不同的项目都会有不同的需求，表单验证也不一样，但是 VeeValidate 支持你去扩展，完成各种不同的需求。你可以参照着官网文档，造一个自己的表单验证，这样不同项目时只需要进行简单的修改就能用上了。
+
+
+  VeeValidate 具备丰富的文档：
+    官网地址传送门
+
+    优秀文章：
+        1、vee-validate 表单验证
+        2、Vue2.0表单校验组件vee-validate的使用
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

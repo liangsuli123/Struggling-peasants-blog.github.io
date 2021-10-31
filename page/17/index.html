@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/c1/'> itchat发送微信消息 </a></h2>
+    <h2><a href='/posts/d1/'> 企业微信API开发前准备 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、运行程序，会弹出二维码，扫描授权后即可实现自动回复信息 参考01 参考02 复制代码 #coding=utf8 import itchat, time from itchat.content import * @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING]) def text_reply(msg): itchat.send('%s: %s' % (msg['Type'], msg['Text']), msg['FromUserName']) @itchat.msg_register([PICTURE, RECORDING, ATTACHMENT, VIDEO]) def download_files(msg): msg['Text'](msg['FileName']) return '@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName']) @itchat.msg_register(FRIENDS) def add_friend(msg): itchat.add_friend(**msg['Text']) # 该操作会自动将新好友的消息录入，不......</p>
+      <p>1.1 术语介绍 返回顶部 参考文档：http://work.weixin.qq.com/api/doc#10013 企业微信管理后台： https://work.weixin.qq.com/wework_admin/frame 1、corpid：ww2f9a1a85f1806981 每个企业都拥有唯一的......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.10.01</span>
+          <span class="date">2018.11.25</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b18/'> python3使用email和smtplib库发送邮件 </a></h2>
+    <h2><a href='/posts/git/c12/'> 云监控 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>注：python代理登录qq邮箱发邮件，是需要更改自己qq邮箱设置的。在这里大家需要做两件事情：邮箱开启SMTP功能 、获得授权码 教程链接 1、给单个人发邮件 参考 复制代码 from email.mime.text import MIMEText from email.header import Header from smtplib import SMTP_SSL #qq邮箱......</p>
+      <p>1、云监控相关接口 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.profile.client_profile import ClientProfile from tencentcloud.common.profile.http_profile import HttpProfile from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException from tencentcloud.monitor.v20180724 import monitor_client, models from day04.settings import secretKey,secretId # 导入腾讯云账户secretId，secretKey值 # 实例化一个认证对象，入参需要传入腾讯云账户secre......</p>
     </div>
   </div>
   
@@ -158,7 +158,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.09.26</span>
+          <span class="date">2018.11.20</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b17/'>django&#43;celery&#43;redis实现异步周期任务  </a></h2>
+    <h2><a href='/posts/c11/'> 腾讯云API-云服务器 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>注：python的celery模块 4.2.0版本， 刚开始安装的未4.1.1版本，但是定时任务居然不执行 1、在settings.py中配置celery 复制代码 #1、如果在django中需要周期性执行，在......</p>
+      <p>1、腾讯云SDK使用举例 网址：https://cloud.tencent.com/document/sdk/Python 复制代码 #! /usr/bin/env python # -*- coding: utf-8 -*- from tencentcloud.common import credential from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException # 导入对应产品模块的client mode......</p>
     </div>
   </div>
   
@@ -189,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.09.21</span>
+          <span class="date">2018.11.14</span>
         </span>
         
         <span class="field tags">
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b16/'>celery与Django项目最佳实践  </a></h2>
+    <h2><a href='/posts/git/c9/'> git分支管理 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、在Django中使用celery介绍（celery无法再windows下运行） 1）在Django中使用celery时，celery文件必须以tasks.py 2）Django会自动到每个APP中找t......</p>
+      <p>参考博客：https://www.cnblogs.com/gzpblog/p/5463031.html 1、git常用命令 echo &quot;#Description&quot; &gt; README.md， 添加一个文件 git status， 查看当前状态，发现有未跟踪......</p>
     </div>
   </div>
   
@@ -220,13 +220,15 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.09.17</span>
+          <span class="date">2018.11.03</span>
         </span>
         
         <span class="field tags">
           <i class="remixicon-stack-line"></i>
           
           <a href="https://liangsuli123.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+          
+          <a href="https://liangsuli123.github.io/tags/git/">git</a>
           
         </span>
         

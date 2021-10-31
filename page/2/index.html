@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/mysql/sql/'>MySql数据库备份的几种方式</a></h2>
+    <h2><a href='/posts/git/git/'>fatal: unable to access ‘https://github.com/Homebrew/brew/‘: Error in the HTTP2 framing layer</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>mysqldump工具备份 备份整个数据库 $&gt; mysqldump -u root -h host -p dbname &gt; backdb.sql 备份数据库中的某个表 $&gt; mysqldump -u root -h host -p dbname tbname1, tbname2 &gt; backdb.sql 备份多个数据库 $&gt; mysqldump -u root -h host -p --databases dbname1, dbname2 &gt; backdb.sql 备份系统中所有数据库 $&gt; mysqldump -u root -h host -p --all-databases &gt; backdb.sql 直接复制整个数据库......</p>
+      <p>问题描述 解决：fatal: unable to access ‘https://github.com/Homebrew/brew/’: Error in the HTTP2 framing layer fatal: unable to access 'https://github.com/homebrew/brew/': 1 更新了新的系统，安装homebrew的时候老失败。 解决方案： git config --global --unset http.proxy git......</p>
     </div>
   </div>
   
@@ -127,7 +127,38 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2021.07.02</span>
+          <span class="date">2021.08.11</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://liangsuli123.github.io/tags/git/">git</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/mysql/sql/'>mysql常见的三种数据库引擎</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>MySQL中的数据用各种不同的技术存储在文件（或内存）中，这些技术中的每一种技术都使用不同的存储机制， 索引技巧，锁定水平并且最终提供广泛的不同功能和能力。在MySQL中将这些不同的技术及配套的相关功能......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2021.08.01</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/linux/a1/'>linux技巧让进程后台可靠运行的几种方法</a></h2>
+    <h2><a href='/posts/mysql/sql_index/'>sql优化和索引常见的面试题(面试总结)</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>我们经常会碰到这样的问题，用 telnet/ssh 登录了远程的 Linux 服务器，运行了一些耗时较长的任务， 结果却由于网络的 不稳定导致任务中途失败。如何让命令提交后不受本地关闭终端窗口/网络断开连接的干扰呢？下面举了一些例子， 您可......</p>
+      <p>1.什么是索引 索引指数据库的目录，比如：字典上面的字母目录 (适用于大数据量) 2.建立索引的优缺点 优点:查询速度快 缺点：增删改慢，因为数据库要同步去维护索引文件，所以速度慢 3.索引有哪些 普通 主键 唯一 组合......</p>
     </div>
   </div>
   
@@ -158,7 +189,38 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2021.05.17</span>
+          <span class="date">2021.08.01</span>
+        </span>
+        
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          
+          <a href="https://liangsuli123.github.io/tags/sql/">sql</a>
+          
+        </span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='/posts/linux/a1/'>linux查看硬件信息命令</a></h2>
+  </div>
+  
+  <div class="list">
+    <div class="post_content markdown">
+      <p>Linux大部分操作是通过命令实现的，并不像windows那么直观。 linux查看硬件信息也是需要通过linux查看硬件信息命令查询的 系统 # uname -a # 查看内核/操作系统/CPU信息 # head -n 1 /etc/issue # 查看操作系统......</p>
+    </div>
+  </div>
+  
+  <div class="post_footer">
+    <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-map-pin-time-line"></i>
+          <span class="date">2021.07.20</span>
         </span>
         
         <span class="field tags">
@@ -167,68 +229,6 @@
           <a href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
           
           <a href="https://liangsuli123.github.io/tags/linux/">linux</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/cate/'>唯有美食不可辜负 </a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>我一不高兴就喜欢吃东西，一吃东西就发胖，一发胖我就很不高兴。 这辈子唯一拿得起，放不下的就是——筷子。......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2021.04.10</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://liangsuli123.github.io/tags/cate/">cate</a>
-          
-        </span>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post animated fadeInDown">
-  <div class="post_title">
-    <h2><a href='/posts/%E5%90%8E%E7%AB%AF/'>django 中间件</a></h2>
-  </div>
-  
-  <div class="list">
-    <div class="post_content markdown">
-      <p>Middlewares 是修改 Django request 或者 response 对象的钩子。中间件顾名思义，是介于request 与response处理之间的一道处理过程，相对比较轻量级并且在全局上改变django的输入与输出。因为改变的是 全局，所以需要谨慎实用，......</p>
-    </div>
-  </div>
-  
-  <div class="post_footer">
-    <div class="meta">
-      <div class="info">
-        <span class="field">
-          <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2020.08.26</span>
-        </span>
-        
-        <span class="field tags">
-          <i class="remixicon-stack-line"></i>
-          
-          <a href="https://liangsuli123.github.io/tags/%E5%90%8E%E7%AB%AF/">后端</a>
           
         </span>
         

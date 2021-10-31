@@ -6,10 +6,28 @@
     <description>Recent content in 配置 on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 22 Aug 2021 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Oct 2021 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django &#43; Uwsgi &#43; Nginx 实现生产环境部署 </title>
+      <link>https://liangsuli123.github.io/posts/django/django2/</link>
+      <pubDate>Tue, 12 Oct 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/django/django2/</guid>
+      <description>Django + Uwsgi + Nginx 实现生产环境部署 uwsgi介绍 uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用 是与uWSGI服务器进行交换。要</description>
+    </item>
+    
+    <item>
+      <title>Django Celery RabbitMQ构建异步消息队列</title>
+      <link>https://liangsuli123.github.io/posts/django/django1/</link>
+      <pubDate>Fri, 08 Oct 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/django/django1/</guid>
+      <description>1. 建立消息队列 最常用的消息队列就是rabbitmq与redis，这里以rabbitmq为例 首先是安装rabbitmq linux下安装 sudo apt-get install rabbitmq-server mac下安装 brew install rabbitmq 启动rabbitmq 进入到 /usr/loc</description>
+    </item>
     
     <item>
       <title>46个Linux面试常见问题送给你</title>
@@ -18,6 +36,15 @@
       
       <guid>https://liangsuli123.github.io/posts/linux/linux_use/</guid>
       <description>问题一： 绝对路径用什么符号表示？当前目录、上层目录用什么表示？主目录用什么表示? 切换目录用什么命令？ 答案： 绝对路径： 如/etc/init.d 当前目录和上层目录： ./ ../ 主目录： ~/ 切换目录： cd 问题二： 怎么查</description>
+    </item>
+    
+    <item>
+      <title>nginx 同时监听uwsgi服务器两个端口，实现一个服务器运行多个项目</title>
+      <link>https://liangsuli123.github.io/posts/conf/nginx_uwsgi/</link>
+      <pubDate>Sun, 22 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/conf/nginx_uwsgi/</guid>
+      <description>nginx.conf 配置文件 #user nobody; worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; gzip on; server { listen 80; server_name 第一个域名; location / { # 将nginx所有请求转到uwsgi include uwsgi_params; # uwsgi的ip与端口 uwsgi_pass 127.0.0.1:3309; } location /static { # 静态文件目录 alias /home/XXXXX(静态</description>
     </item>
     
     <item>

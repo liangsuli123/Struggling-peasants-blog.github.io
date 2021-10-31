@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="百度地图JavaScript API是一套由JavaScript语言编写的应用程序接口， 可帮助您在网站中构建功能丰富、交互性强的地图应用，支持PC端和移动端基于浏览器的地图应用开发， 且支持HTML5特性"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue9/"/>
+
+  
+
+  <title>前端框架Vue（9）——百度地图使用 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue9/'>前端框架Vue（9）——百度地图使用</a></h2>
+          <span class="date">0001.01.01</span>
+        </div>
+        <div class="post_content markdown"><p>百度地图JavaScript API是一套由JavaScript语言编写的应用程序接口，
+可帮助您在网站中构建功能丰富、交互性强的地图应用，支持PC端和移动端基于浏览器的地图应用开发，
+且支持HTML5特性的地图开发。</p>
+
+<pre><code>该套API免费对外开放。自v1.5版本起，您需先申请密钥（ak）才可使用，接口无使用次数限制。
+
+  地址传送门：http://lbsyun.baidu.com/index.php?title=jspopular
+
+  文章说是栏目是前端框架Vue结合百度地图，这边还是主讲一下如何引入地图，以及部分 API 的使用。
+
+1、申请密钥
+百度地图的使用需要一个专属的密钥（ak）作为路径：
+
+&lt;script src='http://api.map.baidu.com/api?v=2.0&amp;ak=你的密钥&amp;callback=init'&gt;
+&lt;/script&gt;
+按步骤完成，并且激活就能获得一个密钥了，这样我们就可以开始引入地图了。
+
+先来看效果图：
+</code></pre>
+
+<p><img src="http://localhost:1313/img/map_1.jpg" alt="" />
+<img src="http://localhost:1313/img/map_2.jpg" alt="" /></p>
+
+<pre><code>整体项目是用Vue做的，百度地图是其中的一个功能模块，这边了解一下如何将地图引入到Vue项目中：
+
+1、首先我用的是vue-cli脚手架,这是目录结构：
+
+
+现在在 index.html 中引入script:
+
+script src='http://api.map.baidu.com/api?v=2.0&amp;ak=你的密钥&amp;callback=init'&gt;&lt;/script&gt;
+1
+解释一下：v = 2.0是版本，ak 则是申请到的密钥，callback 回调初始化地图。
+
+2、给定容器，调用 API 绘图
+&lt;template&gt;
+    &lt;!--地图容器--&gt;
+    &lt;div id=&quot;XSDFXPage&quot; class=&quot;XSDFXPage&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default {
+        name:'',
+        data () {
+            return {
+
+            }
+        },
+        mounted() {
+            // 百度地图API功能
+            // 创建Map实例
+            var map = new BMap.Map(&quot;XSDFXPage&quot;,{enableMapClick:true});
+            // 初始化地图,设置中心点坐标和地图级别
+            map.centerAndZoom(new BMap.Point(116.4035,39.915), 11);
+            // 添加地图类型控件
+            map.addControl(new BMap.MapTypeControl());  
+            // 设置地图显示的城市 此项是必须设置的
+            map.setCurrentCity(&quot;杭州&quot;);    
+            // 开启鼠标滚轮缩放      
+            map.enableScrollWheelZoom(true);
+            // 设置定时器，对地图进行自动移动
+            setTimeout(function(){
+                map.panTo(new BMap.Point(113.262232,23.154345));
+            }, 2000);
+            setTimeout(function(){
+                map.setZoom(14);
+            },4000);
+            /************************************************
+            添加折线
+            *************************************************/
+            var pointGZ = new BMap.Point(113.262232,23.154345);
+            var pointHK = new BMap.Point(110.35,20.02);
+            setTimeout(function(){
+                var polyline = new BMap.Polyline([pointGZ,pointHK],
+                {strokeColor:&quot;blue&quot;,strokeWeight:5,strokeOpacity:0.5});
+                map.addOverlay(polyline);
+            },6000);
+            /************************************************
+            添加工具条、比例尺控件
+            *************************************************/
+            map.addControl(new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT}));
+            map.addControl(new BMap.NavigationControl());
+            map.addControl(new BMap.NavigationControl({anchor:
+            BMAP_ANCHOR_BOTTOM_RIGHT,type:BMAP_NAVIGATION_CONTROL_SMALL}));
+            /************************************************
+            添加自定义控件类，放大ZoomControl
+            *************************************************/
+            function ZoomControl() {
+                //默认停靠位置和偏移量
+                this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;
+                this.defaultOffset = new BMap.Size(50,23);
+            }
+            //通过JavaScript的prototype属性继承于BMap.Control
+            ZoomControl.prototype = new BMap.Control();
+            //自定义控件必须实现自己的initialize方法，并且将控件的DOM元素返回
+            //在本方法中创建div容器，并将其添加到地图容器中
+            ZoomControl.prototype.initialize = function(map) {
+                //创建一个DOM元素
+                var div = document.createElement('div');
+                //添加文字说明
+                div.appendChild(document.createTextNode('放大两级'));
+                //添加样式
+                div.style.color = '#40C5CC'; 
+                div.style.cursor = 'pointer';
+                div.style.border = '3px solid gray';
+                div.style.backgroundColor = '#eee';
+                //绑定事件，点击触发
+                div.onclick = function(e) {
+                    map.setZoom(map.getZoom() + 2);
+                }
+                //添加DOM元素到地图上
+                map.getContainer().appendChild(div);
+                //将DOM元素返回
+                return div;
+            }
+            //创建控件
+            var myZoomCtrl = new ZoomControl();
+            map.addControl(myZoomCtrl)
+
+            /************************************************
+            添加添加城市列表控件
+            *************************************************/
+            map.addControl(new BMap.CityListControl({
+                anchor:BMAP_ANCHOR_BOTTOM_RIGHT,
+                offset:new BMap.Size(130,23)
+                // 切换城市之间事件
+                // onChangeBefore: function(){
+                //    alert('before');
+                // },
+                // 切换城市之后事件
+                // onChangeAfter:function(){
+                //   alert('after');
+                // }
+            }));
+            /************************************************
+            添加新图标
+            *************************************************/
+            //定义新图标
+            var myIcon = new BMap.Icon(&quot;http://developer.baidu.com/map/jsdemo
+            /img/fox.gif&quot;,new BMap.Size(300,157));
+            //创建标注
+            var marker = new BMap.Marker(pointHK,{icon:myIcon});
+            var marker1 = new BMap.Marker(pointGZ,{icon:myIcon});
+            //将标注放大地图上
+            map.addOverlay(marker);
+            map.addOverlay(marker1);
+            //文字提示
+            var label = new BMap.Label('广州西站',{offset:new BMap.Size(140,10)});
+            marker1.setLabel(label); 
+            //添加新图标的监听事件
+            marker1.addEventListener('click',function(){
+                var p = marker1.getPosition();//获取位置
+                alert(&quot;点击的位置是：&quot; + p.lng + ',' + p.lat);
+            })
+
+            /************************************************
+            添加曲线
+            *************************************************/
+            var beijingPosition=new BMap.Point(116.432045,39.910683),
+                hangzhouPosition=new BMap.Point(120.129721,30.314429),
+                taiwanPosition=new BMap.Point(121.491121,25.127053);
+            var point = [beijingPosition,hangzhouPosition,taiwanPosition];
+
+            var curve = new BMapLib.CurveLine(point, {strokeColor:&quot;blue&quot;, 
+            strokeWeight:3, strokeOpacity:0.5});//创建弧线
+            map.addOverlay(curve);//添加到地图上
+            curve.enableEditing();//开启编辑功能
+
+            /************************************************
+            给地图添加右键菜单
+            *************************************************/
+            var menu = new BMap.ContextMenu();
+
+            var txtMenuItem = [
+                {
+                    text:'放大',
+                    callback:function(){map.zoomIn()}
+                },
+                {
+                    text:'缩小',
+                    callback:function(){map.zoomOut()}
+                }
+            ];
+            for(var i=0; i &lt; txtMenuItem.length; i++){
+                menu.addItem(new BMap.MenuItem(txtMenuItem[i].text,
+                txtMenuItem[i].callback,100));
+            }
+            map.addContextMenu(menu);
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt;
+    html,body,.XSDFXPage{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: &quot;微软雅黑&quot;;
+        }
+&lt;/style&gt;
+
+上面的代码是可以直接用的，也完全可以对照着百度地图给出的文档进行实践。
+
+将所有的操作放到 mounted 中，保证挂载完成后再去初始化地图。
+
+
+这篇文章主要是为了日后自己用到地图可以直接来查，实在想不出其他写的目的了。
+总结一下：
+1、vue 结合百度地图如何引入。
+2、操作暂时写在 mounted 中。
+3、需要申请一个密钥，并在使用时引入 script 中。
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="父子间的通信传值是 vue 中的一个重要的内容和掌握点。 父子间的通信传值是 vue 中的一个重要的内容和掌握点。 *vue2.0 推荐使用 vuex,全局进行状态管理。（后面再讲）。 解释一下： 组件之间的关系： &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;loginPage v-on:showState=&amp;quot;changeState&amp;quot; v-if=&amp;quot;loginShow&amp;quot; :fromParent=&amp;quot;fromParent&amp;quot;&amp;gt;&amp;lt;/loginPage&amp;gt; &amp;lt;div class=&amp;quot;web-content&amp;quot; v-if=&amp;quot;webShow&amp;quot;&amp;gt; &amp;lt;phHeader :headerUserName=&amp;quot;headerUserName&amp;quot;&amp;gt;&amp;lt;/phHeader&amp;gt; &amp;lt;div&amp;gt; &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue8/"/>
+
+  
+
+  <title>前端框架Vue（8）——子父组件的传参通信 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue8/'>前端框架Vue（8）——子父组件的传参通信</a></h2>
+          <span class="date">2020.06.30</span>
+        </div>
+        <div class="post_content markdown"><p>父子间的通信传值是 vue 中的一个重要的内容和掌握点。</p>
+
+<pre><code>父子间的通信传值是 vue 中的一个重要的内容和掌握点。
+
+  *vue2.0 推荐使用 vuex,全局进行状态管理。（后面再讲）。
+
+</code></pre>
+
+<p><img src="http://localhost:1313/img/8.png" alt="" /></p>
+
+<pre><code>解释一下：
+  组件之间的关系：
+
+ &lt;div id=&quot;app&quot;&gt;
+    &lt;loginPage v-on:showState=&quot;changeState&quot; v-if=&quot;loginShow&quot; :fromParent=&quot;fromParent&quot;&gt;&lt;/loginPage&gt;
+    &lt;div class=&quot;web-content&quot; v-if=&quot;webShow&quot;&gt;
+      &lt;phHeader :headerUserName=&quot;headerUserName&quot;&gt;&lt;/phHeader&gt;
+      &lt;div&gt;
+        &lt;router-view&gt;&lt;/router-view&gt;
+      &lt;/div&gt;
+      &lt;phFooter&gt;&lt;/phFooter&gt;
+    &lt;/div&gt;    
+  &lt;/div&gt;
+
+
+
+1、子组件 login 传参数给父组件 app.vue
+$emit
+用法：vm.$emit( event, […args] )，触发当前实例上的事件。
+
+子组件中代码：
+
+submitForm:function(formName){
+    //与父组件通信传值
+    this.$emit('showState', [this.loginShow,this.formName.user])
+}
+
+submitForm 是一个点击事件， showState 是一个方法，后边是多个参数写法。
+
+父组件中代码：
+
+首先需要在 子组件中绑定 showState 事件，前一个 showState 是在子组件定义的，后面的 changeState 是新定义的方法。
+
+ &lt;loginPage v-on:showState=&quot;changeState&quot; v-if=&quot;loginShow&quot; :fromParent=&quot;fromParent&quot;&gt;&lt;/loginPage&gt;
+1
+changeState:function(data){
+      //console.log(data)
+      if(data[0] === false){
+        console.log('执行')
+        this.webShow = true;//显示web应用内容
+        this.loginShow = false;//隐藏login组件
+        this.headerUserName = data[1];//赋值headerUserName
+      }
+    }
+
+然后就能在方法中获得子组件传来的参数：
+data：[false, &quot;allen&quot;]0: false1: &quot;allen&quot;length: 2__proto__: Array(0)
+
+2、父组件 app.vue 传参数给子组件 ph-Header
+props
+父组件中代码：
+
+引入在父组件中的 ph-Header 子组件需要绑定 headerUserName,前一个 headerUserName 是子组件中定义的。后一个才是父组件中的参数。
+
+&lt;phHeader :headerUserName=&quot;headerUserName&quot;&gt;&lt;/phHeader&gt;
+1
+export default {
+  name: 'app',
+  data () {
+    return {
+      loginShow: true,
+      webShow: false,
+      fromParent:'——来自父组件',
+      headerUserName: '用户名'
+    }
+  },
+  components:{
+    phHeader,
+    phFooter,
+    loginPage
+  },
+  methods:{
+    changeState:function(data){
+      console.log(data)
+      if(data[0] === false){
+        console.log('执行')
+        this.webShow = true;//显示web应用内容
+        this.loginShow = false;//隐藏login组件
+        this.headerUserName = data[1];//赋值headerUserName
+      }
+    }
+  }
+}
+
+子组件中代码
+
+子组件中需要接收 headerUserName
+
+    export default {
+        name: '',
+        data () {
+            return {
+
+            }
+        },
+        props:[
+            'headerUserName'
+        ]
+    }
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

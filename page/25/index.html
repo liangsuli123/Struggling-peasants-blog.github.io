@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/vue/vue.js-%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0/-%E5%8D%83%E7%B1%B3%E7%B1%B3%E7%9A%84%E8%BD%AC%E6%8D%A2-/%E6%97%B6%E5%88%86%E7%A7%92-%E7%9A%84%E8%BD%AC%E6%8D%A2/'>vue.js 监听属性的学习/ 千米、米的转换 /时、分、秒 的转换</a></h2>
+    <h2><a href='/posts/re1/'>正则1</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;vue_的监听属性&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; window.onload = function(){ var app= new Vue({ el:&quot;#app&quot;, data:{ kilometers:0, meters:0 }, //监听属性 watch:{ kilometers:function(val){ this.kilometers = val; this.meters = val * 1000; }, meters:function(val){ this.kilometers = val / 1000; this.meters.val; } } }); var app1 = new Vue({ el:&quot;#app1&quot;, data:{ seconds:0, minutes:0, hours:0 }, //......</p>
+      <p>匹配多个字符----默认greed 贪婪 • * 匹配前一个字符 * 匹配前一个字符 修饰前面的字符出现0次或无限次数 匹配 + 修饰前一位字符至少一次或无限次（至少得有 一个） ? 匹配一个字符出现最多一次或着没有-----......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.06.10</span>
+          <span class="date">2018.04.03</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/vue/vue.js%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/'>vue.js的计算属性</a></h2>
+    <h2><a href='/posts/bianma/'>编码</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;vue 计算属性的学习&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; window.onload = function(){ var app = new Vue({ el:&quot;#app&quot;, data:{ information:'灰色的世界里，只有你的眼睛是色彩斑斓的' }, computed:{ reverseInformation:function(){ return this.information.split('').reverse().join('') } } }); } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;app&quot;&gt; &lt;!-- 颠倒字符串 上面的......</p>
+      <p>import base64 s = '无可挑剔' q=base64.b64encode(bytes(s, 'gbk')) print(q) w=base64.b64decode(base64.b64encode(bytes(s, 'gbk'))) print(w) 编码过程 s = &quot;无可挑剔&quot; encoder = base64.b64encode(s.encode(&quot;utf-8&quot;)) print(encoder) str_encoder = encoder.decode('utf-8') print(str_encoder) # 解码过程 decoder = base64.b64decode(str_encoder) print(decoder.decode('utf-8')) src = &quot;功成名就&quot; tgt = base64.b64encode(src.encode('UTF-8')) print (tgt) src = base64.b64decode(tgt).decode('utf-8') print (src) &quot;&quot;&quot; b'zt6/ycz0zN4=' b'\xce\xde\xbf\xc9\xcc\xf4\xcc\xde' b'5peg5Y+v5oyR5YmU' 5peg5Y+v5oyR5YmU 无可挑剔 b'5Yqf5oiQ5ZCN5bCx' 功成名就 &quot;&quot;&quot;......</p>
     </div>
   </div>
   
@@ -158,7 +158,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.06.05</span>
+          <span class="date">2018.04.03</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/vue/vue%E5%85%A5%E9%97%A8/'>vue入门</a></h2>
+    <h2><a href='/posts/%E5%8F%8D%E6%89%92%E6%93%8D%E4%BD%9C/'>反扒操作</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Vue.js 的入门&lt;/title&gt; &lt;!-- 导入 --&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; //单一入口 window.onload = function(){ var app = new Vue({ //el 属性用来绑定元素节点 el:&quot;#app&quot;, //data属性用来绑定数据 data:{ message:'Hello World' } }); //建立vue对象 var app2 = new Vue({ // 绑定元素节点......</p>
+      <p>先检查是否有API API是网站官方提供的数据接口，如果通过调用API采集数据，则相当于在网站允许的范围内采集，这样既不会有道德法律风险，也没有网站故意设置的障碍；不过调用API接口的访问则处于网站的控......</p>
     </div>
   </div>
   
@@ -189,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.05.10</span>
+          <span class="date">2017.08.01</span>
         </span>
         
         <span class="field tags">
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/'>鼠标事件</a></h2>
+    <h2><a href='/posts/%E5%85%B7%E4%BD%93%E7%88%AC%E8%99%AB%E6%93%8D%E4%BD%9C/'>具体爬虫操作</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;mouse 事件&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot; ./js/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; &gt; $(function(){ // 用id 选择器监听鼠标 悬停事件 $(&quot;#b2&quot;).mouseover(function(){ $(&quot;.c2&quot;).css(&quot;background-color&quot;,&quot;gold&quot;); $(&quot;.c2&quot;).css(&quot;color&quot;,&quot;blue&quot;); $(&quot;.c2&quot;).css(&quot;font-size&quot;,&quot;36px&quot;); }); // 用id选择器来修改元素的样式 $(&quot;#b2&quot;).mouseout(function(){ $(&quot;.c2&quot;).css(&quot;background-color&quot;,&quot;pink&quot;); $(&quot;.c2&quot;).css(&quot;color&quot;,&quot;red&quot;); $(&quot;.c2&quot;).css(&quot;font-size&quot;,&quot;18px&quot;); }); }); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;input type=&quot;button&quot; id=&quot;b2&quot; value=&quot;悬停改变颜色&qu......</p>
+      <p>首先肯定要实现图片抓取这个基本功能 然后实现对用户所给的链接进行抓取 最后要有一定的交互，程序不能太傻吧 一、页面获取 要让python可以进行对网页的访问，那肯定要用到urllib之类的包。So先来个 import urllib u......</p>
     </div>
   </div>
   
@@ -220,7 +220,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.04.20</span>
+          <span class="date">2017.07.29</span>
         </span>
         
         <span class="field tags">

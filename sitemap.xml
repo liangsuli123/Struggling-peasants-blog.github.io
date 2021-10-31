@@ -3,31 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://liangsuli123.github.io/about/</loc>
-    <lastmod>2021-08-22T20:24:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://liangsuli123.github.io/</loc>
-    <lastmod>2021-08-22T20:24:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://liangsuli123.github.io/posts/linux/linux_use/</loc>
-    <lastmod>2021-08-22T14:26:00+08:00</lastmod>
+    <loc>https://liangsuli123.github.io/posts/django/django2/</loc>
+    <lastmod>2021-10-12T14:26:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://liangsuli123.github.io/posts/</loc>
-    <lastmod>2021-08-22T14:26:00+08:00</lastmod>
+    <lastmod>2021-10-12T14:26:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://liangsuli123.github.io/tags/</loc>
-    <lastmod>2021-08-22T14:26:00+08:00</lastmod>
+    <lastmod>2021-10-12T14:26:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/</loc>
+    <lastmod>2021-10-12T14:26:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2021-10-12T14:26:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/django/django1/</loc>
+    <lastmod>2021-10-08T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/about/</loc>
+    <lastmod>2021-08-22T20:24:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/linux/linux_use/</loc>
+    <lastmod>2021-08-22T14:26:00+08:00</lastmod>
   </url>
   
   <url>
@@ -37,9 +53,8 @@
   </url>
   
   <url>
-    <loc>https://liangsuli123.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://liangsuli123.github.io/posts/conf/nginx_uwsgi/</loc>
     <lastmod>2021-08-22T14:26:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -62,6 +77,11 @@
     <loc>https://liangsuli123.github.io/tags/sql/</loc>
     <lastmod>2021-08-01T14:26:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/mysql/sql_index/</loc>
+    <lastmod>2021-08-01T14:26:00+08:00</lastmod>
   </url>
   
   <url>
@@ -103,13 +123,43 @@
   
   <url>
     <loc>https://liangsuli123.github.io/tags/vue/</loc>
-    <lastmod>2020-06-26T14:26:00+08:00</lastmod>
+    <lastmod>2020-07-29T14:26:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue12/</loc>
+    <lastmod>2020-07-29T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue11/</loc>
+    <lastmod>2020-07-25T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue10/</loc>
+    <lastmod>2020-07-15T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue9/</loc>
+    <lastmod>2020-07-10T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue8/</loc>
+    <lastmod>2020-06-30T14:26:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://liangsuli123.github.io/posts/vue/vue/</loc>
     <lastmod>2020-06-26T14:26:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue7/</loc>
+    <lastmod>2020-06-25T14:26:00+08:00</lastmod>
   </url>
   
   <url>
@@ -756,6 +806,10 @@
   <url>
     <loc>https://liangsuli123.github.io/img/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://liangsuli123.github.io/posts/vue/vue9/</loc>
   </url>
   
 </urlset>

@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="最长回文子串 回文是指正着读和倒着读，结果一些样，比如abcba或abba。 题目是要在一个字符串中要到最长的回文子串。 最容易想到的就是暴力破解，求出每一个子串，之后判断是不是回文，找到最长的那个。 求每一"/>
+  <meta name="description" content="给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例: 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] &#43; nums[1] = 2 &#43; 7 = 9 所以返回 [0, 1] 这道题目比较容易"/>
   
 
   
@@ -23,7 +23,7 @@
 
   
 
-  <title>leetcode题目最长回文子串 &middot; 梁苏莉的博客</title>
+  <title>leetcode题目两数和 &middot; 梁苏莉的博客</title>
 
   <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
@@ -108,110 +108,74 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/leetcode/'>leetcode题目最长回文子串</a></h2>
-          <span class="date">2020.01.25</span>
+          <h2><a href='/posts/leetcode/'>leetcode题目两数和</a></h2>
+          <span class="date">2020.01.22</span>
         </div>
-        <div class="post_content markdown"><pre><code>
-最长回文子串
-回文是指正着读和倒着读，结果一些样，比如abcba或abba。
-题目是要在一个字符串中要到最长的回文子串。
-最容易想到的就是暴力破解，求出每一个子串，之后判断是不是回文，找到最长的那个。
-求每一个子串时间复杂度O(N^2)，判断子串是不是回文O(N)，两者是相乘关系，所以时间复杂度为O(N^3)。
+        <div class="post_content markdown"><pre><code>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+示例:
+给定 nums = [2, 7, 11, 15], target = 9
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+
+这道题目比较容易想到的是通过暴力搜索求解，但暴力搜索的时间复杂度为 O(n^2)。
+如果使用哈希的思想，利用Python中list的查询方式，我们可以将复杂度降低到 O(n)。有两个值得注意的地方：
+
+同样的元素不能重复使用（也就是不能自己加自己）
+给定的数组中可能有相同的元素（比如 [3, 3, 4, 4, 5]）
 
 class Solution:
     &quot;&quot;&quot;
-        最长回文子串
-        回文是指正着读和倒着读，结果一些样，比如abcba或abba。
-        题目是要在一个字符串中要到最长的回文子串。
-        最容易想到的就是暴力破解，求出每一个子串，之后判断是不是回文，找到最长的那个。
-        求每一个子串时间复杂度O(N^2)，判断子串是不是回文O(N)，两者是相乘关系，所以时间复杂度为O(N^3)。
+    给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+    你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+    示例:
+    给定 nums = [2, 7, 11, 15], target = 9
+    因为 nums[0] + nums[1] = 2 + 7 = 9
+    所以返回 [0, 1]
+
+    这道题目比较容易想到的是通过暴力搜索求解，但暴力搜索的时间复杂度为 O(n^2)。
+    如果使用哈希的思想，利用Python中list的查询方式，我们可以将复杂度降低到 O(n)。有两个值得注意的地方：
+
+    同样的元素不能重复使用（也就是不能自己加自己）
+    给定的数组中可能有相同的元素（比如 [3, 3, 4, 4, 5]）
+
     &quot;&quot;&quot;
-    def longestPalindrome(self, s):
-        &quot;&quot;&quot;
-        :type s: str
-        :rtype: str
-        &quot;&quot;&quot;
-        s = s
-        mlen = len(s)
-        while True:
-            i = 0
-            while i + mlen &lt;= len(s):
-                sl = s[i:i + mlen]
-                sr = sl[::-1]
-                if sl == sr:
-                    return sl
-                i = i + 1
-            mlen = mlen - 1
-            if mlen == 0:
-                return &quot;No solution&quot;
+    def twoSum(self, nums, target):
+        i = 0
+        while i &lt; len(nums):
+            if i == len(nums) - 1:
+                return &quot;No solution here!&quot;
+            r = target - nums[i]
+            # Can't use a num twice
+            num_follow = nums[i + 1:]
+            if r in num_follow:
+                return [i, num_follow.index(r) + i + 1]
+            i = i + 1
 
 if __name__ == '__main__':
-    s=Solution()
-    s.longestPalindrome('himhbggbc') 
+    s = Solution()
+    print(s.twoSum([3, 3, 4, 4, 5], 9))
 
 
-第二种
-class Solution(object):
-    def longestPalindrome(self, s):
-        &quot;&quot;&quot;
-        :type s: str
-        :rtype: str
-        &quot;&quot;&quot;
-        # 使用动态规划，用空间换时间，把问题拆分
-        # 获取字符串s的长度
-        str_length = len(s)
-        # 记录最大字符串长度
-        max_length = 0
-        # 记录位置
-        start = 0
-        # 循环遍历字符串的每一个字符
-        for i in range(str_length):
-            # 如果当前循环次数-当前最大长度大于等于1  并  字符串[当前循环次数-当前最大长度-1:当前循环次数+1]  == 取反后字符串
-            if i - max_length &gt;= 1 and s[i-max_length-1: i+1] == s[i-max_length-1: i+1][::-1]:
-                # 记录当前开始位置
-                start = i - max_length - 1
-                # 取字符串最小长度为2，所以+=2，s[i-max_length-1: i+1]
-                max_length += 2
-                continue
-            # 如果当前循环次数-当前最大长度大于等于0  并  字符串[当前循环次数-当前最大长度:当前循环次数+1]  == 取反后字符串
-            if i - max_length &gt;= 0 and s[i-max_length: i+1] == s[i-max_length: i+1][::-1]:
-                start = i - max_length
-                # 取字符串最小长度为1，所以+=1，s[i-max_length: i+1]
-                max_length += 1
-        # 返回最长回文子串
-        return s[start: start + max_length]
+    给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+    你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+    示例:
+    给定 nums = [1，2, 7, 8，11, 15], target = 9
+    因为 nums[0] + nums[3] = 2 + 7 = 9
+    所以返回 [[0, 3],[1,2]]
+
+    这道题目比较容易想到的是通过暴力搜索求解，但暴力搜索的时间复杂度为 O(n^2)。
+    如果使用哈希的思想，利用Python中list的查询方式，我们可以将复杂度降低到 O(n)。有两个值得注意的地方：
 
 
-if __name__ == '__main__':
-    s = &quot;babad&quot;
-    # s = &quot;cbbd&quot;
-    sl = Solution()
-    print(sl.longestPalindrome(s))
-
-第三种
-根据回文串对称性，分为奇数长度回文串和偶数长度回文串
-
-def match(s):
-    res=0
-    for i in range(len(s)-1):
-        if s[i]==s[i+1]:#奇数长度
-            first=i
-            end=i+1
-            while first&gt;=0 and end&lt;len(s) and s[first]==s[end]:
-            #满足条件就向两边扩展
-                first-=1
-                end+=1
-            res=max(res,end-first-1)
-        elif s[i-1]==s[i+1]:#偶数长度
-            first=i-1
-            end=i+1
-            while first&gt;=0 and end&lt;len(s) and s[first]==s[end]:
-                first-=1
-                end+=1
-            res=max(res,end-first-1)
-    return res
-match('abba')
-
+b_index=[]
+for i in mylist:
+    r=4-i
+    if r in mylist :
+        b_index.append([mylist.index(i),mylist.index(r)])
+        a.append((i,r))
+        mylist.remove(i)
+print(b_index)
 </code></pre>
 </div>
         <div class="post_footer">

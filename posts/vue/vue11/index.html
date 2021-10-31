@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="当我们将 vue 项目完成后，面临的就是如何将项目进行打包上线，放到服务器中。我使用的是 vue-cli（simple） 脚手架， 所以就讲一下如何将项目进行打包，并放到 tomcat 上。 如果是 vue-cli (非 simple 脚手架)，这篇文章可能有"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, hugo-theme-zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://liangsuli123.github.io/posts/vue/vue11/"/>
+
+  
+
+  <title>前端框架Vue（11）——vue项目打包部署 &middot; 梁苏莉的博客</title>
+
+  <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://liangsuli123.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首页</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">归档</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">标签</a>
+      </li>
+      
+      <li>
+        <a href="/about/">关于我</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://liangsuli123.github.io/">
+          <span>梁苏莉的博客</span>
+          <img src="https://liangsuli123.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">the site subtitle</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://liangsuli123.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/vue/vue11/'>前端框架Vue（11）——vue项目打包部署</a></h2>
+          <span class="date">2020.07.25</span>
+        </div>
+        <div class="post_content markdown"><pre><code>
+当我们将 vue 项目完成后，面临的就是如何将项目进行打包上线，放到服务器中。我使用的是 vue-cli（simple） 脚手架，
+所以就讲一下如何将项目进行打包，并放到 tomcat 上。
+如果是 vue-cli (非 simple 脚手架)，这篇文章可能有点帮助。地址链接：vue-cli 如何打包上线
+先来描述一下期间遇到的问题有哪些：
+
+1、打包后将 dist 文件夹和 index.html 放到 tomcat，在浏览器中访问时，出现空白页，f12 提示 404。
+2、打包好的静态资源均是绝对路径，无法引入进项目，也是 404。
+
+</code></pre>
+
+<pre><code>1、项目目录结构
+
+</code></pre>
+
+<p><img src="http://localhost:1313/img/12_1.jpg" alt="" /></p>
+
+<pre><code>这是打包后的，所以有 dist 文件夹，打包方式：npm run build。
+
+2、webpack.config.js
+</code></pre>
+
+<p><img src="http://localhost:1313/img/12_2.jpg" alt="" /></p>
+
+<pre><code>
+这里只是一小部分，因为这边最关键的就是 publicPath,下面会提，这边可以解决静态资源 404 无法引入的问题。
+
+3、npm run build 打包后的文件。
+npm run build 打包后生成一个 dist 文件夹，这里面的目录：
+
+
+
+我对 webpack 打包工具的原理不是很清楚，所以文件夹应该生成什么不是了解。我这边是这样子的。主要是一个主要的 build.js, 
+因为我们的 index.html 引入的就是这个 js 文件。还有一些图片文件和 ElementUI 生成的 ttf 和 woff。
+</code></pre>
+
+<p><img src="http://localhost:1313/img/12_3.jpg" alt="" /></p>
+
+<pre><code>4、如何放到服务器中。
+接下来就是需要将生成的 dist 文件夹和 index.html 文件放到服务器中，只需要这两个。首先我将这两个文件放在同一个文件夹
+然后将文件夹放到 tomcat 中,
+ok 部署完成,启动 tomcat，你会发现显示一个空白页，一些静态资源都是 404。
+
+5、解决空白页和静态资源无法引入的问题。
+    1、首先空白页的问题，可以重 f12 中看出来都是绝对路径的原因，而我们打包后，应该的引入路径是相对路径，这时我们需要的是修改 index.html 页面。
+    
+    看一下没改之前的：
+    
+    看我 /dist/build.js 引用的是绝对路径，这就导致了在 tomcat 去访问 index.html 页面时，报404。我们需要将路径变成相对路径 ./dist/build/。多一个点，很关键。好了到这里应该主页面可以显示了。
+    
+    但是你会发现，我的静态资源，我的图片（不包括 img 形式的引入），例如我在 css 中 background:url() 的图片显示404。
+    
+    2、解决静态资源失效的问题
+    
+    这就需要修改我们的 webpack.config.js 中的 publicPath 了，默认的 vue-cli 脚手架环境搭建好后，publicPath 是这样的：
+    可以看到我们的路径是： /dist/。所以这时候我们如果打开页面，静态资源的路径都会是这样子的，并且报错404：
+    
+    解决：
+    
+    所以我需要改变一下 webpack.config.js 中的输出路径 publicPath: /gas/dist/。将最外层的文件夹路径加进去，这样就可以将静态资源引入进项目了。
+    
+    ok,到现在为止，最主要的两个问题解决了，一个是 index.html 空白页，另一个是 静态资源路径不正确的问题。
+</code></pre>
+
+<p><img src="http://localhost:1313/img/12_4.jpg" alt="" />
+<img src="http://localhost:1313/img/12_5.jpg" alt="" />
+<img src="http://localhost:1313/img/12_6.jpg" alt="" /></p>
+
+<pre><code>6、index.html 页面中的link 和 srcipt 引用的资源失效问题：
+原因还是路径的地址不对：
+
+妥协的解决方法是：将自己引用的资源手动放到打包出来的 dist 文件夹内，然后在 index.html 中按照 dist 的相对路径进行引用。
+
+
+
+代码中的 icon.ico 就是我手动将 icon 图标放到 dist 文件夹中，然后按照对应的引用路径进行引用。其他的 css 和 js 引用一样。
+
+7、待解决的问题：
+1、在我的项目中，使用了 ElementUI 框架，但是在打包放到服务器中后，发现按钮样式变了，所有的 padding 失效，所有我只能自己手动进行添加样式。
+
+2、在我的 index.html 中如果引入 link css文件时，还是没办法引入相对路径，所以我将 css 样式都放到了各自的组件中的 style 中了，其他的一般都是用 npm 注入依赖的形式进行安装。
+
+8、网上搜索到的相关问题和解决方法。
+1、求助！Vue项目用Webpack打包后放到服务器上，但访问是空白页？弄了好久了也不知道什么原因
+
+2、vue项目中，npm run build生成的index.html文件只有放在根目录下打开才能生效，怎么解决？
+
+3、Vue应用部署到服务器的正确方式
+
+
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://liangsuli123.github.io/tags/vue/">vue</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span>梁苏莉的技术博客</span>
+  </div>
+</footer>
+
+
+
+<script src="https://liangsuli123.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://liangsuli123.github.io/js/zozo.js"></script>
+<script src="https://liangsuli123.github.io/js/highlight.pack.js"></script>
+<link  href="https://liangsuli123.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://liangsuli123.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

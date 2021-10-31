@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b6/'>Python进程池和线程池</a></h2>
+    <h2><a href='/posts/b17/'>django&#43;celery&#43;redis实现异步周期任务  </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、简介 参考官网 1、Python标准库为我们提供了threading和multiprocessing模块编写相应的多线程/多进程代码 2、但是当项目达到一定的规模，频繁创建/销毁进程或者线程是非常消耗资......</p>
+      <p>注：python的celery模块 4.2.0版本， 刚开始安装的未4.1.1版本，但是定时任务居然不执行 1、在settings.py中配置celery 复制代码 #1、如果在django中需要周期性执行，在......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.08.05</span>
+          <span class="date">2018.09.21</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b5/'>协程</a></h2>
+    <h2><a href='/posts/b16/'>celery与Django项目最佳实践  </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、什么是协程（进入上一次调用的状态） 1. 协程，又称微线程，纤程，协程是一种用户态的轻量级线程。 2. 线程的切换会保存到CPU的栈里，协程拥有自己的寄存器上下文和栈， 3. 协程调度切换时，将寄存器上下文和栈保存......</p>
+      <p>1、在Django中使用celery介绍（celery无法再windows下运行） 1）在Django中使用celery时，celery文件必须以tasks.py 2）Django会自动到每个APP中找t......</p>
     </div>
   </div>
   
@@ -158,7 +158,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.07.10</span>
+          <span class="date">2018.09.17</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b4/'>线程，进程应用场景</a></h2>
+    <h2><a href='/posts/b15/'> celery简单使用 </a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、多线程和多进程各自应用场景 1. I/O操作不占用CPU（从硬盘，网路读入数据等） 2. 计算占用CPU，这种情况最好不用多线程 3. python多线程不适合CPU密集型的任务，适合I/O密集型的任务 4. pytho......</p>
+      <p>1、安装 1. 安装celery： pip3 install celery # ln -s /usr/local/python3/bin/celery /bin/celery 2. 安装redis 2、创建tasks.py文件进行验证 复制代码 from celery import Celery import time app = Celery('TASK', broker='redis://localhost', backend='redis://localhost') @app.task def add(x, y): print(&quot;running..add.&quot;, x, y) return x + y @app.task def minus(x, y): time.sleep(60) print(&quot;running..minus.&quot;, x, y) return x - y 复制代码 1、启动Celery......</p>
     </div>
   </div>
   
@@ -189,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.07.08</span>
+          <span class="date">2018.09.13</span>
         </span>
         
         <span class="field tags">
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/b3/'>线程，进程</a></h2>
+    <h2><a href='/posts/b14/'>Celery介绍</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>1、什么是进程(process)？（进程是资源集合） 1. 程序并不能单独运行，只有将程序装载到内存中，系统为它分配资源才能运行，这种执行的程序就称之为进程 2. 程序和进程的区别就在于：程序是指令的集合，它是进......</p>
+      <p>参考博客：http://www.cnblogs.com/alex3714/p/6351797.html 1、celery应用举例 1、Celery 是一个 基于python开发的分布式异步消息任务队列，通过它......</p>
     </div>
   </div>
   
@@ -220,7 +220,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2018.07.05</span>
+          <span class="date">2018.09.08</span>
         </span>
         
         <span class="field tags">

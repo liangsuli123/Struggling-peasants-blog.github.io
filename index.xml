@@ -6,10 +6,28 @@
     <description>Recent content on 梁苏莉的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 22 Aug 2021 20:24:28 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Oct 2021 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://liangsuli123.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django &#43; Uwsgi &#43; Nginx 实现生产环境部署 </title>
+      <link>https://liangsuli123.github.io/posts/django/django2/</link>
+      <pubDate>Tue, 12 Oct 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/django/django2/</guid>
+      <description>Django + Uwsgi + Nginx 实现生产环境部署 uwsgi介绍 uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用 是与uWSGI服务器进行交换。要</description>
+    </item>
+    
+    <item>
+      <title>Django Celery RabbitMQ构建异步消息队列</title>
+      <link>https://liangsuli123.github.io/posts/django/django1/</link>
+      <pubDate>Fri, 08 Oct 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/django/django1/</guid>
+      <description>1. 建立消息队列 最常用的消息队列就是rabbitmq与redis，这里以rabbitmq为例 首先是安装rabbitmq linux下安装 sudo apt-get install rabbitmq-server mac下安装 brew install rabbitmq 启动rabbitmq 进入到 /usr/loc</description>
+    </item>
     
     <item>
       <title>个人简历</title>
@@ -30,6 +48,15 @@
     </item>
     
     <item>
+      <title>nginx 同时监听uwsgi服务器两个端口，实现一个服务器运行多个项目</title>
+      <link>https://liangsuli123.github.io/posts/conf/nginx_uwsgi/</link>
+      <pubDate>Sun, 22 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/conf/nginx_uwsgi/</guid>
+      <description>nginx.conf 配置文件 #user nobody; worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; gzip on; server { listen 80; server_name 第一个域名; location / { # 将nginx所有请求转到uwsgi include uwsgi_params; # uwsgi的ip与端口 uwsgi_pass 127.0.0.1:3309; } location /static { # 静态文件目录 alias /home/XXXXX(静态</description>
+    </item>
+    
+    <item>
       <title>fatal: unable to access ‘https://github.com/Homebrew/brew/‘: Error in the HTTP2 framing layer</title>
       <link>https://liangsuli123.github.io/posts/git/git/</link>
       <pubDate>Wed, 11 Aug 2021 14:26:00 +0800</pubDate>
@@ -45,6 +72,15 @@
       
       <guid>https://liangsuli123.github.io/posts/mysql/sql/</guid>
       <description>MySQL中的数据用各种不同的技术存储在文件（或内存）中，这些技术中的每一种技术都使用不同的存储机制， 索引技巧，锁定水平并且最终提供广泛的不同功能和能力。在MySQL中将这些不同的技术及配套的相关功能</description>
+    </item>
+    
+    <item>
+      <title>sql优化和索引常见的面试题(面试总结)</title>
+      <link>https://liangsuli123.github.io/posts/mysql/sql_index/</link>
+      <pubDate>Sun, 01 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/mysql/sql_index/</guid>
+      <description>1.什么是索引 索引指数据库的目录，比如：字典上面的字母目录 (适用于大数据量) 2.建立索引的优缺点 优点:查询速度快 缺点：增删改慢，因为数据库要同步去维护索引文件，所以速度慢 3.索引有哪些 普通 主键 唯一 组合</description>
     </item>
     
     <item>
@@ -93,12 +129,66 @@
     </item>
     
     <item>
+      <title>前端框架Vue（12）——vue 中如何对公共css、 js 方法进行单文件统一管理，全局调用</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue12/</link>
+      <pubDate>Wed, 29 Jul 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue12/</guid>
+      <description>1、前言 最近，为公司开发交付的一个后台管理系统项目，我使用了 Vue 框架进行开发实践。 模块化、组件化、工程化的开发体验非常好。良好的 api，优雅的设计，对于工程师非常友好。 但是由于模块比较多，我对于每个模块</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（11）——vue项目打包部署</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue11/</link>
+      <pubDate>Sat, 25 Jul 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue11/</guid>
+      <description>当我们将 vue 项目完成后，面临的就是如何将项目进行打包上线，放到服务器中。我使用的是 vue-cli（simple） 脚手架， 所以就讲一下如何将项目进行打包，并放到 tomcat 上。 如果是 vue-cli (非 simple 脚手架)，这篇文章可能有</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（10）——vue validate验证</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue10/</link>
+      <pubDate>Wed, 15 Jul 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue10/</guid>
+      <description>为什么需要用表单验证插件，想想自己重写过几次表单验证，重复造轮子相当的痛苦，当然你可以自己造一套通用的组件。我比较懒，表单验证就用现成的，VeeValidate 可扩展性也不错，所以就使用它来做表单验证</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（9）——vuex状态保持</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue9/</link>
+      <pubDate>Fri, 10 Jul 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue9/</guid>
+      <description>一个 store 中包含了： Actions( 行为 ) 、Mutations( 突变 )、State( 状态 )， 完整的 Vuex 动作是这样的 Components( 组件 )中 methods 里面一个方法 dispatch （调用）Actions，Actions 然后 commit 对应的Mutations, 只有 Mutations 可以</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（8）——子父组件的传参通信</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue8/</link>
+      <pubDate>Tue, 30 Jun 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue8/</guid>
+      <description>父子间的通信传值是 vue 中的一个重要的内容和掌握点。 父子间的通信传值是 vue 中的一个重要的内容和掌握点。 *vue2.0 推荐使用 vuex,全局进行状态管理。（后面再讲）。 解释一下： 组件之间的关系： &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;loginPage v-on:showState=&amp;quot;changeState&amp;quot; v-if=&amp;quot;loginShow&amp;quot; :fromParent=&amp;quot;fromParent&amp;quot;&amp;gt;&amp;lt;/loginPage&amp;gt; &amp;lt;div class=&amp;quot;web-content&amp;quot; v-if=&amp;quot;webShow&amp;quot;&amp;gt; &amp;lt;phHeader :headerUserName=&amp;quot;headerUserName&amp;quot;&amp;gt;&amp;lt;/phHeader&amp;gt; &amp;lt;div&amp;gt; &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>vue 常用组件</title>
       <link>https://liangsuli123.github.io/posts/vue/vue/</link>
       <pubDate>Fri, 26 Jun 2020 14:26:00 +0800</pubDate>
       
       <guid>https://liangsuli123.github.io/posts/vue/vue/</guid>
       <description>阅读本文需要注意的地方 本文所有组件示例都基于vuecli2。其中大部分组件，使用了vue.use()方法。 这里解释一下为什么使用vue.use()。因为，当插件是一个方法的时候， 我们只需要把该方法定义</description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（7）——Vue&#43;ElementUI:简易login登录框重构</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue7/</link>
+      <pubDate>Thu, 25 Jun 2020 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue7/</guid>
+      <description>Vue 来实现一个简易的登录框，有 用户名（user）和 密码（password），具备简单的校验。 使用的UI框架：ElementUI vue 登录框的优点: 无须操作 dom，只需建立数据模型，自动渲染。 双向数据绑定。 登</description>
     </item>
     
     <item>
@@ -1132,6 +1222,15 @@
       <guid>https://liangsuli123.github.io/posts/linux/xshell/</guid>
       <description> title: &amp;quot;xshell 常用命令&amp;quot; date: 2019-05-25T14:26:00+08:00 draft: false tags: [&amp;quot;xshell&amp;quot;]
 slug: &amp;quot;Xshell&amp;quot;  Xshell :一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议. 0 帮助 命令 与清屏 help 查看帮助命令 ls 查看ls命令下的具体用法 info ls 查看ls命令的作用 clear 清屏 1。查看当前路径 pwd （print working directory) 2. 列出当前路径的目录和文件 ls 列出当前目录 ls *abc 列出文件abc 内的所有文件 ls -l 列出所有的文件 3.查看 cd 进入当前用户主目录（等同于cd ~） cd etl/app/TEMP/abc/ddl 进入目录etl/app/TEMP/abc/ss cd /home 进入home目录 cd / 切换到根目录 cd - 回到上次目录 cd .. 返回上一级目录 cd ../.. 返回上两级目录 whereis &#39;文件名&#39; 查找  </description>
+    </item>
+    
+    <item>
+      <title>前端框架Vue（9）——百度地图使用</title>
+      <link>https://liangsuli123.github.io/posts/vue/vue9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/vue/vue9/</guid>
+      <description>百度地图JavaScript API是一套由JavaScript语言编写的应用程序接口， 可帮助您在网站中构建功能丰富、交互性强的地图应用，支持PC端和移动端基于浏览器的地图应用开发， 且支持HTML5特性</description>
     </item>
     
   </channel>

@@ -113,12 +113,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/jquery_ajax-%E8%B7%A8%E5%9F%9F/'>jquery_ajax 跨域</a></h2>
+    <h2><a href='/posts/selenium%E7%A0%B4%E8%A7%A3%E4%BA%BA%E4%BA%BA%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81/'>selenium破解人人登陆验证码</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;jquery_ajax&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&quot;#b2&quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:'GET', //提交网址 url:'http://192.168.1.238/ajax.php', //数据格式 dataType:'jsonp', //具体数据 data:{'phone':$(&quot;#phone&quot;).val()}, //回调函数 jsonp:'callback', //通信成......</p>
+      <p>from selenium import webdriver from PIL import Image from chaojiying import Chaojiying_Client import time driver = webdriver.Chrome() driver.get('http://ww.renren.com') driver.find_element_by_xpath('//*[@id=&quot;email&quot;]').send_keys(&quot;人人网账号&q......</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.04.10</span>
+          <span class="date">2017.07.18</span>
         </span>
         
         <span class="field tags">
@@ -144,12 +144,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/jquery-%E7%9A%84%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA/%E7%BB%91%E5%AE%9A/'>jquery 的鼠标事件/淡入淡出/绑定</a></h2>
+    <h2><a href='/posts/selenium%E7%88%AC%E5%8F%96%E4%BC%98%E9%85%B7%E9%A1%B5%E9%9D%A2%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/'>selenium爬取优酷页面并下载图片</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;jquery的学习&lt;/title&gt; &lt;!-- 引入第三方库用单表签 --&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; /* jquery 代码的入口，用来等待元素的全部加载*/ // $(function() { // /* 用jQuery选择器来选取某......</p>
+      <p>from selenium import webdriver import requests driver = webdriver.Chrome() #打开优酷 driver.get(&quot;http://www.youku.com&quot;) #点开优酷片库 driver.find_element_by_xpath(&quot;//*[@id='m_2544']/div/ul/li[6]/span[1]/a&quot;).click() #获取所有img元素 listImg = driver.find_elements_by_xpath(&quot;//div[@class='vaule_main']//li/div/div/img&quot;) #取img的src值 listSrc = [] for img in listImg: src = img.get_attribute('src') listSrc.append(src) print(len(listImg)) #下载图片 session = requests.session() for index,value in enumerate(listSrc): response = session.get(value) with open(str(index)+'.png',mode='wb') as f: f.write(response.content)......</p>
     </div>
   </div>
   
@@ -158,7 +158,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.03.10</span>
+          <span class="date">2017.07.13</span>
         </span>
         
         <span class="field tags">
@@ -175,12 +175,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/jquery_ajax-%E5%BC%82%E6%AD%A5%E6%8F%90%E4%BA%A4/'>jquery_ajax 异步提交</a></h2>
+    <h2><a href='/posts/vue/vue%E7%B4%AF%E5%8A%A0%E8%AE%A1%E6%95%B0%E5%99%A8/'>vue累加计数器</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;jquery_ajax&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; //写jquery的单一入口 $(function(){ //绑定按钮事件 $(&quot;#b2&quot;).click(function(){ //用异步的形式来提交数据给服务器 $.ajax({ //提交方式使用get type:'GET', //提交网址 url:'http://192.168.1.238/ajax.php', //数据格式 dataType:'jsonp', //具体数据 data:{'phone':$(&quot;#phone&quot;).val()}, //回调函数 jsonp:'callback', //通信成......</p>
+      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;vue的单击事件&lt;/title&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; window.onload = function(){ var app = new Vue({ el:&quot;.c&quot;, data:{ //定义计数器 counter:0, } }); } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div class=&quot;c&quot;&gt; &lt;!-- 定义一个按钮，使用counter做累加--&gt; &lt;button......</p>
     </div>
   </div>
   
@@ -189,7 +189,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.02.20</span>
+          <span class="date">2017.07.08</span>
         </span>
         
         <span class="field tags">
@@ -206,12 +206,12 @@
 
 <div class="post animated fadeInDown">
   <div class="post_title">
-    <h2><a href='/posts/%E5%89%8D%E7%AB%AFjavascript/'>前端javascript</a></h2>
+    <h2><a href='/posts/vue/vue%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A/'>vue样式的动态绑定</a></h2>
   </div>
   
   <div class="list">
     <div class="post_content markdown">
-      <p>前端 JavaScript javaScript----数据库jquery $(function(){ 执行代码 }); 基本语法：$(selector).action() $(&quot;p&quot;).hide() 隐藏所有&lt;p&gt;元素 $(&quot;#test&quot;).hide() - 隐藏所有 id=&quot;test&quot; 的元素 $(this).hide() - 隐藏当前元素 $(&quot;p.test&quot;).hide() 隐藏所有clas......</p>
+      <p>&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;vue的样式绑定&lt;/title&gt; &lt;style type=&quot;text/css&quot;&gt; .active{ background-color: gold; color:blue; } &lt;/style&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; window.onload = function(){ var app = new Vue({ el:&quot;#a&quot;, data:{ //激活 false isactive:true } }); } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;a&quot;&gt;人生......</p>
     </div>
   </div>
   
@@ -220,7 +220,7 @@
       <div class="info">
         <span class="field">
           <i class="remixicon-map-pin-time-line"></i>
-          <span class="date">2017.01.15</span>
+          <span class="date">2017.07.03</span>
         </span>
         
         <span class="field tags">

@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="1、最简单：html&#43;js全在一个文件中 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;动态路由匹配&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue-router/dist/vue-router.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;h1&amp;gt;Hello App!&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt; &amp;lt;!-- 使用router-link 组件来导航 --&amp;gt; &amp;lt;!-- 通过传入 &#39;to&#39; 属性指"/>
+  <meta name="description" content="vue 中如何支持异步请求 一、vue 支持开发者引入 jquery 使用 $.ajax() 1、首先，在 package.json 中添加 jQuery，然后 npm install &amp;quot;dependencies&amp;quot;: { &amp;quot;jquery&amp;quot;: &amp;quot;^3.2.1&amp;quot;, }, 2、在 webpack.config.js ( 这边用的 vue-cli-simple 脚手架 ) // 增加一个plugins plugins: [ new webpack.ProvidePlugin({ $: &amp;quot;jquery&amp;quot;, jQuery: &amp;quot;jquery&amp;quot; }) ], 3、最后，在全局（mai"/>
   
 
   
@@ -23,7 +23,7 @@
 
   
 
-  <title>前端框架Vue（2）——Vue-Router 路由跳转 &middot; 梁苏莉的博客</title>
+  <title>前端框架Vue（3）—— vue.resource 、axios、ajax 异步通信 &middot; 梁苏莉的博客</title>
 
   <link rel="shortcut icon" href="https://liangsuli123.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://liangsuli123.github.io/css/animate.min.css"/>
@@ -108,320 +108,110 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/vue/vue2/'>前端框架Vue（2）——Vue-Router 路由跳转</a></h2>
+          <h2><a href='/posts/vue/vue2/'>前端框架Vue（3）—— vue.resource 、axios、ajax 异步通信</a></h2>
           <span class="date">2020.05.02</span>
         </div>
-        <div class="post_content markdown"><p>1、最简单：html+js全在一个文件中</p>
+        <div class="post_content markdown"><p>vue 中如何支持异步请求</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;动态路由匹配&lt;/title&gt;
-    &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;app&quot;&gt;
-        &lt;h1&gt;Hello App!&lt;/h1&gt;
-        &lt;p&gt;
-            &lt;!-- 使用router-link 组件来导航 --&gt;
-            &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
-            &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
-            &lt;router-link to=&quot;/foo&quot;&gt;GO TO FOO&lt;/router-link&gt;
-            &lt;router-link to=&quot;/bar&quot;&gt;GO TO BAR&lt;/router-link&gt;
-        &lt;/p&gt;
-        &lt;!-- 路由出口 --&gt;
-        &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
-        &lt;router-view&gt;&lt;/router-view&gt;
-    &lt;/div&gt;
-&lt;script&gt;
-    // 1、定义组件
-    const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
-    const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};
-    // 2、定义路由
-    // 每一个路由映射一个组件
-  const routes = [
-    {path:'/foo',component:Foo},
-    {path:'/bar',component:Bar}
-  ]
-    // 3、创建router实例，然后传'routes'配置
-    const router = new VueRouter({
-        routes
+<pre><code>一、vue 支持开发者引入 jquery 使用 $.ajax()
+    1、首先，在 package.json 中添加 jQuery，然后 npm install
+    
+    &quot;dependencies&quot;: {
+        &quot;jquery&quot;: &quot;^3.2.1&quot;,
+      },
+    
+    2、在 webpack.config.js ( 这边用的 vue-cli-simple 脚手架 )
+    
+     // 增加一个plugins
+      plugins: [
+          new webpack.ProvidePlugin({
+              $: &quot;jquery&quot;,
+              jQuery: &quot;jquery&quot;
+          })
+       ],
+    
+    3、最后，在全局（main.js）中去引用
+    
+    import $ from 'jquery'   
+
+二、vue.resource（ 2.0后不再更新）
+    1、 npm 安装 vue-resource
+    
+     npm install vue-resource
+    
+    2、 main.js 中引入
+    
+     import VueResource from 'vue-resource'
+    
+      Vue.use(VueResource)
+    3、使用
+
+        this.$http.get('../src/data/a.txt')
+            .then(function(res){
+                      alert(res.data);
+                  },function(){
+                      alert('false')
+                  });
+
+
+三、推荐使用 axios
+    github 地址：https://github.com/mzabriskie/axios
+    
+    url :绝对路径
+
+1、npm 安装
+
+    npm install axios
+
+2、组件 中引入
+
+    import Vue from 'vue'
+    import Axios from 'axios'
+
+3、使用
+    
+    axios.get('url')
+         .then(function(res){
+        alert(res);
+         })
+         .catch(function(err){
+        alert(err);
+         })
+    
+    axios.post('/user', {
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    
+    axios({
+      method: 'post',
+      url: '/user/12345',
+      data: {
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      }
     });
-
-    // 4、创建和挂载根实例
-    const app = new Vue({
-        router
-    }).$mount('#app');
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<p>2、命名路由 用name属性链接地址</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;命名路由&lt;/title&gt;
-  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;app&quot;&gt;
-  &lt;h1&gt;Hello App!&lt;/h1&gt;
-  &lt;p&gt;
-    &lt;!-- 使用router-link 组件来导航 --&gt;
-    &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
-    &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
-    &lt;router-link :to=&quot;{name:'user',params:{id:123}}&quot;&gt;GO TO FOO&lt;/router-link&gt;
-    &lt;router-link :to=&quot;{name:'user',params:{id:456}}&quot;&gt;GO TO BAR&lt;/router-link&gt;
-  &lt;/p&gt;
-  &lt;!-- 路由出口 --&gt;
-  &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
-  &lt;router-view&gt;&lt;/router-view&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  // 1、定义组件
-  const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
-  const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};
-  const User = {
-    template:'&lt;div&gt;User {{$route.params.id}}&lt;/div&gt;',
-  }
-  // 2、定义路由
-  
-  // 每一个路由映射一个组件
-
-
-  // 3、创建router实例，然后传'routes'配置
-  const router = new VueRouter({
-    routes:[
-      {
-        path:'/user/:id',
-        name:'user',
-        component: User
-      }
-    ]
-  });
-
-  // 4、创建和挂载根实例
-  const app = new Vue({
-    router
-  }).$mount('#app');
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<p>3、嵌套路由</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;路由嵌套&lt;/title&gt;
-  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;app&quot;&gt;
-  &lt;h1&gt;Hello App!&lt;/h1&gt;
-  &lt;p&gt;
-    &lt;!-- 使用router-link 组件来导航 --&gt;
-    &lt;!-- 通过传入 'to' 属性指定链接 --&gt;
-    &lt;!-- &lt;router-link&gt;默认会渲染成一个a标签 --&gt;
-    &lt;router-link to=&quot;/user/foo/profile&quot;&gt;GO TO FOO&lt;/router-link&gt;
-    &lt;router-link to=&quot;/user/bar/posts&quot;&gt;GO TO BAR&lt;/router-link&gt;
-  &lt;/p&gt;
-  &lt;!-- 路由出口 --&gt;
-  &lt;!-- 路由匹配到的组件将会被渲染到这里 --&gt;
-  &lt;router-view&gt;&lt;/router-view&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  // 1、定义组件
-  /*const Foo = {template:'&lt;div&gt;foo&lt;/div&gt;'};
-   const Bar = {template:'&lt;div&gt;bar&lt;/div&gt;'};*/
-  const User = {
-    template:'&lt;div class=&quot;user&quot;&gt;' +
-    '&lt;h2&gt;User {{$route.params.id}}&lt;/h2&gt;' +
-    '&lt;router-view&gt;&lt;/router-view&gt;' +
-    '&lt;/div&gt;'
-  }
-  const UserProfile = {
-    template:'&lt;div&gt;profile&lt;/div&gt;'
-  }
-  const UserPosts = {
-    template:'&lt;div&gt;posts&lt;/div&gt;'
-  }
-  // 2、定义路由
-  // 每一个路由映射一个组件
-
-
-  // 3、创建router实例，然后传'routes'配置
-  const router = new VueRouter({
-    routes:[
-      {path:'/user/:id',component: User,
-        children:[
-          {
-            //当/user/:id/profile匹配成功
-            //UserProfile会被渲染在User的&lt;router-view&gt;
-            path:'profile',
-            component:UserProfile
-          },
-          {
-            path:'posts',
-            component:UserPosts
-          }
-        ]
-      }
-    ]
-  });
-
-  // 4、创建和挂载根实例
-  const app = new Vue({
-    router
-  }).$mount('#app');
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<p>4、命名视图</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;命名视图&lt;/title&gt;
-  &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;app&quot;&gt;
-    &lt;h1&gt;Hello Views!&lt;/h1&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;router-link to=&quot;/&quot;&gt;/&lt;/router-link&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;router-link to=&quot;/other&quot;&gt;/other&lt;/router-link&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;router-view class=&quot;view one&quot;&gt;&lt;/router-view&gt;
-    &lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;
-    &lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;
-&lt;/div&gt;
-&lt;script&gt;
-  const Header = {template:'&lt;div&gt;头部&lt;/div&gt;'}
-  const Section = {template:'&lt;div&gt;中间部分&lt;/div&gt;'}
-  const Footer = {template:'&lt;div&gt;尾部&lt;/div&gt;'}
-
-  const router = new VueRouter({
-      mode:'history',
-      routes:[
-        {
-            path:'/',
-            //redirect:'/other',//重定向
-            components:{
-                default:Header,
-                a:Section,
-                b:Footer
-            }
-        },
-        {
-            path:'/other',
-            components:{
-                default:Footer,
-                a:Section,
-                b:Header
-            }
-        }
-      ]
-  })
-
-  new Vue({
-      router,
-      el:'#app'
-  })
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-
-*当使用 Vue-cli 时如何进行 vue-router 路由跳转
-
-如果没有使用vue-cli开发环境，请移步
-http://blog.csdn.net/docallen/article/details/68490256
-
-项目目录结构：
-
-1、npm 安装 vue-router
-
-cnpm install vue-router --save
-1
-2、首先建上图结构中的3个组件,写点内容即可
-3、配置 router.js 文件
-
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Hello from '../component/Hello.vue'
-import firstPage from '../pages/firstPage.vue'
-import secondPage from '../pages/secondPage.vue'
-
-Vue.use(VueRouter)
-
-export default new VueRouter({
-  routes:[
-    {
-      path:'/',
-      name:'Hello',
-      component:Hello
-    },
-    {
-      path:'/first',
-      name:'first',
-      component:firstPage
-    },
-    {
-      path:'/second',
-      name:'second',
-      component:secondPage
+    
+     mounted: function() {
+         this.$nextTick(function () {
+        //先定义一个全局_this
+            var _this=this;
+            axios.get('../../src/data/a.txt')
+                 .then(function(res){
+                      _this.msg=res.data;
+                      console.log(_this.msg)
+                 })
+                 .catch(function(err){
+                      alert(err);
+                 })
+         })
     }
-  ]
-})
-</code></pre>
-
-<p>4、修改 APP.vue 中的 template</p>
-
-<pre><code>    &lt;template&gt;
-      &lt;div id=&quot;app&quot;&gt;
-        &lt;img src=&quot;./assets/logo.png&quot;&gt;
-        &lt;div class=&quot;nav-list&quot;&gt;
-          &lt;router-link class=&quot;nav-item&quot; to=&quot;/&quot;&gt;首页&lt;/router-link&gt;
-          &lt;router-link class=&quot;nav-item&quot; to=&quot;/first&quot;&gt;页面一&lt;/router-link&gt;
-          &lt;router-link class=&quot;nav-item&quot; to=&quot;/second&quot;&gt;页面二&lt;/router-link&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;router-view&gt;&lt;/router-view&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/template&gt;
-</code></pre>
-
-<p>5、修改 main.js</p>
-
-<pre><code>    引入router.js
-    
-    import router from './router/router.js'
-    
-    修改 Vue 实例
-    
-    new Vue({
-      el: '#app',
-      router,
-      render: h =&gt; h(App)
-    })
 </code></pre>
 </div>
         <div class="post_footer">

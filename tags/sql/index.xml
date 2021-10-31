@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>sql优化和索引常见的面试题(面试总结)</title>
+      <link>https://liangsuli123.github.io/posts/mysql/sql_index/</link>
+      <pubDate>Sun, 01 Aug 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://liangsuli123.github.io/posts/mysql/sql_index/</guid>
+      <description>1.什么是索引 索引指数据库的目录，比如：字典上面的字母目录 (适用于大数据量) 2.建立索引的优缺点 优点:查询速度快 缺点：增删改慢，因为数据库要同步去维护索引文件，所以速度慢 3.索引有哪些 普通 主键 唯一 组合</description>
+    </item>
+    
+    <item>
       <title>MySql数据库备份的几种方式</title>
       <link>https://liangsuli123.github.io/posts/mysql/sql/</link>
       <pubDate>Fri, 02 Jul 2021 14:26:00 +0800</pubDate>
